@@ -1,3 +1,4 @@
+drop database lmo_g9
 /*create database for lmo_g9*/
 use master
 go
@@ -37,6 +38,7 @@ go
 create table singer (
 	singer_id int identity(1, 1) not null primary key,
 	name nvarchar(200),
+	image_path varchar(200),
 	create_date datetime,
 	create_by int,
 	update_date datetime,
@@ -77,5 +79,17 @@ create table music_favorite (
 	create_by int,
 	update_date datetime,
 	update_by int
+)
+go
+-- create table composer
+create table composer(
+	composer_id int identity(1, 1) not null primary key,
+	music_id int,
+	name nvarchar(200),
+	image_path varchar(200),
+	create_by int,
+	create_date datetime,
+	update_by int,
+	update_date datetime
 )
 go
