@@ -4,6 +4,8 @@ go
 /*create databae*/
 create database lmo_g9
 go
+use lmo_g9
+go
 /*create table*/
 -- account
 create table account (

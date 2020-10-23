@@ -56,3 +56,4 @@ C:\Users\vuhun\OneDrive\Desktop\LMO_G9\LMO_G9\obj\Debug\LMO_G9.csproj.CoreCompil
 C:\Users\vuhun\OneDrive\Desktop\LMO_G9\LMO_G9\obj\Debug\LMO_G9.csproj.CopyComplete
 C:\Users\vuhun\OneDrive\Desktop\LMO_G9\LMO_G9\obj\Debug\LMO_G9.dll
 C:\Users\vuhun\OneDrive\Desktop\LMO_G9\LMO_G9\obj\Debug\LMO_G9.pdb
+C:\Users\vuhun\OneDrive\Desktop\LMO_G9\LMO_G9\obj\Debug\LMO_G9.csprojAssemblyReference.cache

@@ -1,0 +1,5 @@
+body .header .slide .carousel-inner .carousel-item img {
+  width: 100% !important;
+  height: 300px;
+  object-fit: cover;
+}

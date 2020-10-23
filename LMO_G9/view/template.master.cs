@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace LMO_G9.view
 {
-    public partial class template : System.Web.UI.MasterPage
+    public partial class template : MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
