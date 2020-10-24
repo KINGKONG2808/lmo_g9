@@ -3,5 +3,4 @@
     <title>Trang chủ</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <h1>Hung dep trai</h1>
 </asp:Content>

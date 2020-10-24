@@ -12,4 +12,7 @@ We are coding a project to listen music online
 	+ Fontawsome: https://fontawesome.com/icons
 	+ Boostrap 4: https://getbootstrap.com/docs/4.5/getting-started/introduction/
 	+ W3S (see more): https://www.w3schools.com/bootstrap4/default.asp
+	+ Install less: https://www.youtube.com/watch?v=YD91G8DdUsw&t=321s
+# Build less/css: lessc ../LMO_G9/LMO_G9/view/template/css/style.less ../LMO_G9/LMO_G9/view/template/css/style.css
+
 # Updating ... ====> comming soon ...

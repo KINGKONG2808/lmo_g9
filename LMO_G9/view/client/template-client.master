@@ -9,12 +9,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../template/images/icons/favicon.ico" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../template/fontawsome/css/all.css" />
-    <link rel="stylesheet" type="text/css" href="../template/style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../template/custom.js"></script>
+    <link href="../template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../template/fontawsome/css/all.css" rel="stylesheet" />
+    <link href="../template/css/style.css" rel="stylesheet" />
+    <script src="../template/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../template/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../template/js/custom.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -30,7 +30,7 @@
     </div>
     <div class="container-fluid">
         <div class="footer">
-            <h1>Copyright: <i class="fas fa-copyright"></i>2020</h1>
+            
         </div>
     </div>
 </body>
