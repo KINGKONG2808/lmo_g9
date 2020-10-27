@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LMO_G9.view.login
+namespace LMO_G9.view.client
 {
 
 

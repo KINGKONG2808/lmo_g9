@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signin.aspx.cs" Inherits="LMO_G9.view.login.signin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signin.aspx.cs" Inherits="LMO_G9.view.client.signin" %>
 
 <!DOCTYPE html>
 

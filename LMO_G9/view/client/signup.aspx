@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signup.aspx.cs" Inherits="LMO_G9.view.login.signup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signup.aspx.cs" Inherits="LMO_G9.view.client.signup" %>
 
 <!DOCTYPE html>
 
@@ -102,3 +102,4 @@
     <script src="../template/js/main-signup.js"></script>
 </body>
 </html>
+

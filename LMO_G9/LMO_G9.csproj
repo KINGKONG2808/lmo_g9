@@ -73,6 +73,8 @@
     <Content Include="view\client\img\slide5.jpg" />
     <Content Include="view\client\img\slide3.jpg" />
     <Content Include="view\client\index.aspx" />
+    <Content Include="view\client\signin.aspx" />
+    <Content Include="view\client\signup.aspx" />
     <Content Include="view\library\footer.html" />
     <Content Include="view\login\signin.aspx" />
     <Content Include="view\login\signup.aspx" />
@@ -138,6 +140,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\client\signin.aspx.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\client\signin.aspx.designer.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\client\signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\client\signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="view\client\template-client.master.cs">
       <DependentUpon>template-client.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
