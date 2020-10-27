@@ -67,6 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="view\admin\404.html" />
+    <Content Include="view\admin\blank.html" />
+    <Content Include="view\admin\buttons.html" />
+    <Content Include="view\admin\cards.html" />
+    <Content Include="view\admin\charts.html" />
+    <Content Include="view\admin\forgot-password.html" />
+    <Content Include="view\admin\index.html" />
+    <Content Include="view\admin\login.html" />
+    <Content Include="view\admin\register.html" />
+    <Content Include="view\admin\tables.html" />
+    <Content Include="view\admin\utilities-animation.html" />
+    <Content Include="view\admin\utilities-border.html" />
+    <Content Include="view\admin\utilities-color.html" />
+    <Content Include="view\admin\utilities-other.html" />
     <Content Include="view\client\img\slide1.jpg" />
     <Content Include="view\client\img\slide2.jpg" />
     <Content Include="view\client\img\slide4.jpg" />
@@ -301,9 +315,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="view\admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
