@@ -3,7 +3,6 @@
     <title>Trang chủ</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-<<<<<<< Updated upstream
     <div class="container">
         <div class="row">
             <div class="col-lg-4"></div>
@@ -21,7 +20,4 @@
             <div class="col-lg-4"></div>
         </div>
     </div>
-=======
-
->>>>>>> Stashed changes
 </asp:Content>
