@@ -69,7 +69,7 @@
   <ItemGroup>
     <Content Include="controller\text.txt" />
     <Content Include="dto\text.txt" />
-    <Content Include="repository\text.txt" />
+    <Content Include="respository\test.txt" />
     <Content Include="view\admin\404.aspx" />
     <Content Include="view\admin\blank.aspx" />
     <Content Include="view\admin\buttons.aspx" />
@@ -1823,8 +1823,10 @@
     <Compile Include="model\MusicFactory.cs" />
     <Compile Include="model\MusicFavorite.cs" />
     <Compile Include="model\Singer.cs" />
-    <Compile Include="model\Type.cs" />
+    <Compile Include="model\Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util\Constant.cs" />
+    <Compile Include="util\DataUtil.cs" />
     <Compile Include="view\admin\template-admin.master.cs">
       <DependentUpon>template-admin.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
