@@ -83,9 +83,19 @@ go
 -- create table composer
 create table composer(
 	composer_id int identity(1, 1) not null primary key,
-	music_id int,
 	name nvarchar(200),
 	image_path varchar(200),
+	create_by int,
+	create_date datetime,
+	update_by int,
+	update_date datetime
+)
+go
+-- create table composer-music
+create table composer_music(
+	composer_music_id int identity(1, 1) not null primary key,
+	composer_id int,
+	music_id int,
 	create_by int,
 	create_date datetime,
 	update_by int,
