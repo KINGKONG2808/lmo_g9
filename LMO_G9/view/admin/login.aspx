@@ -32,7 +32,10 @@
                                             <label class="custom-control-label" for="formExtend_btnCheck">Remember Me</label>
                                         </div>
                                     </div>
-                                    <asp:LinkButton ID="btnLogin" CssClass="btn btn-primary btn-user btn-block" PostBackUrl="~/view/admin/index.aspx" runat="server">Login</asp:LinkButton>
+                                    <div class="form-group">
+                                        <asp:Label ID="txtError" CssClass="text-error" runat="server" Text="" />
+                                    </div>
+                                    <asp:Button ID="btnLogin" CssClass="btn btn-primary btn-user btn-block" Text="Login" runat="server" OnClick="btnLogin_Click" />
                                 </form>
                                 <hr>
                                 <div class="text-center">
@@ -60,5 +63,7 @@
         (function () {
             $("#formExtend_btnCheck").addClass("custom-control-input");
         })();
+        $(document).ready(function () {
+        })
     </script>
 </asp:Content>

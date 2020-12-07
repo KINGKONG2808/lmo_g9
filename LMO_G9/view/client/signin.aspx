@@ -25,12 +25,12 @@
                     <img src="../template/images/img-01.png" alt="IMG" />
                 </div>
 
-                <form class="login100-form validate-form">
+                <form class="login100-form validate-form" runat="server">
                     <span class="login100-form-title">Tài khoản
                     </span>
 
-                    <div class="wrap-input100 validate-input" data-validate="Email phải đúng định dạng: ex@abc.xyz">
-                        <input class="input100" type="text" name="email" placeholder="Nhập vào email" />
+                    <div class="wrap-input100 validate-input" data-validate="Tên đăng nhập là trường bắt buộc">
+                        <asp:TextBox ID="txtUsername" CssClass="input100" type="text" name="username" placeholder="Nhập vào tên đăng nhập" runat="server" />
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -38,23 +38,25 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Mật khẩu là trường bắt buộc">
-                        <input class="input100" type="password" name="pass" placeholder="Nhập vào mật khẩu" />
+                        <asp:TextBox ID="txtPassword" CssClass="input100" type="password" name="pass" placeholder="Nhập vào mật khẩu" runat="server" />
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
                     </div>
 
+                    <div class="wrap-input100">
+                        <asp:Label ID="txtError" CssClass="text-error" runat="server" Text="" />
+                    </div>
+
                     <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                            Đăng nhập
-                        </button>
+                        <asp:Button ID="btnLogin" CssClass="login100-form-btn" runat="server" Text="Đăng nhập" OnClick="btnLogin_Click" />
                     </div>
 
                     <div class="text-center p-t-12">
                         <span class="txt1">Quên
                         </span>
-                        <a class="txt2" href="#">Email / Mật khẩu?
+                        <a class="txt2" href="#">Tài khoản / Mật khẩu?
                         </a>
                     </div>
 

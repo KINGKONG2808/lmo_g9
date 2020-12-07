@@ -42,12 +42,21 @@ namespace LMO_G9.view.admin
         protected global::System.Web.UI.WebControls.CheckBox btnCheck;
 
         /// <summary>
+        /// txtError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtError;
+
+        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnLogin;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
     }
 }

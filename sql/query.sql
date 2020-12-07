@@ -8,11 +8,12 @@ use lmo_g9
 go
 /*create table*/
 -- account
+drop table account
 create table account (
 	account_id int identity(1, 1) not null primary key,
 	fullname nvarchar(200),
 	address nvarchar(200),
-	date_of_birth varchar(200),
+	date_of_birth datetime,
 	role_id int, -- 0: user, 1: admin
 	username varchar(200),
 	password varchar(200),
@@ -102,3 +103,10 @@ create table composer_music(
 	update_date datetime
 )
 go
+
+-----------------------------------------------------------------------------------
+/*insert data*/
+use lmo_g9
+go
+insert into account(fullname, address, date_of_birth, role_id, username, password, avatar_path, create_date, create_by, update_date, update_by) values ('Vu Van Hung', 'Thai Binh', '08-28-1999', 1, 'hungvv', '1', null, '12-07-2020', 1, '12-07-2020', 1)
+insert into account(fullname, address, date_of_birth, role_id, username, password, avatar_path, create_date, create_by, update_date, update_by) values ('Vu Van Hung', 'Thai Binh', '08-28-1999', 0, 'client', '1', null, '12-07-2020', 1, '12-07-2020', 1)

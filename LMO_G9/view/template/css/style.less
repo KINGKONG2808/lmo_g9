@@ -29,34 +29,40 @@ body {
     .container-fluid {
         padding: 0 !important;
         margin: 0 !important;
+    }
+}
 
-        .header {
-            .navbar {
-                background: @background;
+.header {
+    .navbar {
+        background: @background;
 
-                .navbar-brand {
-                    font-family: Roboto-Bold;
-                }
-
-                a {
-                    color: @color !important;
-                }
-            }
-
-            .slide {
-                .carousel-inner {
-                    .carousel-item {
-                        img {
-                            width: 100% !important;
-                            height: 600px;
-                            object-fit: cover
-                        }
-                    }
-                }
-            }
+        .navbar-brand {
+            font-family: Roboto-Bold;
         }
 
-        .footer {
+        a {
+            color: @color !important;
         }
     }
+
+    .slide {
+        .carousel-inner {
+            .carousel-item {
+                img {
+                    width: 100% !important;
+                    height: 600px;
+                    object-fit: cover
+                }
+            }
+        }
+    }
+}
+
+.footer {
+}
+
+.text-error {
+    color: red;
+    font-size: 13px;
+    font-style: italic;
 }

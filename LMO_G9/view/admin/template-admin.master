@@ -72,7 +72,9 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.aspx">Logout</a>
+                    <form runat="server">
+                        <asp:Button ID="btnLogOut" runat="server" Text="Logout" OnClick="btnLogOut_Click" CssClass="btn btn-primary" />
+                    </form>
                 </div>
             </div>
         </div>
@@ -94,5 +96,11 @@
     <!-- Page level custom scripts -->
     <script src="../template/js/demo/chart-area-demo.js"></script>
     <script src="../template/js/demo/chart-pie-demo.js"></script>
+
+    <script>
+        (function () {
+            $("#admin-profile-fullname").text("<%=account.Fullname%>");
+        })();
+    </script>
 </body>
 </html>

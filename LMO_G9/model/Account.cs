@@ -11,6 +11,7 @@ namespace LMO_G9.model
         private string fullname;
         private string address;
         private DateTime dateOfBirth;
+        private int roleId;
         private string username;
         private string password;
         private string avatarPath;
@@ -19,12 +20,13 @@ namespace LMO_G9.model
         {
         }
 
-        public Account(long accountId, string fullname, string address, DateTime dateOfBirth, string username, string password, string avatarPath)
+        public Account(long accountId, string fullname, string address, DateTime dateOfBirth, int roleId, string username, string password, string avatarPath)
         {
             this.AccountId = accountId;
             this.Fullname = fullname;
             this.Address = address;
             this.DateOfBirth = dateOfBirth;
+            this.RoleId = roleId;
             this.Username = username;
             this.Password = password;
             this.AvatarPath = avatarPath;
@@ -34,6 +36,7 @@ namespace LMO_G9.model
         public string Fullname { get => fullname; set => fullname = value; }
         public string Address { get => address; set => address = value; }
         public DateTime DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
+        public int RoleId { get => roleId; set => roleId = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public string AvatarPath { get => avatarPath; set => avatarPath = value; }
