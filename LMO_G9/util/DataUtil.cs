@@ -14,10 +14,10 @@ namespace LMO_G9.util
 
         public DataUtil()
         {
-            string connectString = Constant.CONNECTING_STRING_K2;
-            connection = new SqlConnection(connectString);
+            string connectString = Constant.CONNECTING_STRING_NIET;
+            Connection = new SqlConnection(connectString);
         }
 
-
+        public SqlConnection Connection { get => connection; set => connection = value; }
     }
 }
