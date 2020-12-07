@@ -19,28 +19,20 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
-                                <form class="user">
+                                <form class="user" runat="server">
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                                        <asp:TextBox ID="txtUsername" CssClass="form-control form-control-user" type="text" placeholder="Enter username" runat="server" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                        <asp:TextBox ID="txtPassword" CssClass="form-control form-control-user" type="password" placeholder="Enter password" runat="server" />
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck">
-                                            <label class="custom-control-label" for="customCheck">Remember Me</label>
+                                            <asp:CheckBox ID="btnCheck" runat="server" />
+                                            <label class="custom-control-label" for="formExtend_btnCheck">Remember Me</label>
                                         </div>
                                     </div>
-                                    <a href="index.aspx" class="btn btn-primary btn-user btn-block">Login
-                                    </a>
-                                    <hr>
-                                    <a href="index.aspx" class="btn btn-google btn-user btn-block">
-                                        <i class="fab fa-google fa-fw"></i>Login with Google
-                                    </a>
-                                    <a href="index.aspx" class="btn btn-facebook btn-user btn-block">
-                                        <i class="fab fa-facebook-f fa-fw"></i>Login with Facebook
-                                    </a>
+                                    <asp:LinkButton ID="btnLogin" CssClass="btn btn-primary btn-user btn-block" PostBackUrl="~/view/admin/index.aspx" runat="server">Login</asp:LinkButton>
                                 </form>
                                 <hr>
                                 <div class="text-center">
@@ -61,4 +53,12 @@
         </div>
 
     </div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="customScript" runat="server">
+    <script>
+        (function () {
+            $("#formExtend_btnCheck").addClass("custom-control-input");
+        })();
+    </script>
 </asp:Content>
