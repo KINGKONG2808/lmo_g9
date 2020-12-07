@@ -46,6 +46,9 @@ create table singer (
 )
 go
 -- music
+/*use lmo_g9
+go
+drop table music*/
 create table music (
 	music_id int identity(1, 1) not null primary key,
 	name nvarchar(200),
