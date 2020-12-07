@@ -1,5 +1,4 @@
-drop database lmo_g9
-/*create database for lmo_g9*/
+
 use master
 go
 /*create databae*/
@@ -46,9 +45,6 @@ create table singer (
 )
 go
 -- music
-/*use lmo_g9
-go
-drop table music*/
 create table music (
 	music_id int identity(1, 1) not null primary key,
 	name nvarchar(200),
