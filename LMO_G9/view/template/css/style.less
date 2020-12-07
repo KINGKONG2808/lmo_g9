@@ -29,36 +29,42 @@ body {
     .container-fluid {
         padding: 0 !important;
         margin: 0 !important;
+    }
+}
 
-        .header {
-            .navbar {
-                background: @background;
+.header {
+    .navbar {
+        background: @background;
 
-                .navbar-brand {
-                    font-family: Roboto-Bold;
-                }
-
-                a {
-                    color: @color !important;
-                }
-            }
-
-            .slide {
-                .carousel-inner {
-                    .carousel-item {
-                        img {
-                            width: 100% !important;
-                            height: 600px;
-                            object-fit: cover
-                        }
-                    }
-                }
-            }
+        .navbar-brand {
+            font-family: Roboto-Bold;
         }
 
-        .footer {
+        a {
+            color: @color !important;
         }
     }
+
+    .slide {
+        .carousel-inner {
+            .carousel-item {
+                img {
+                    width: 100% !important;
+                    height: 600px;
+                    object-fit: cover
+                }
+            }
+        }
+    }
+}
+
+.footer {
+}
+
+.text-error {
+    color: red;
+    font-size: 13px;
+    font-style: italic;
 }
 
 @player-height: 190px;
@@ -88,9 +94,7 @@ h2 {
     cursor: default;
 }
 
-@mixin
-
-unselectable() {
+@mixin unselectable() {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -103,8 +107,7 @@ unselectable() {
     width: @player-width;
     background-color: #1E2125;
     position: absolute;
-    @include
-    unselectable();
+    @include unselectable();
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

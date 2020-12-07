@@ -19,19 +19,24 @@ body .container-fluid {
   padding: 0 !important;
   margin: 0 !important;
 }
-body .container-fluid .header .navbar {
+.header .navbar {
   background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
-body .container-fluid .header .navbar .navbar-brand {
+.header .navbar .navbar-brand {
   font-family: Roboto-Bold;
 }
-body .container-fluid .header .navbar a {
+.header .navbar a {
   color: #ffffff !important;
 }
-body .container-fluid .header .slide .carousel-inner .carousel-item img {
+.header .slide .carousel-inner .carousel-item img {
   width: 100% !important;
   height: 600px;
   object-fit: cover;
+}
+.text-error {
+  color: red;
+  font-size: 13px;
+  font-style: italic;
 }
 h1 {
   font-family: 'Open Sans', sans-serif;
