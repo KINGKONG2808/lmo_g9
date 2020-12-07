@@ -46,13 +46,16 @@ create table singer (
 )
 go
 -- music
+/*use lmo_g9
+go
+drop table music*/
 create table music (
 	music_id int identity(1, 1) not null primary key,
 	name nvarchar(200),
 	file_path varchar(200),
 	image_path varchar(200),
 	singer_id int,
-	type_id int,
+	category_id int,
 	create_date datetime,
 	create_by int,
 	update_date datetime,
