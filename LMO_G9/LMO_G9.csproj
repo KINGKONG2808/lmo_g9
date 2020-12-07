@@ -76,7 +76,7 @@
     <Content Include="view\admin\cards.aspx" />
     <Content Include="view\admin\charts.aspx" />
     <Content Include="view\admin\index.aspx" />
-    <Content Include="view\admin\tables.aspx" />
+    <Content Include="view\admin\tables_Composer.aspx" />
     <Content Include="view\admin\utilities-animation.aspx" />
     <Content Include="view\admin\utilities-border.aspx" />
     <Content Include="view\admin\utilities-color.aspx" />
@@ -84,6 +84,8 @@
     <Content Include="view\admin\register.aspx" />
     <Content Include="view\admin\login.aspx" />
     <Content Include="view\admin\forgot-password.aspx" />
+    <Content Include="view\admin\category.aspx" />
+    <Content Include="view\admin\music.aspx" />
     <Content Include="view\client\img\slide1.jpg" />
     <Content Include="view\client\img\slide2.jpg" />
     <Content Include="view\client\img\slide4.jpg" />
@@ -95,6 +97,7 @@
     <Content Include="view\library\footer.html" />
     <Content Include="view\library\menubar-admin.html" />
     <Content Include="view\library\topbar-admin.html" />
+    <Content Include="view\modal\category-modal.aspx" />
     <Content Include="view\template\css\custom.css" />
     <Content Include="view\template\css\main-signin.css" />
     <Content Include="view\template\css\main-signup.css" />
@@ -1825,8 +1828,16 @@
     <Compile Include="model\Singer.cs" />
     <Compile Include="model\Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="respository\CategoryRepository.cs" />
     <Compile Include="util\Constant.cs" />
     <Compile Include="util\DataUtil.cs" />
+    <Compile Include="view\admin\tables_Composer.aspx.cs">
+      <DependentUpon>tables_Composer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\admin\tables_Composer.aspx.designer.cs">
+      <DependentUpon>tables_Composer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="view\admin\template-admin.master.cs">
       <DependentUpon>template-admin.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1875,13 +1886,6 @@
     </Compile>
     <Compile Include="view\admin\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="view\admin\tables.aspx.cs">
-      <DependentUpon>tables.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\admin\tables.aspx.designer.cs">
-      <DependentUpon>tables.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\admin\template-login.master.cs">
       <DependentUpon>template-login.master</DependentUpon>
@@ -1939,6 +1943,20 @@
     <Compile Include="view\admin\forgot-password.aspx.designer.cs">
       <DependentUpon>forgot-password.aspx</DependentUpon>
     </Compile>
+    <Compile Include="view\admin\category.aspx.cs">
+      <DependentUpon>category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\admin\category.aspx.designer.cs">
+      <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\admin\music.aspx.cs">
+      <DependentUpon>music.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\admin\music.aspx.designer.cs">
+      <DependentUpon>music.aspx</DependentUpon>
+    </Compile>
     <Compile Include="view\client\signin.aspx.cs">
       <DependentUpon>signin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1966,6 +1984,13 @@
     </Compile>
     <Compile Include="view\client\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\modal\category-modal.aspx.cs">
+      <DependentUpon>category-modal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\modal\category-modal.aspx.designer.cs">
+      <DependentUpon>category-modal.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,7 @@ namespace LMO_G9.view.admin
 {
 
 
-    public partial class WebForm7
+    public partial class WebForm16
     {
     }
 }
