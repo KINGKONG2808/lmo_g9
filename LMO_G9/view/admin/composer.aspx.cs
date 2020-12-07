@@ -4,13 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LMO_G9.util;
 using LMO_G9.model;
+using LMO_G9.respository;
+
 namespace LMO_G9.view.admin
 {
     public partial class WebForm7 : System.Web.UI.Page
     {
-        DataUtil dt = new DataUtil();
+        ComposerRepository composerRespository = new ComposerRepository();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             hienthi();
@@ -18,7 +20,7 @@ namespace LMO_G9.view.admin
 
         private void hienthi()
         {
-            grComposer.DataSource = dt.dsComposer();
+            grComposer.DataSource = composerRespository.dsComposer();
             DataBind();
         }
         protected void Xoa_Click(Object sender, CommandEventArgs e)
@@ -26,7 +28,7 @@ namespace LMO_G9.view.admin
             if (e.CommandName == "xoa")
             {
                 int m = Convert.ToInt16(e.CommandArgument);
-                dt.Xoa(m);
+                composerRespository.Xoa(m);
                 hienthi();
             }
         }

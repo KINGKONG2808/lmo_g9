@@ -1,12 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/admin/template-admin.master" AutoEventWireup="true" CodeBehind="tables_Composer.aspx.cs" Inherits="LMO_G9.view.admin.WebForm7" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/admin/template-admin.master" AutoEventWireup="true" CodeBehind="composer.aspx.cs" Inherits="LMO_G9.view.admin.WebForm7" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Tables Page</title>
+    <title>Composer Manage</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pageHeading" runat="server">
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-
+    <h1 class="h3 mb-2 text-gray-800">Composer</h1>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="contentRow" runat="server">
@@ -15,9 +14,9 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <asp:LinkButton ID="add" CommandName="add" CssClass="btn btn-primary" OnCommand="add_Command" runat="server" data-toggle="modal" data-target="#exampleModal">
-<i class="fas fa-plus ">ADD</i>
-
+                    <i class="fas fa-plus ">ADD</i>
                 </asp:LinkButton>
+
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -33,19 +32,21 @@
                                     <asp:TableRow>
                                         <asp:TableCell>Name</asp:TableCell>
                                         <asp:TableCell>
-                                            <asp:TextBox runat="server" ID="txtht"></asp:TextBox></asp:TableCell>
+                                            <asp:TextBox runat="server" ID="txtht"></asp:TextBox>
+                                        </asp:TableCell>
                                     </asp:TableRow>
-                                     
+
                                     <asp:TableRow>
                                         <asp:TableCell>Image path</asp:TableCell>
                                         <asp:TableCell>
-                                            <asp:TextBox runat="server" ID="txtdc"></asp:TextBox></asp:TableCell>
-                                    </asp:TableRow>                                 
+                                            <asp:TextBox runat="server" ID="txtdc"></asp:TextBox>
+                                        </asp:TableCell>
+                                    </asp:TableRow>
                                 </asp:Table>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" runat="server">Close</button>
-                                <button type="button" class="btn btn-primary" OnClick="btnThem_Click" runat="server">Save</button>
+                                <button type="button" class="btn btn-primary" onclick="btnThem_Click" runat="server">Save</button>
                             </div>
                         </div>
                     </div>
@@ -53,7 +54,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <h2>Danh sách Composer</h2>
+                    <h2>Composer List</h2>
                     <asp:GridView ID="grComposer" runat="server" AutoGenerateColumns="false" class="table table-bordered" Width="100%" CellPadding="0">
                         <Columns>
                             <asp:BoundField DataField="composerId" HeaderText="Composer ID" />

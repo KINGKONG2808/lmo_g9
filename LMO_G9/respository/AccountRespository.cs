@@ -9,7 +9,7 @@ using System.Data.Sql;
 
 namespace LMO_G9.respository
 {
-    public class AccountAdminRespository : DataUtil
+    public class AccountRespository : DataUtil
     {
         public Account checkExistsEmail(string username, string password)
         {
