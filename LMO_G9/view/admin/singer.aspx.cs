@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace LMO_G9.view.admin
 {
-    public partial class WebForm17 : System.Web.UI.Page
+    public partial class WebForm18 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

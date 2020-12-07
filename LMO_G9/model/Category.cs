@@ -20,7 +20,7 @@ namespace LMO_G9.model
             this.name = name;
         }
 
-        public long TypeId { get => categoryId; set => categoryId = value; }
+        public long CategoryId { get => categoryId; set => categoryId = value; }
         public string Name { get => name; set => name = value; }
     }
 }

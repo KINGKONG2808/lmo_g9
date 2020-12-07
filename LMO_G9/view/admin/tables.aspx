@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/admin/template-admin.master" AutoEventWireup="true" CodeBehind="tables.aspx.cs" Inherits="LMO_G9.view.admin.WebForm7" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/admin/template-admin.master" AutoEventWireup="true" CodeBehind="tables.aspx.cs" Inherits="LMO_G9.view.admin.WebForm17" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Tables Page</title>
 </asp:Content>

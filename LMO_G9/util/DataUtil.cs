@@ -5,7 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using LMO_G9.util;
-
+using LMO_G9.model;
 namespace LMO_G9.util
 {
     public class DataUtil
@@ -15,9 +15,9 @@ namespace LMO_G9.util
         public DataUtil()
         {
             string connectString = Constant.CONNECTING_STRING_K2;
-            connection = new SqlConnection(connectString);
+            Connection = new SqlConnection(connectString);
         }
 
-
+        public SqlConnection Connection { get => connection; set => connection = value; }
     }
 }
