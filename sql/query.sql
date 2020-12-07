@@ -24,9 +24,9 @@ create table account (
 	update_by int
 )
 go
--- type
-create table type (
-	type_id int identity(1, 1) not null primary key,
+-- category
+create table category (
+	category_id int identity(1, 1) not null primary key,
 	name nvarchar(200),
 	create_date datetime,
 	create_by int,
