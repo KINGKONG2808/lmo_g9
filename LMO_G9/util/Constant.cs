@@ -8,5 +8,6 @@ namespace LMO_G9.util
     public class Constant
     {
         // connect string config
+        public static string CONNECTING_STRING_K2 = @"Data Source=KINGKONG;Initial Catalog=lmo_g9;Integrated Security=True";
     }
 }
