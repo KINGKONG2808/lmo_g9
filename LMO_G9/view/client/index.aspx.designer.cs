@@ -13,23 +13,5 @@ namespace LMO_G9.view.client
 
     public partial class WebForm1
     {
-
-        /// <summary>
-        /// source1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSource source1;
-
-        /// <summary>
-        /// source2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSource source2;
     }
 }
