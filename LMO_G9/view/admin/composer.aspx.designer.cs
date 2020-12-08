@@ -15,15 +15,6 @@ namespace LMO_G9.view.admin
     {
 
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
         /// add control.
         /// </summary>
         /// <remarks>
@@ -42,22 +33,22 @@ namespace LMO_G9.view.admin
         protected global::System.Web.UI.WebControls.Table tbl;
 
         /// <summary>
-        /// txtht control.
+        /// txtname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtht;
+        protected global::System.Web.UI.WebControls.TextBox txtname;
 
         /// <summary>
-        /// txtdc control.
+        /// txtimgpath control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdc;
+        protected global::System.Web.UI.WebControls.TextBox txtimgpath;
 
         /// <summary>
         /// grComposer control.
