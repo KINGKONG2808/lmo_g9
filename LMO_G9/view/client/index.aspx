@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="state">
-                           <a runat="server" Id="Button1" OnClick="play_Click" CommandArgument="<%= dto.MusicId %>"> <i class="material-icons">play_arrow</i></a>
+                           <asp:Button runat="server" Id="Button1" OnCommand="Button1_Click" CommandArgument="<%= dto.MusicId %>" />
                         </div>
                     </div>
                     
