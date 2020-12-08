@@ -15,6 +15,7 @@ namespace LMO_G9.view.client
         ListMusicRepository lm = new ListMusicRepository();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Button1.Text = " <i class='" + "material - icons'" + ">play_arrow</i>";
             lms = lm.getList();
             if (lms.Count > 0)
             {
@@ -64,11 +65,12 @@ namespace LMO_G9.view.client
             }
         }
 
-        protected void play_Click(object sender, CommandEventArgs e)
+
+        protected void Button1_Click(object sender, CommandEventArgs e)
         {
-            foreach(MusicDto ms in lms)
+            foreach (MusicDto ms in lms)
             {
-                if(ms.MusicId == Convert.ToInt32(e.CommandArgument))
+                if (ms.MusicId == Convert.ToInt32(e.CommandArgument))
                 {
                     sourcemp3.Src = ms.AudioPath;
                     sourceogg.Src = ms.AudioPath;
@@ -92,6 +94,7 @@ namespace LMO_G9.view.client
                     }
                 }
             }
+
         }
     }
 }
