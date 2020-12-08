@@ -4,8 +4,8 @@
     <title>Trang chủ</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-
-    <div class="player">
+    <form runat="server"> 
+        <div class="player">
         <ul>
             <li class="cover">
                 <img src="abc.png" runat="server" id="image" /></li>
@@ -84,7 +84,9 @@
                             </div>
                         </div>
                         <div class="state">
-                           <asp:Button runat="server" Id="Button1" OnCommand="Button1_Click" CommandArgument="<%= dto.MusicId %>" />
+                            <a href="index.aspx?index=<%=dto.MusicId %>" onclick="click(<%=dto.MusicId %>)">
+                               <i class="material-icons">play_arrow</i>
+                                </a>
                         </div>
                     </div>
                     
@@ -94,6 +96,8 @@
                     
                 </div>
     </div>
+
+</form>
 
 
     </label>
