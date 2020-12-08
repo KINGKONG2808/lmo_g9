@@ -19,7 +19,7 @@ namespace LMO_G9.view.admin
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
-            Session.Clear();
+            Session.Remove("account");
             Response.Redirect("~/view/admin/login.aspx");
         }
     }

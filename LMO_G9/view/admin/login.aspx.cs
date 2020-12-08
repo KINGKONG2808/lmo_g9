@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using LMO_G9.respository;
 using LMO_G9.model;
 using LMO_G9.util;
-using LMO_G9.respository;
+
 namespace LMO_G9.view.admin
 {
     public partial class WebForm13 : System.Web.UI.Page
