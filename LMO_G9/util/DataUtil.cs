@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Data.Sql;
 using LMO_G9.util;
 using LMO_G9.model;
 namespace LMO_G9.util
@@ -14,7 +14,7 @@ namespace LMO_G9.util
 
         public DataUtil()
         {
-            string connectString = Constant.CONNECTING_STRING_HIEU;
+            string connectString = Constant.CONNECTING_STRING_JALS;
             Connection = new SqlConnection(connectString);
         }
 
