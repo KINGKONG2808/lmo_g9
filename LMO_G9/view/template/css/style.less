@@ -172,6 +172,7 @@ h2 {
 }
 
 #timer {
+    margin-top: 10px;
     color: #494B4E;
     line-height: 0;
     font-size: 9pt;
@@ -319,5 +320,78 @@ p {
 
     svg:hover g polygon {
         fill: #EF6DBC;
+    }
+}
+
+.music {
+    padding: 10px 20px 0px 20px;
+    background: #1A1B1E;
+    margin-top: 27px;
+
+    .song-2,{
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+        .info {
+            display: flex;
+            align-items: center;
+
+            .img {
+                width: 60px;
+                height: 60px;
+                background: red;
+                margin-right: 10px;
+            }
+
+            .img.first {
+                background: url(http://static.stereogum.com/blogs.dir/2/files/2011/12/Adele-21.jpg) center center;
+                background-size: cover;
+            }
+
+            .img.second {
+                background: url(https://upload.wikimedia.org/wikipedia/en/d/df/RedHotChiliPeppersCalifornication.jpg) center center;
+                background-size: cover;
+            }
+
+            .img.third {
+                background: url(http://images.rapgenius.com/59fc635f7dbe6b5cd1e07e5e605c96b5.640x640x1.jpg) center center;
+                background-size: cover;
+            }
+
+            .img.fourth {
+                background: url(http://djrichiep.us/wp-content/uploads/2014/06/princelgc7F.jpg) center center;
+                background-size: cover;
+            }
+
+            .titles {
+
+                h5, p {
+                    margin: 0;
+                    color: white;
+                }
+
+                h5 {
+                    font-size: 17px;
+                    font-weight: 400;
+                    margin-bottom: 7px;
+                }
+
+                p {
+                    font-size: 13px;
+                    color: #929292;
+                }
+            }
+        }
+
+
+        .state {
+
+            i {
+                color: #ddd;
+            }
+        }
     }
 }
