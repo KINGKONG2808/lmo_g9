@@ -11,16 +11,15 @@ namespace LMO_G9.view.admin
     public partial class template_admin : System.Web.UI.MasterPage
     {
         public Account account;
+        public string fullname;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            account = (Account)Session["account"];
-        }
-
-        protected void btnLogOut_Click(object sender, EventArgs e)
-        {
-            Session.Remove("account");
-            Response.Redirect("~/view/admin/login.aspx");
+            if (!IsPostBack)
+            {
+                account = (Account)Session["account"];
+                fullname = account.Fullname == null ? "ADMIN" : account.Fullname;
+            }
         }
     }
 }

@@ -11,29 +11,75 @@ namespace LMO_G9.respository
 {
     public class AccountRespository : DataUtil
     {
+
+
         public Account checkExistsAccount(string username, string password, int roleId)
         {
             Connection.Open();
-            Account account = new Account();
             string sb = "select * from account acc where acc.username = @username and acc.password = @password and acc.role_id = @roleId";
             SqlCommand cmd = new SqlCommand(sb, Connection);
             cmd.Parameters.AddWithValue("username", username);
             cmd.Parameters.AddWithValue("password", password);
             cmd.Parameters.AddWithValue("roleId", roleId);
             SqlDataReader rd = cmd.ExecuteReader();
-            while (rd.Read())
-            {
-                account.AccountId = Convert.ToInt64(rd["account_id"]);
-                account.Fullname = (string)rd["fullname"];
-                account.Address = rd["address"] == DBNull.Value ? null : (string)rd["address"];
-                account.DateOfBirth = (DateTime)rd["date_of_birth"];
-                account.RoleId = Convert.ToInt32(rd["role_id"]);
-                account.Username = (string)rd["username"];
-                account.Password = (string)rd["password"];
-                account.AvatarPath = rd["avatar_path"] == DBNull.Value ? null : (string)rd["avatar_path"];
-            }
+            Account account = pushDataAccount(rd);
             Connection.Close();
             return account;
+        }
+
+        public Account getInforAccount(int accountId)
+        {
+            Connection.Open();
+            string sb = "select * from account acc where acc.account_id = @accountId";
+            SqlCommand cmd = new SqlCommand(sb, Connection);
+            cmd.Parameters.AddWithValue("accountId", accountId);
+            SqlDataReader rd = cmd.ExecuteReader();
+            Account account = pushDataAccount(rd);
+            Connection.Close();
+            return account;
+        }
+
+        public void createAccount(Account account)
+        {
+            Connection.Open();
+            string sb = "insert into account(" +
+                "fullname, " +
+                "address, " +
+                "date_of_birth, " +
+                "role_id, " +
+                "username, " +
+                "password, " +
+                "avatar_path, " +
+                "create_date, " +
+                "create_by, " +
+                "update_date, " +
+                "update_by) " +
+                "values (" +
+                "@fullname, " +
+                "@address, " +
+                "@dateOfBirth, " +
+                "@roleId, " +
+                "@username, " +
+                "@password, " +
+                "@avatarPath, " +
+                "@createDate, " +
+                "@createBy, " +
+                "@updateDate, " +
+                "@updateBy)";
+            SqlCommand cmd = new SqlCommand(sb, Connection);
+            cmd.Parameters.AddWithValue("fullname", account.Fullname);
+            cmd.Parameters.AddWithValue("address", account.Address);
+            cmd.Parameters.AddWithValue("dateOfBirth", account.DateOfBirth);
+            cmd.Parameters.AddWithValue("roleId", account.RoleId);
+            cmd.Parameters.AddWithValue("username", account.Username);
+            cmd.Parameters.AddWithValue("password", account.Password);
+            cmd.Parameters.AddWithValue("avatarPath", account.AvatarPath);
+            cmd.Parameters.AddWithValue("createDate", account.CreateDate);
+            cmd.Parameters.AddWithValue("createBy", account.CreateBy);
+            cmd.Parameters.AddWithValue("updateDate", account.UpdateDate);
+            cmd.Parameters.AddWithValue("updateBy", account.UpdateBy);
+            cmd.ExecuteNonQuery();
+            Connection.Close();
         }
     }
 }

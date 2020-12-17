@@ -4,6 +4,7 @@
 
 <html>
 <head runat="server">
+    <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <meta charset="utf-8">
@@ -74,7 +75,7 @@
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <asp:Button ID="btnLogOut" runat="server" Text="Logout" OnClick="btnLogOut_Click" CssClass="btn btn-primary" />
+                        <button class="btn btn-primary" type="button" data-dismiss="modal" onclick="logout();">Logout</button>
                     </div>
                 </div>
             </div>
@@ -100,8 +101,26 @@
 
     <script>
         (function () {
-            $("#admin-profile-fullname").text("<%=account.Fullname%>");
+            $("#admin-profile-fullname").text("<%=fullname%>");
         })();
+
+        function logout() {
+            $.ajax({
+                type: 'POST',
+                url: 'index.aspx/logout',
+                data: '{}',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (msg) {
+                    redirectPage(msg.d);
+                }
+            });
+        };
+
+        function redirectPage(link) {
+            var currentHost = window.location.origin;
+            window.location.href = currentHost.concat(link);
+        }
     </script>
 </body>
 </html>
