@@ -7,7 +7,7 @@ namespace LMO_G9.dto
 {
     public class MusicDto
     {
-        private long musicId;
+        private int musicId;
         private string name;
         private string audioPath;
         private string imagePath;
@@ -22,7 +22,7 @@ namespace LMO_G9.dto
         {
         }
 
-        public MusicDto(long musicId, string name, string audioPath, string imagePath, string signerName, List<string> singer, string categoryName, string composerName, List<string> composer, string imgHTML)
+        public MusicDto(int musicId, string name, string audioPath, string imagePath, string signerName, List<string> singer, string categoryName, string composerName, List<string> composer, string imgHTML)
         {
             this.MusicId = musicId;
             this.Name = name;
@@ -36,7 +36,7 @@ namespace LMO_G9.dto
             this.ImgHTML = imgHTML;
         }
 
-        public long MusicId { get => musicId; set => musicId = value; }
+        public int MusicId { get => musicId; set => musicId = value; }
         public string Name { get => name; set => name = value; }
         public string ImagePath { get => imagePath; set => imagePath = value; }
         public string AudioPath { get => audioPath; set => audioPath = value; }

@@ -7,7 +7,7 @@ namespace LMO_G9.model
 {
     public class Account : BaseModel
     {
-        private long accountId;
+        private int accountId;
         private string fullname;
         private string address;
         private DateTime dateOfBirth;
@@ -20,7 +20,7 @@ namespace LMO_G9.model
         {
         }
 
-        public Account(long accountId, string fullname, string address, DateTime dateOfBirth, int roleId, string username, string password, string avatarPath)
+        public Account(int accountId, string fullname, string address, DateTime dateOfBirth, int roleId, string username, string password, string avatarPath)
         {
             this.AccountId = accountId;
             this.Fullname = fullname;
@@ -32,7 +32,7 @@ namespace LMO_G9.model
             this.AvatarPath = avatarPath;
         }
 
-        public long AccountId { get => accountId; set => accountId = value; }
+        public int AccountId { get => accountId; set => accountId = value; }
         public string Fullname { get => fullname; set => fullname = value; }
         public string Address { get => address; set => address = value; }
         public DateTime DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }

@@ -7,17 +7,17 @@ namespace LMO_G9.model
 {
     public class Music : BaseModel
     {
-        private long musicId;
+        private int musicId;
         private string name;
         private string imagePath;
-        private long signerId;
-        private long categoryId;
+        private int signerId;
+        private int categoryId;
 
         public Music()
         {
         }
 
-        public Music(long musicId, string name, string imagePath, long signerId, long categoryId)
+        public Music(int musicId, string name, string imagePath, int signerId, int categoryId)
         {
             this.MusicId = musicId;
             this.Name = name;
@@ -26,10 +26,10 @@ namespace LMO_G9.model
             this.CategoryId = categoryId;
         }
 
-        public long MusicId { get => musicId; set => musicId = value; }
+        public int MusicId { get => musicId; set => musicId = value; }
         public string Name { get => name; set => name = value; }
         public string ImagePath { get => imagePath; set => imagePath = value; }
-        public long SignerId { get => signerId; set => signerId = value; }
-        public long CategoryId { get => categoryId; set => categoryId = value; }
+        public int SignerId { get => signerId; set => signerId = value; }
+        public int CategoryId { get => categoryId; set => categoryId = value; }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Services;
 using LMO_G9.respository;
 using LMO_G9.model;
 
@@ -12,7 +13,8 @@ namespace LMO_G9.view.admin
     public partial class WebForm15 : System.Web.UI.Page
     {
 
-        CategoryRepository categoryRepository = new CategoryRepository();
+        private static CategoryRepository categoryRepository = new CategoryRepository();
+        private static Account account;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,6 +28,7 @@ namespace LMO_G9.view.admin
         {
             grdDs.DataSource = categoryRepository.getList();
             DataBind();
+            account = (Account)Session["account"];
         }
 
         protected void delete_Command(object sender, CommandEventArgs e)
@@ -44,16 +47,30 @@ namespace LMO_G9.view.admin
             {
                 int id = Convert.ToInt32(e.CommandArgument);
                 Category category = categoryRepository.getById(id);
-                txtName.Text = category.Name;
+                Session["categoryEdit"] = category;
+                Response.Redirect("~/view/admin/add-category.aspx");
             }
         }
 
-        protected void add_Command(object sender, CommandEventArgs e)
+        [WebMethod]
+        public static string saveCategory(string categoryName)
         {
-            if (e.CommandName == "add")
+            string log;
+            try
             {
                 Category category = new Category();
+                category.Name = categoryName;
+                category.CreateDate = DateTime.Now;
+                category.CreateBy = account.AccountId;
+                category.UpdateDate = DateTime.Now;
+                category.UpdateBy = account.AccountId;
+                categoryRepository.onAddNew(category);
+                log = "Add a new category complete !!!";
+            } catch (Exception ex)
+            {
+                log = "Something wrong with the error: " + ex.Message;
             }
+            return log;
         }
     }
 }

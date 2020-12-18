@@ -22,12 +22,12 @@ namespace LMO_G9.respository
             while (rd.Read())
             {
                 Category cate = new Category();
-                cate.CategoryId = Convert.ToInt64(rd["category_id"]);
+                cate.CategoryId = Convert.ToInt32(rd["category_id"]);
                 cate.Name = (string)rd["name"];
                 cate.CreateDate = (DateTime)rd["create_date"];
-                cate.CreateBy = Convert.ToInt64(rd["create_by"]);
+                cate.CreateBy = Convert.ToInt32(rd["create_by"]);
                 cate.UpdateDate = (DateTime)rd["update_date"];
-                cate.UpdateBy = Convert.ToInt64(rd["update_by"]);
+                cate.UpdateBy = Convert.ToInt32(rd["update_by"]);
 
                 li.Add(cate);
             }
@@ -70,12 +70,12 @@ namespace LMO_G9.respository
             if (rd.Read())
             {
                 cate = new Category();
-                cate.CategoryId = (long)rd["category_id"];
+                cate.CategoryId = (int)rd["category_id"];
                 cate.Name = (string)rd["name"];
                 cate.CreateDate = (DateTime)rd["create_date"];
-                cate.CreateBy = (long)rd["create_by"];
+                cate.CreateBy = (int)rd["create_by"];
                 cate.UpdateDate = (DateTime)rd["update_date"];
-                cate.UpdateBy = (long)rd["update_by"];
+                cate.UpdateBy = (int)rd["update_by"];
             }
             Connection.Close();
 

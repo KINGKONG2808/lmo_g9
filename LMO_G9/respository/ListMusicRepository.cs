@@ -24,7 +24,7 @@ namespace LMO_G9.respository
             while (rd.Read())
             {
                 MusicDto s = new MusicDto();
-                s.MusicId = Convert.ToInt64(rd["musicID"]);
+                s.MusicId = Convert.ToInt32(rd["musicID"]);
                 s.Name = (string)rd["musicName"];
                 s.AudioPath = (string)rd["audioPath"];
                 s.ImagePath = (string)rd["imagePath"];

@@ -15,15 +15,6 @@ namespace LMO_G9.view.admin
     {
 
         /// <summary>
-        /// add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton add;
-
-        /// <summary>
         /// grdDs control.
         /// </summary>
         /// <remarks>
@@ -33,21 +24,12 @@ namespace LMO_G9.view.admin
         protected global::System.Web.UI.WebControls.GridView grdDs;
 
         /// <summary>
-        /// t1 control.
+        /// txtCategoryName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table t1;
-
-        /// <summary>
-        /// txtName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
+        protected global::System.Web.UI.WebControls.TextBox txtCategoryName;
     }
 }

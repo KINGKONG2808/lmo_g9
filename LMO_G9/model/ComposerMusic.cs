@@ -7,23 +7,23 @@ namespace LMO_G9.model
 {
     public class ComposerMusic : BaseModel
     {
-        private long composerMusicId;
-        private long composerId;
-        private long musicId;
+        private int composerMusicId;
+        private int composerId;
+        private int musicId;
 
         public ComposerMusic()
         {
         }
 
-        public ComposerMusic(long composerMusicId, long composerId, long musicId)
+        public ComposerMusic(int composerMusicId, int composerId, int musicId)
         {
             this.ComposerMusicId = composerMusicId;
             this.ComposerId = composerId;
             this.MusicId = musicId;
         }
 
-        public long ComposerMusicId { get => composerMusicId; set => composerMusicId = value; }
-        public long ComposerId { get => composerId; set => composerId = value; }
-        public long MusicId { get => musicId; set => musicId = value; }
+        public int ComposerMusicId { get => composerMusicId; set => composerMusicId = value; }
+        public int ComposerId { get => composerId; set => composerId = value; }
+        public int MusicId { get => musicId; set => musicId = value; }
     }
 }

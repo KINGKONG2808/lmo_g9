@@ -8,15 +8,15 @@ namespace LMO_G9.model
     public class BaseModel
     {
         private DateTime createDate;
-        private long createBy;
+        private int createBy;
         private DateTime updateDate;
-        private long updateBy;
+        private int updateBy;
 
         public BaseModel()
         {
         }
 
-        public BaseModel(DateTime createDate, long createBy, DateTime updateDate, long updateBy)
+        public BaseModel(DateTime createDate, int createBy, DateTime updateDate, int updateBy)
         {
             this.createDate = createDate;
             this.createBy = createBy;
@@ -25,8 +25,8 @@ namespace LMO_G9.model
         }
 
         public DateTime CreateDate { get => createDate; set => createDate = value; }
-        public long CreateBy { get => createBy; set => createBy = value; }
+        public int CreateBy { get => createBy; set => createBy = value; }
         public DateTime UpdateDate { get => updateDate; set => updateDate = value; }
-        public long UpdateBy { get => updateBy; set => updateBy = value; }
+        public int UpdateBy { get => updateBy; set => updateBy = value; }
     }
 }

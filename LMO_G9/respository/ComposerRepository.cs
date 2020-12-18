@@ -21,12 +21,12 @@ namespace LMO_G9.respository
             while (rd.Read())
             {
                 Composer s = new Composer();
-                s.ComposerId = Convert.ToInt64(rd["composer_id"]);
+                s.ComposerId = Convert.ToInt32(rd["composer_id"]);
                 s.Name = (string)rd["name"];
                 s.ImagePath = (string)rd["image_path"];
-                s.CreateBy = Convert.ToInt64(rd["create_by"]);
+                s.CreateBy = Convert.ToInt32(rd["create_by"]);
                 s.CreateDate = (DateTime)rd["create_date"];
-                s.UpdateBy = Convert.ToInt64(rd["update_by"]);
+                s.UpdateBy = Convert.ToInt32(rd["update_by"]);
                 s.UpdateDate = (DateTime)rd["update_date"];
                 li.Add(s);
             }

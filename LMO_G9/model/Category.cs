@@ -7,20 +7,20 @@ namespace LMO_G9.model
 {
     public class Category : BaseModel
     {
-        private long categoryId;
+        private int categoryId;
         private string name;
 
         public Category()
         {
         }
 
-        public Category(long categoryId, string name)
+        public Category(int categoryId, string name)
         {
             this.categoryId = categoryId;
             this.name = name;
         }
 
-        public long CategoryId { get => categoryId; set => categoryId = value; }
+        public int CategoryId { get => categoryId; set => categoryId = value; }
         public string Name { get => name; set => name = value; }
     }
 }

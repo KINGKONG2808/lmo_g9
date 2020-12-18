@@ -7,10 +7,13 @@
     <h2>Music Category</h2>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentRow" runat="server">
-    <asp:LinkButton ID="add" CommandName="add" CssClass="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal"
-        OnCommand="add_Command" runat="server">
-            <i class="fas fa-plus">Add</i>
-    </asp:LinkButton>
+    <div class="container">
+        <div class="row">
+            <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal" style="width: 100%; margin: 1rem;">
+                <i class="fas fa-plus">Add</i>
+            </button>
+        </div>
+    </div>
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -18,8 +21,9 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <asp:GridView ID="grdDs" runat="server" AutoGenerateColumns="false" class="table table-bordered" Width="100%" CellSpacing="0">
+                <asp:GridView ID="grdDs" runat="server" AllowPaging="true" PageSize="15" AutoGenerateColumns="false" class="table table-bordered" Width="100%" CellSpacing="0" >
                     <Columns>
+                        <asp:BoundField DataField="categoryId" HeaderText="Category Id" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="name" HeaderText="Name" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="createDate" HeaderText="Create Date" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="createBy" HeaderText="Create By" HeaderStyle-CssClass="text-center" />
@@ -28,8 +32,7 @@
                         <asp:TemplateField HeaderText="Edit" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                             <ItemTemplate>
                                 <asp:LinkButton ID="edit" CommandName="edit" CommandArgument='<%# Bind("categoryId") %>' CssClass="btn btn-success btn-custom"
-                                    data-toggle="modal" data-target="#exampleModal"
-                                    OnCommand="edit_Command" runat="server">
+                                    OnCommand="edit_Command" runat="server" OnClientClick="onShowModal(exampleModal);">
                                     <i class="fas fa-edit"></i>
                                 </asp:LinkButton>
                             </ItemTemplate>
@@ -59,18 +62,16 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <asp:Table runat="server" ID="t1">
-                        <asp:TableRow>
-                            <asp:TableCell>Category Name</asp:TableCell>
-                            <asp:TableCell>
-                                <asp:TextBox ID="txtName" runat="server" />
-                            </asp:TableCell>
-                        </asp:TableRow>
-                    </asp:Table>
+                    <div class="row">
+                        <div class="col-lg-4">Category name:</div>
+                        <div class="col-lg-8">
+                            <asp:TextBox ID="txtCategoryName" CssClass="form-control width-100" type="text" placeholder="Enter the category name ..." runat="server" />
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveCategory('category.aspx/saveCategory', 'contentRow_txtCategoryName');">Save</button>
                 </div>
             </div>
         </div>

@@ -99,28 +99,13 @@
     <script src="../template/js/demo/chart-area-demo.js"></script>
     <script src="../template/js/demo/chart-pie-demo.js"></script>
 
+    <!-- Custom js -->
+    <script src="../template/js/custom.js"></script>
+
     <script>
         (function () {
             $("#admin-profile-fullname").text("<%=fullname%>");
         })();
-
-        function logout() {
-            $.ajax({
-                type: 'POST',
-                url: 'index.aspx/logout',
-                data: '{}',
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                success: function (msg) {
-                    redirectPage(msg.d);
-                }
-            });
-        };
-
-        function redirectPage(link) {
-            var currentHost = window.location.origin;
-            window.location.href = currentHost.concat(link);
-        }
     </script>
 </body>
 </html>

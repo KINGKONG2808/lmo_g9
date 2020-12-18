@@ -23,7 +23,7 @@ namespace LMO_G9.util
             Account account = new Account();
             while (rd.Read())
             {
-                account.AccountId = Convert.ToInt64(rd["account_id"]);
+                account.AccountId = Convert.ToInt32(rd["account_id"]);
                 account.Fullname = (string)rd["fullname"];
                 account.Address = rd["address"] == DBNull.Value ? null : (string)rd["address"];
                 account.DateOfBirth = (DateTime)rd["date_of_birth"];
