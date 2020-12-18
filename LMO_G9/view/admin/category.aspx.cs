@@ -21,6 +21,7 @@ namespace LMO_G9.view.admin
             if (!IsPostBack)
             {
                 loadData();
+                Session["categoryEdit"] = null;
             }
         }
 
@@ -48,7 +49,7 @@ namespace LMO_G9.view.admin
                 int id = Convert.ToInt32(e.CommandArgument);
                 Category category = categoryRepository.getById(id);
                 Session["categoryEdit"] = category;
-                Response.Redirect("~/view/admin/add-category.aspx");
+                Response.Redirect("~/view/admin/edit-page/edit-category.aspx");
             }
         }
 
@@ -65,7 +66,7 @@ namespace LMO_G9.view.admin
                 category.UpdateDate = DateTime.Now;
                 category.UpdateBy = account.AccountId;
                 categoryRepository.onAddNew(category);
-                log = "Add a new category complete !!!";
+                log = "Sucess !!!";
             } catch (Exception ex)
             {
                 log = "Something wrong with the error: " + ex.Message;

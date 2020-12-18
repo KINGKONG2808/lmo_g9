@@ -67,6 +67,9 @@
                         <div class="col-lg-8">
                             <asp:TextBox ID="txtCategoryName" CssClass="form-control width-100" type="text" placeholder="Enter the category name ..." runat="server" />
                         </div>
+                        <div class="form-group">
+                             <asp:Label ID="txtError" CssClass="text-error" runat="server" Text="" />
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

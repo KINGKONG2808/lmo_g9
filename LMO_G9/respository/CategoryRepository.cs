@@ -85,11 +85,11 @@ namespace LMO_G9.respository
         public void onUpdate(Category cate)
         {
             Connection.Open();
-            string strSql = "update sinhvien " +
+            string strSql = "update category " +
                 " set name = @name," +
                 " update_date = @ud," +
-                " update_by = @ub," +
-                "where category_id = @id";
+                " update_by = @ub " +
+                " where category_id = @id";
             SqlCommand cmd = new SqlCommand(strSql, Connection);
             cmd.Parameters.AddWithValue("name", cate.Name);
             cmd.Parameters.AddWithValue("ud", cate.UpdateDate);

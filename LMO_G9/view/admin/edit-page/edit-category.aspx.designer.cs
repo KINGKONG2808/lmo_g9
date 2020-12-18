@@ -42,15 +42,6 @@ namespace LMO_G9.view.admin
         protected global::System.Web.UI.WebControls.TextBox txtCreateBy;
 
         /// <summary>
-        /// txtCreateDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCreateDate;
-
-        /// <summary>
         /// txtUpdateBy control.
         /// </summary>
         /// <remarks>
