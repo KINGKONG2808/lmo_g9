@@ -9,6 +9,8 @@ go
 /*create table*/
 -- account
 drop table account
+truncate table account
+
 create table account (
 	account_id int identity(1, 1) not null primary key,
 	fullname nvarchar(200),
@@ -110,3 +112,7 @@ use lmo_g9
 go
 insert into account(fullname, address, date_of_birth, role_id, username, password, avatar_path, create_date, create_by, update_date, update_by) values ('Vu Van Hung', 'Thai Binh', '08-28-1999', 1, 'hungvv', '1', null, '12-07-2020', 1, '12-07-2020', 1)
 insert into account(fullname, address, date_of_birth, role_id, username, password, avatar_path, create_date, create_by, update_date, update_by) values ('Vu Van Hung', 'Thai Binh', '08-28-1999', 0, 'client', '1', null, '12-07-2020', 1, '12-07-2020', 1)
+
+delete from account where account_id = 3
+
+update account set password = 1 where username = 'hungvv'

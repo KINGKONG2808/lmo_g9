@@ -15,5 +15,8 @@ namespace LMO_G9.util
 
         public static int ACCOUNT_ROLE_USER = 0;
         public static int ACCOUNT_ROLE_ADMIN = 1;
+
+        public static string DEFAULT_USERNAME = "1";
+        public static string DEFAULT_PASSWORD = "1";
     }
 }
