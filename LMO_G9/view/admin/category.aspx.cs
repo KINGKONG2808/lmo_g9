@@ -15,6 +15,7 @@ namespace LMO_G9.view.admin
 
         private static CategoryRepository categoryRepository = new CategoryRepository();
         private static Account account;
+        private static MusicRepository musicRepository = new MusicRepository();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,6 +38,13 @@ namespace LMO_G9.view.admin
             if (e.CommandName == "delete")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
+                List<Music> msList = musicRepository.getByCategoryId(id);
+                if(msList.Count > 0)
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Không thể xóa vì thể loại đang được sử dụng');", true);
+                    loadData();
+                    return;
+                }
                 categoryRepository.onDelete(id);
                 loadData();
             }

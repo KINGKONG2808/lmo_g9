@@ -81,5 +81,18 @@ namespace LMO_G9.respository
             cmd.ExecuteNonQuery();
             Connection.Close();
         }
+
+        public Account getById(long id)
+        {
+            Connection.Open();
+            string strSql = "select * from account where account_id = @id";
+            SqlCommand cmd = new SqlCommand(strSql, Connection);
+            cmd.Parameters.AddWithValue("id", id);
+            SqlDataReader rd = cmd.ExecuteReader();
+            Account account = pushDataAccount(rd);
+            Connection.Close();
+
+            return account;
+        }
     }
 }
