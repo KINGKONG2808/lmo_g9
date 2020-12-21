@@ -48,10 +48,54 @@ namespace LMO_G9.respository
         public void Them(Composer s)
         {
             Connection.Open();
-            string sql = "insert into sinhvien(name,imagePath) values(@name,@imgpath)";
+            string sql = "insert into composer(name,image_path,create_by,create_date,update_by,update_date) values(@name,@imgpath,@cb,@cd,@ub,@ud)";
             SqlCommand cmd = new SqlCommand(sql, Connection);
             cmd.Parameters.AddWithValue("name", s.Name);
             cmd.Parameters.AddWithValue("imgpath", s.ImagePath);
+            cmd.Parameters.AddWithValue("cb", s.CreateBy);
+            cmd.Parameters.AddWithValue("cd", s.CreateDate);
+            cmd.Parameters.AddWithValue("ub", s.UpdateBy);
+            cmd.Parameters.AddWithValue("ud", s.UpdateDate);
+            cmd.ExecuteNonQuery();
+            Connection.Close();
+        }
+        public Composer getById(long id)
+        {
+            Connection.Open();
+            string strSql = "select * from composer where composer_id = @id";
+            SqlCommand cmd = new SqlCommand(strSql, Connection);
+            cmd.Parameters.AddWithValue("id", id);
+            SqlDataReader rd = cmd.ExecuteReader();
+            Composer s = null;
+            if (rd.Read())
+            {
+                s = new Composer();
+                s.ComposerId = (int)rd["composer_id"];
+                s.Name = (string)rd["name"];
+                s.CreateDate = (DateTime)rd["create_date"];
+                s.CreateBy = (int)rd["create_by"];
+                s.UpdateDate = (DateTime)rd["update_date"];
+                s.UpdateBy = (int)rd["update_by"];
+            }
+            Connection.Close();
+
+            return s;
+        }
+        public void onUpdate(Composer s)
+        {
+            Connection.Open();
+            string strSql = "update composer " +
+                " set name = @name," +
+                " set image_path = @imgpath," +
+                " update_date = @ud," +
+                " update_by = @ub " +
+                " where category_id = @id";
+            SqlCommand cmd = new SqlCommand(strSql, Connection);
+            cmd.Parameters.AddWithValue("name", s.Name);
+            cmd.Parameters.AddWithValue("imgpath", s.ImagePath);
+            cmd.Parameters.AddWithValue("ud", s.UpdateDate);
+            cmd.Parameters.AddWithValue("ub", s.UpdateBy);
+            cmd.Parameters.AddWithValue("id", s.ComposerId);
             cmd.ExecuteNonQuery();
             Connection.Close();
         }

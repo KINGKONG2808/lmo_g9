@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/admin/template-admin.master" AutoEventWireup="true" CodeBehind="edit-category.aspx.cs" Inherits="LMO_G9.view.admin.WebForm19" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/admin/template-admin.master" AutoEventWireup="true" CodeBehind="edit-composer.aspx.cs" Inherits="LMO_G9.view.admin.WebForm19" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Edit music category</title>
 </asp:Content>
@@ -8,11 +8,11 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="contentRow" runat="server">
     <div class="container">
         <div class="row padding-2rem">
-            <h1 class="text-center" style="color: red; width: 100%; font-size: 3rem; font-weight: bold;">Edit a music category</h1>
+            <h1 class="text-center" style="color: red; width: 100%; font-size: 3rem; font-weight: bold;">Edit a composer</h1>
         </div>
         <div class="row padding-2rem">
             <div class="col-lg-3 padding-1rem d-none" >
-                Category Id:
+                Composer Id:
             </div>
             <div class="col-lg-9 padding-1rem d-none">
                 <asp:TextBox ID="txtId" runat="server" Enabled="false" CssClass="form-control width-100" />
@@ -22,6 +22,12 @@
             </div>
             <div class="col-lg-9 padding-1rem" >
                 <asp:TextBox ID="txtName" runat="server" CssClass="form-control width-100" />
+            </div>
+            <div class="col-lg-3 padding-1rem">
+                Image Path:
+            </div>
+            <div class="col-lg-9 padding-1rem" >
+                <asp:TextBox ID="txtImgPath" runat="server" CssClass="form-control width-100" />
             </div>
             <div class="col-lg-3 padding-1rem d-none">
                 Create by:

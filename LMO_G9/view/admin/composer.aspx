@@ -9,74 +9,93 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="contentRow" runat="server">
-        <!-- DataTales Example -->
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <asp:LinkButton ID="add" CommandName="add" CssClass="btn btn-primary" OnCommand="add_Command" runat="server" data-toggle="modal" data-target="#exampleModal">
-                    <i class="fas fa-plus ">ADD</i>
-                </asp:LinkButton>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add Composer</h5>
+    <!-- DataTales Example -->
+    <div class="container">
+        <div class="row">
+            <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal" style="width: 100%; margin: 1rem;">
+                <i class="fas fa-plus">Add</i>
+            </button>
+        </div>
+    </div>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          
 
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Category Information</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-4">Composer name:</div>
+                                <div class="col-lg-8">
+                                    <asp:TextBox ID="txtComposerName" CssClass="form-control width-100" type="text" placeholder="Enter the Composer name ..." runat="server" />
+                                </div>
+                                <div class="form-group">
+                                    <asp:Label ID="txtError" CssClass="text-error" runat="server" Text="" />
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <asp:Table runat="server" ID="tbl">
-                                    <asp:TableRow>
-                                        <asp:TableCell>Name</asp:TableCell>
-                                        <asp:TableCell>
-                                            <asp:TextBox runat="server" ID="txtname"></asp:TextBox>
-                                        </asp:TableCell>
-                                    </asp:TableRow>
-
-                                    <asp:TableRow>
-                                        <asp:TableCell>Image path</asp:TableCell>
-                                        <asp:TableCell>
-                                            <asp:TextBox runat="server" ID="txtimgpath"></asp:TextBox>
-                                        </asp:TableCell>
-                                    </asp:TableRow>
-                                </asp:Table>
+                            <div class="row">
+                                <div class="col-lg-4">Image path:</div>
+                                <div class="col-lg-8">
+                                    <asp:TextBox ID="txtImgPath" CssClass="form-control width-100" type="text" placeholder="Enter the Image path ..." runat="server" />
+                                </div>
+                                <div class="form-group">
+                                    <asp:Label ID="txtError1" CssClass="text-error" runat="server" Text="" />
+                                </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" runat="server">Close</button>
-                                <button type="button" class="btn btn-primary" onclick="btnThem_Click" runat="server">Save</button>
-                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveComposer('contentRow_txtComposerName', 'contentRow_txtImgPath');">Save</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">List composer</h6>
+            </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <h2>Composer List</h2>
-                    <asp:GridView ID="grComposer" runat="server" AutoGenerateColumns="false" class="table table-bordered" Width="100%" CellPadding="0">
+                    <asp:GridView ID="grComposer" runat="server" AllowPaging="true" PageSize="15" AutoGenerateColumns="false" class="table table-bordered" Width="100%" CellSpacing="0">
                         <Columns>
-                            <asp:BoundField DataField="composerId" HeaderText="Composer ID" />
-                            <asp:BoundField DataField="name" HeaderText="Name" />
-                            <asp:BoundField DataField="imagePath" HeaderText="Img Path" />
-                            <asp:TemplateField HeaderText="Delete">
+                            <asp:BoundField DataField="composerId" HeaderText="Composer Id" HeaderStyle-CssClass="text-center" />
+                            <asp:BoundField DataField="name" HeaderText="Name" HeaderStyle-CssClass="text-center" />
+                            <asp:BoundField DataField="imagePath" HeaderText="Image Path" HeaderStyle-CssClass="text-center" />
+                            <asp:BoundField DataField="createDate" HeaderText="Create Date" HeaderStyle-CssClass="text-center" />
+                            <asp:BoundField DataField="createBy" HeaderText="Create By" HeaderStyle-CssClass="text-center" />
+                            <asp:BoundField DataField="updateDate" HeaderText="Update Date" HeaderStyle-CssClass="text-center" />
+                            <asp:BoundField DataField="updateBy" HeaderText="Update By" HeaderStyle-CssClass="text-center" />
+                            <asp:TemplateField HeaderText="Edit" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="xoa"
-                                        OnCommand="Xoa_Click" runat="server" CommandName="xoa" CommandArgument='<%# Bind("composerId") %>' CssClass="btn btn-danger btn-custom far fa-trash-alt">                                         
+                                    <asp:LinkButton ID="edit" CommandName="edit" CommandArgument='<%# Bind("composerId") %>' CssClass="btn btn-success btn-custom"
+                                        OnCommand="edit_Command" runat="server" OnClientClick="onShowModal(exampleModal);">
+                                    <i class="fas fa-edit"></i>
                                     </asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Edit">
+                            <asp:TemplateField HeaderText="Delete" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="sua"
-                                        OnCommand="Sua_Click" runat="server" CommandName="sua" CommandArgument='<%# Bind("composerId") %>' CssClass="btn btn-success btn-custom far fa-edit"></asp:LinkButton>
+                                    <asp:LinkButton ID="delete" CommandName="delete" CommandArgument='<%# Bind("composerId") %>' CssClass="btn btn-danger btn-custom"
+                                        OnCommand="delete_Command" runat="server"
+                                        OnClientClick="return confirm('Are you sure to detele?') ">
+                                    <i class="fas fa-trash"></i>
+                                    </asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
-
                         </Columns>
                     </asp:GridView>
                 </div>
             </div>
+        </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="extendOther" runat="server">
 </asp:Content>
