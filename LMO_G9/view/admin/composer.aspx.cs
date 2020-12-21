@@ -4,51 +4,72 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LMO_G9.model;
+using System.Web.Services;
 using LMO_G9.respository;
-
+using LMO_G9.model;
 namespace LMO_G9.view.admin
 {
     public partial class WebForm7 : System.Web.UI.Page
     {
-        ComposerRepository composerRespository = new ComposerRepository();
-
+        private static ComposerRepository composerRepository = new ComposerRepository();
+        private static Account account;
         protected void Page_Load(object sender, EventArgs e)
         {
-            hienthi();
+            if (!IsPostBack)
+            {
+                hienthi();
+                account = (Account)Session["account"];
+            }
+           
         }
 
         private void hienthi()
         {
-            grComposer.DataSource = composerRespository.dsComposer();
+            grComposer.DataSource = composerRepository.dsComposer();
             DataBind();
         }
-        protected void Xoa_Click(Object sender, CommandEventArgs e)
+        protected void delete_Command(Object sender, CommandEventArgs e)
         {
-            if (e.CommandName == "xoa")
+            if (e.CommandName == "delete")
             {
-                int m = Convert.ToInt16(e.CommandArgument);
-                composerRespository.Xoa(m);
+                int id = Convert.ToInt32(e.CommandArgument);
+                composerRepository.Xoa(id);
                 hienthi();
             }
         }
-        protected void Sua_Click(Object sender, CommandEventArgs e)
+        
+        protected void edit_Command(Object sender, CommandEventArgs e)
         {
-            if (e.CommandName == "sua")
+            if (e.CommandName == "edit")
             {
-               
+                int id = Convert.ToInt32(e.CommandArgument);
+                Composer com = composerRepository.getById(id);
+                Session["composerEdit"] = com;
+                Response.Redirect("~/view/admin/edit-page/edit-composer.aspx");
             }
         }
-        protected void add_Command(Object sender, CommandEventArgs e)
-        {
-            if (e.CommandName == "sua")
-            {
 
-            }
-        }
-        protected void btnThem_Click(Object sender, CommandEventArgs e)
+        [WebMethod]
+        public static string saveComposer(string composerName, string imgPath)
         {
-            
+            string log;
+            try
+            {
+                Composer composer = new Composer();
+                composer.Name = composerName;
+                composer.ImagePath = imgPath;
+                composer.CreateDate = DateTime.Now;
+                composer.CreateBy = account.AccountId;
+                composer.UpdateDate = DateTime.Now;
+                composer.UpdateBy = account.AccountId;
+                composerRepository.Them(composer);
+                log = "Sucess !!!";
+            }
+            catch (Exception ex)
+            {
+                log = "Something wrong with the error: " + ex.Message;
+            }
+            return log;
         }
     }
 }
