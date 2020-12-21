@@ -67,20 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="controller\text.txt" />
-    <Content Include="dto\text.txt" />
-    <Content Include="respository\test.txt" />
-    <Content Include="view\admin\404.aspx" />
-    <Content Include="view\admin\blank.aspx" />
-    <Content Include="view\admin\buttons.aspx" />
-    <Content Include="view\admin\cards.aspx" />
-    <Content Include="view\admin\charts.aspx" />
+    <Content Include="view\admin\composer.aspx" />
+    <Content Include="view\admin\edit-page\edit-category.aspx" />
     <Content Include="view\admin\index.aspx" />
-    <Content Include="view\admin\tables_Composer.aspx" />
-    <Content Include="view\admin\utilities-animation.aspx" />
-    <Content Include="view\admin\utilities-border.aspx" />
-    <Content Include="view\admin\utilities-color.aspx" />
-    <Content Include="view\admin\utilities-other.aspx" />
+    <Content Include="view\admin\singer.aspx" />
     <Content Include="view\admin\register.aspx" />
     <Content Include="view\admin\login.aspx" />
     <Content Include="view\admin\forgot-password.aspx" />
@@ -94,10 +84,10 @@
     <Content Include="view\client\index.aspx" />
     <Content Include="view\client\signin.aspx" />
     <Content Include="view\client\signup.aspx" />
+    <Content Include="view\library\404.html" />
     <Content Include="view\library\footer.html" />
     <Content Include="view\library\menubar-admin.html" />
     <Content Include="view\library\topbar-admin.html" />
-    <Content Include="view\modal\category-modal.aspx" />
     <Content Include="view\template\css\custom.css" />
     <Content Include="view\template\css\main-signin.css" />
     <Content Include="view\template\css\main-signup.css" />
@@ -106,6 +96,7 @@
     <Content Include="view\template\css\util.css" />
     <Content Include="view\template\images\bg-01.jpg" />
     <Content Include="view\template\images\undraw_posting_photo.svg" />
+    <Content Include="view\template\js\Amplitude.min.js" />
     <Content Include="view\template\js\custom.js" />
     <Content Include="view\template\fontawsome\webfonts\fa-brands-400.svg" />
     <Content Include="view\template\fontawsome\webfonts\fa-regular-400.svg" />
@@ -140,15 +131,20 @@
     <Content Include="view\template\vendor\animsition\css\animsition.min.css" />
     <Content Include="view\template\vendor\animsition\js\animsition.js" />
     <Content Include="view\template\vendor\animsition\js\animsition.min.js" />
+    <Content Include="view\template\vendor\bootstrap\css\bootstrap-datepicker.min.css" />
+    <Content Include="view\template\vendor\bootstrap\css\bootstrap-datetimepicker.min.css" />
     <Content Include="view\template\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="view\template\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="view\template\vendor\bootstrap\css\bootstrap-reboot.css" />
     <Content Include="view\template\vendor\bootstrap\css\bootstrap-reboot.min.css" />
     <Content Include="view\template\vendor\bootstrap\css\bootstrap.css" />
     <Content Include="view\template\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="view\template\vendor\bootstrap\js\bootstrap-datepicker.min.js" />
+    <Content Include="view\template\vendor\bootstrap\js\bootstrap-datetimepicker.min.js" />
     <Content Include="view\template\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="view\template\vendor\bootstrap\js\bootstrap.js" />
     <Content Include="view\template\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="view\template\vendor\bootstrap\js\moment.min.js" />
     <Content Include="view\template\vendor\bootstrap\js\popper.js" />
     <Content Include="view\template\vendor\bootstrap\js\popper.min.js" />
     <Content Include="view\template\vendor\bootstrap\js\tooltip.js" />
@@ -1819,24 +1815,43 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dto\CategoryDto.cs" />
+    <Compile Include="dto\MusicDto.cs" />
     <Compile Include="model\Account.cs" />
     <Compile Include="model\BaseModel.cs" />
     <Compile Include="model\Composer.cs" />
+    <Compile Include="model\ComposerMusic.cs" />
     <Compile Include="model\Music.cs" />
     <Compile Include="model\MusicFactory.cs" />
     <Compile Include="model\MusicFavorite.cs" />
     <Compile Include="model\Singer.cs" />
     <Compile Include="model\Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="respository\AccountRespository.cs" />
     <Compile Include="respository\CategoryRepository.cs" />
+    <Compile Include="respository\ComposerRepository.cs" />
+    <Compile Include="respository\ListMusicRepository.cs" />
+    <Compile Include="respository\MusicRepository.cs" />
+    <Compile Include="respository\SingerResponsitory.cs" />
     <Compile Include="util\Constant.cs" />
     <Compile Include="util\DataUtil.cs" />
-    <Compile Include="view\admin\tables_Composer.aspx.cs">
-      <DependentUpon>tables_Composer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="view\admin\composer.aspx.cs">
+      <DependentUpon>composer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="view\admin\tables_Composer.aspx.designer.cs">
-      <DependentUpon>tables_Composer.aspx</DependentUpon>
+    <Compile Include="view\admin\composer.aspx.designer.cs">
+      <DependentUpon>composer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\admin\edit-page\edit-category.aspx.cs">
+      <DependentUpon>edit-category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\admin\edit-page\edit-category.aspx.designer.cs">
+      <DependentUpon>edit-category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\admin\singer.aspx.cs">
+      <DependentUpon>singer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\admin\singer.aspx.designer.cs">
+      <DependentUpon>singer.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\admin\template-admin.master.cs">
       <DependentUpon>template-admin.master</DependentUpon>
@@ -1844,41 +1859,6 @@
     </Compile>
     <Compile Include="view\admin\template-admin.master.designer.cs">
       <DependentUpon>template-admin.master</DependentUpon>
-    </Compile>
-    <Compile Include="view\admin\404.aspx.cs">
-      <DependentUpon>404.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\admin\404.aspx.designer.cs">
-      <DependentUpon>404.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="view\admin\blank.aspx.cs">
-      <DependentUpon>blank.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\admin\blank.aspx.designer.cs">
-      <DependentUpon>blank.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="view\admin\buttons.aspx.cs">
-      <DependentUpon>buttons.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\admin\buttons.aspx.designer.cs">
-      <DependentUpon>buttons.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="view\admin\cards.aspx.cs">
-      <DependentUpon>cards.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\admin\cards.aspx.designer.cs">
-      <DependentUpon>cards.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="view\admin\charts.aspx.cs">
-      <DependentUpon>charts.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\admin\charts.aspx.designer.cs">
-      <DependentUpon>charts.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -1893,34 +1873,6 @@
     </Compile>
     <Compile Include="view\admin\template-login.master.designer.cs">
       <DependentUpon>template-login.master</DependentUpon>
-    </Compile>
-    <Compile Include="view\admin\utilities-animation.aspx.cs">
-      <DependentUpon>utilities-animation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\admin\utilities-animation.aspx.designer.cs">
-      <DependentUpon>utilities-animation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="view\admin\utilities-border.aspx.cs">
-      <DependentUpon>utilities-border.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\admin\utilities-border.aspx.designer.cs">
-      <DependentUpon>utilities-border.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="view\admin\utilities-color.aspx.cs">
-      <DependentUpon>utilities-color.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\admin\utilities-color.aspx.designer.cs">
-      <DependentUpon>utilities-color.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="view\admin\utilities-other.aspx.cs">
-      <DependentUpon>utilities-other.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\admin\utilities-other.aspx.designer.cs">
-      <DependentUpon>utilities-other.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\admin\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
@@ -1984,13 +1936,6 @@
     </Compile>
     <Compile Include="view\client\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="view\modal\category-modal.aspx.cs">
-      <DependentUpon>category-modal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\modal\category-modal.aspx.designer.cs">
-      <DependentUpon>category-modal.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2184,6 +2129,7 @@
     <Content Include="view\template\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="view\template\css\custom.less" />
     <Content Include="view\admin\template-login.master" />
+    <Content Include="view\template\vendor\bootstrap\js\moment.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
