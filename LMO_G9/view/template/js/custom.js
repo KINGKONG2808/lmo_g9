@@ -56,7 +56,6 @@ function validateCategory(nameCategory) {
     return true;
 }
 
-// function call method in c#
 function saveComposer(composerName, imgPath) {
     var composerNameC = $('#' + composerName).val();
     var imgPathC = $('#' + imgPath).val();
