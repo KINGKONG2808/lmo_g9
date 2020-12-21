@@ -28,20 +28,32 @@ function clear() {
 // function call method in c#
 function saveCategory(linkPage, idName) {
     var data = $('#' + idName).val();
-    $.ajax({
-        type: 'POST',
-        url: linkPage,
-        data: '{categoryName: "' + data + '"}',
-        contentType: 'application/json; charset=utf-8',
-        dataType: 'json',
-        success: function (msg) {
-            alert(msg.d);
-            window.location.reload();
-        },
-        error: function (msg) {
-            alert(msg.d);
-        }
-    });
+    //if (validateCategory(data)) {
+        $.ajax({
+            type: 'POST',
+            url: linkPage,
+            data: '{categoryName: "' + data + '"}',
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function (msg) {
+                alert(msg.d);
+                window.location.reload();
+            },
+            error: function (msg) {
+                alert(msg.d);
+            }
+        });
+    /*} else {
+        txtError.text('Bạn vui lòng nhập tên loại nhạc');
+        return;
+    }*/
+}
+
+function validateCategory(nameCategory) {
+    if (nameCategory == null || nameCategory == "") {
+        return false;
+    }
+    return true;
 }
 
 // function call method in c#

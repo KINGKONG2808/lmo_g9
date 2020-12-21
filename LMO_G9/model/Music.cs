@@ -9,6 +9,7 @@ namespace LMO_G9.model
     {
         private int musicId;
         private string name;
+        private string filePath;
         private string imagePath;
         private int signerId;
         private int categoryId;
@@ -17,10 +18,11 @@ namespace LMO_G9.model
         {
         }
 
-        public Music(int musicId, string name, string imagePath, int signerId, int categoryId)
+        public Music(int musicId, string name,string filePath, string imagePath, int signerId, int categoryId)
         {
             this.MusicId = musicId;
             this.Name = name;
+            this.FilePath = filePath;
             this.ImagePath = imagePath;
             this.SignerId = signerId;
             this.CategoryId = categoryId;
@@ -31,5 +33,6 @@ namespace LMO_G9.model
         public string ImagePath { get => imagePath; set => imagePath = value; }
         public int SignerId { get => signerId; set => signerId = value; }
         public int CategoryId { get => categoryId; set => categoryId = value; }
+        public string FilePath { get => filePath; set => filePath = value; }
     }
 }

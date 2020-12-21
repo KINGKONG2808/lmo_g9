@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LMO_G9.model;
 
 namespace LMO_G9.dto
 {
-    public class MusicDto
+    public class MusicDto : BaseModel
     {
         private int musicId;
         private string name;
@@ -17,6 +18,8 @@ namespace LMO_G9.dto
         private string composerName;
         private List<string> composer;
         private string imgHTML;
+        private string createPeople;
+        private string updatePeople;
 
         public MusicDto()
         {
@@ -46,5 +49,7 @@ namespace LMO_G9.dto
         public string ComposerName { get => composerName; set => composerName = value; }
         public List<string> Composer { get => composer; set => composer = value; }
         public string ImgHTML { get => imgHTML; set => imgHTML = value; }
+        public string CreatePeople { get => createPeople; set => createPeople = value; }
+        public string UpdatePeople { get => updatePeople; set => updatePeople = value; }
     }
 }

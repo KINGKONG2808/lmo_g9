@@ -18,13 +18,7 @@ namespace LMO_G9.view.admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            clear();
-        }
 
-        private void clear()
-        {
-            username = null;
-            password = null;
         }
 
         private void login()
@@ -39,7 +33,7 @@ namespace LMO_G9.view.admin
                 txtError.Text = "Password is required !!!";
                 return;
             }
-            Account account = accountRespository.checkExistsAccount(username, password, Constant.ACCOUNT_ROLE_ADMIN);
+            Account account = accountRespository.checkExistsAccount(null, username, password, Constant.ACCOUNT_ROLE_ADMIN);
             if (account.AccountId == 0)
             {
                 txtError.Text = "Invalid account, check your usename or password is correct to sign in !!!";

@@ -14,35 +14,37 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                         </div>
-                        <form class="user">
+                        <form class="user" runat="server">
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                                    <asp:TextBox ID="txtFullname" runat="server" placeholder="Fullname" CssClass="form-control form-control-user" />
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
+                                    <asp:TextBox ID="txtAddress" runat="server" placeholder="Address" CssClass="form-control form-control-user" />
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                 <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <asp:TextBox ID="txtUsername" runat="server" placeholder="Username" CssClass="form-control form-control-user" />
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
+                                    <asp:TextBox ID="txtDateOfBirth" runat="server" placeholder="Date of birth" CssClass="form-control form-control-user" />
                                 </div>
                             </div>
-                            <a href="login.aspx" class="btn btn-primary btn-user btn-block">Register Account
-                            </a>
-                            <hr>
-                            <a href="index.aspx" class="btn btn-google btn-user btn-block">
-                                <i class="fab fa-google fa-fw"></i>Register with Google
-                            </a>
-                            <a href="index.aspx" class="btn btn-facebook btn-user btn-block">
-                                <i class="fab fa-facebook-f fa-fw"></i>Register with Facebook
-                            </a>
+                            <div class="form-group row">
+                                 <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <asp:TextBox ID="txtPassword" runat="server" placeholder="Password" CssClass="form-control form-control-user" type="password" autocomplete="anyrandomstring" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <asp:TextBox ID="txtRepassword" runat="server" placeholder="Repassword" CssClass="form-control form-control-user" type="password" autocomplete="anyrandomstring" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-12">
+                                    <asp:Label ID="txtError" runat="server" Text="" CssClass="text-error" />
+                                </div>
+                            </div>
+                            <asp:Button ID="btnRegister" runat="server" Text="Register Account" CssClass="btn btn-primary btn-user btn-block" OnClick="btnRegister_Click" />
                         </form>
                         <hr>
                         <div class="text-center">
@@ -59,4 +61,20 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="customScript" runat="server">
+    <script>
+        (function () {
+            $('input').attr('autocomplete', 'off');
+            showDateTimePicker();
+        })();
+
+        // show datetime picker for bootstrap
+        function showDateTimePicker() {
+            $('#formExtend_txtDateOfBirth').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: 'dd/mm/yyyy',
+                language: 'tr'
+            });
+        }
+    </script>
 </asp:Content>

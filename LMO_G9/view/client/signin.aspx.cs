@@ -29,7 +29,7 @@ namespace LMO_G9.view.client
 
         private void login()
         {
-            Account account = accountRespository.checkExistsAccount(username, password, Constant.ACCOUNT_ROLE_USER);
+            Account account = accountRespository.checkExistsAccount(null, username, password, Constant.ACCOUNT_ROLE_USER);
             if (account.AccountId == 0)
             {
                 txtError.Text = "Tài khoản hoặc mật khẩu không chính xác !!!";

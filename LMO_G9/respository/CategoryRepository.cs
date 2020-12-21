@@ -6,28 +6,35 @@ using LMO_G9.model;
 using LMO_G9.util;
 using System.Data.SqlClient;
 using System.Data.Sql;
+using LMO_G9.dto;
 
 namespace LMO_G9.respository
 {
     public class CategoryRepository : DataUtil
     {
+        private static AccountRespository accountRespository = new AccountRespository();
 
-        public List<Category> getList()
+        public List<CategoryDto> getList()
         {
-            List<Category> li = new List<Category>();
-            String strSql = "select * from category ";
+            List<CategoryDto> li = new List<CategoryDto>();
+            String strSql = "select * from category c";
             Connection.Open();
             SqlCommand cmd = new SqlCommand(strSql, Connection);
             SqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
-                Category cate = new Category();
+                CategoryDto cate = new CategoryDto();
+                Account account = new Account();
                 cate.CategoryId = Convert.ToInt32(rd["category_id"]);
                 cate.Name = (string)rd["name"];
                 cate.CreateDate = (DateTime)rd["create_date"];
                 cate.CreateBy = Convert.ToInt32(rd["create_by"]);
+                account = accountRespository.getById(cate.CreateBy);
+                cate.CreatePeople = account.Fullname;
                 cate.UpdateDate = (DateTime)rd["update_date"];
                 cate.UpdateBy = Convert.ToInt32(rd["update_by"]);
+                account = accountRespository.getById(cate.UpdateBy);
+                cate.UpdatePeople = account.Fullname;
 
                 li.Add(cate);
             }

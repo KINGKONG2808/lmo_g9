@@ -26,9 +26,9 @@
                         <asp:BoundField DataField="categoryId" HeaderText="Category Id" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="name" HeaderText="Name" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="createDate" HeaderText="Create Date" HeaderStyle-CssClass="text-center" />
-                        <asp:BoundField DataField="createBy" HeaderText="Create By" HeaderStyle-CssClass="text-center" />
+                        <asp:BoundField DataField="createPeople" HeaderText="Create By" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="updateDate" HeaderText="Update Date" HeaderStyle-CssClass="text-center" />
-                        <asp:BoundField DataField="updateBy" HeaderText="Update By" HeaderStyle-CssClass="text-center" />
+                        <asp:BoundField DataField="updatePeople" HeaderText="Update By" HeaderStyle-CssClass="text-center" />
                         <asp:TemplateField HeaderText="Edit" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                             <ItemTemplate>
                                 <asp:LinkButton ID="edit" CommandName="edit" CommandArgument='<%# Bind("categoryId") %>' CssClass="btn btn-success btn-custom"
@@ -66,9 +66,6 @@
                         <div class="col-lg-4">Category name:</div>
                         <div class="col-lg-8">
                             <asp:TextBox ID="txtCategoryName" CssClass="form-control width-100" type="text" placeholder="Enter the category name ..." runat="server" />
-                        </div>
-                        <div class="form-group">
-                             <asp:Label ID="txtError" CssClass="text-error" runat="server" Text="" />
                         </div>
                     </div>
                 </div>

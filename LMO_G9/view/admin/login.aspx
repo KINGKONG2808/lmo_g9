@@ -63,7 +63,5 @@
         (function () {
             $("#formExtend_btnCheck").addClass("custom-control-input");
         })();
-        $(document).ready(function () {
-        })
     </script>
 </asp:Content>
