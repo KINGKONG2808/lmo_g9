@@ -38,105 +38,137 @@ body .container-fluid {
   font-size: 13px;
   font-style: italic;
 }
-h1 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 13pt;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: white;
-  cursor: default;
+.width-100 {
+  width: 100%;
 }
-h4 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 8pt;
-  font-weight: 400;
-  cursor: default;
+.no-padding {
+  padding: 0;
 }
-h2 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 13pt;
-  font-weight: 300;
-  color: white;
-  cursor: default;
+.no-margin {
+  margin: 0;
 }
-@mixin unselectable() {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.play-audio {
+  margin: 2rem 0;
 }
 .player {
-  height: 190px;
-  width: 430px;
-  background-color: #1E2125;
-  position: absolute;
-  @include unselectable();
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
+  height: auto;
+  width: 100%;
+  background-color: #02f5634f;
+  user-select: none;
+  font-family: 'Open Sans', sans-serif;
+  filter: drop-shadow(20px 20px 10px black);
+  border-radius: 15px;
 }
-.player ul {
-  list-style: none;
+.player .cover {
+  width: 100%;
+  text-align: center;
+  align-items: center;
 }
-.player ul li {
-  display: inline-block;
+.player .cover__img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  border-radius: 15px;
 }
-.cover {
-  position: absolute;
-  top: 0;
-  left: 0;
+.player .infor p {
+  color: #BDBDBD;
 }
-.cover img {
-  height: 190px;
-  width: 190px;
+.player .infor span {
+  width: 100%;
 }
-.info h1 {
-  margin-top: 15px;
-  margin-left: 180px;
-  line-height: 0;
+.player .infor__singer-name {
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ff03f7;
+  cursor: default;
+  text-align: center;
 }
-.info h4 {
-  margin-left: 180px;
-  line-height: 20px;
-  color: #636367;
+.player .infor__composer-name {
+  font-size: 18px;
+  font-weight: 400;
+  cursor: default;
+  color: #ff7939ad;
+  text-align: right;
+  font-style: italic;
+  padding-right: 1vw;
 }
-.info h2 {
-  margin-left: 180px;
+.player .infor__music-name {
+  font-size: 30px;
+  font-weight: 300;
+  color: #62ff4fdb;
+  cursor: default;
+  padding: 0 2rem;
 }
-.button-items {
-  margin-left: 180px;
+.player .infor .button-items {
+  padding: 2rem 0.5rem;
 }
-#slider {
-  width: 182px;
-  height: 4px;
-  background: #151518;
-  border-radius: 2px;
+.player .infor .button-items #slider {
+  height: 7px;
+  background: #4386a7c9;
+  border-radius: 5px;
 }
-#slider div {
-  width: 4px;
-  height: 4px;
-  margin-top: 1px;
-  background: #EF6DBC;
-  border-radius: 2px;
+.player .infor .button-items #slider #elapsed {
+  width: 10px;
+  height: 7px;
+  background: #9fef6d;
+  border-radius: 5px;
 }
-#timer {
-  margin-top: 10px;
-  color: #494B4E;
-  line-height: 0;
-  font-size: 9pt;
+.player .infor .button-items .count-down {
+  padding: 0.5rem;
+}
+.player .infor .button-items .count-down #timer {
+  margin-top: 5px;
+  color: #04ff00;
+  line-height: 15px;
+  font-size: 15px;
   float: right;
-  font-family: Arial, Sans-Serif;
 }
-.controls {
+.player .infor .button-items .controls {
   margin-top: 20px;
 }
-.controls svg:nth-child(2) {
+.player .infor .button-items .controls .expend {
+  padding: 0.5px;
+  cursor: pointer;
+}
+.player .infor .button-items .controls .expend svg:hover g polygon {
+  fill: #EF6DBC;
+}
+.player .infor .button-items .controls .expend svg:nth-child(2) {
   margin-left: 5px;
   margin-right: 5px;
 }
-#play {
+.player .infor .button-items .controls .expend .step-backward {
+  width: 18px;
+  height: 18px;
+  x: 0px;
+  y: 0px;
+  enable-background: new 0 0 25 25;
+  margin-bottom: 5px;
+}
+.player .infor .button-items .controls .expend .step-backward g polygon {
+  fill: #FEFEFE;
+}
+.player .infor .button-items .controls .expend .step-backward g polygon:hover {
+  fill: #EF6DBC;
+  cursor: pointer;
+}
+.player .infor .button-items .controls .expend .step-foreward {
+  width: 18px;
+  height: 18px;
+  x: 0px;
+  y: 0px;
+  enable-background: new 0 0 25 25;
+  margin-bottom: 5px;
+}
+.player .infor .button-items .controls .expend .step-foreward g polygon {
+  fill: #FEFEFE;
+}
+.player .infor .button-items .controls .expend .step-foreward g polygon:hover {
+  fill: #EF6DBC;
+  cursor: pointer;
+}
+.player .infor .button-items .controls #play {
   padding: 0 3px;
   width: 30px;
   height: 30px;
@@ -144,48 +176,26 @@ h2 {
   y: 0px;
   enable-background: new 0 0 25 25;
 }
-#play g {
+.player .infor .button-items .controls #play:hover {
+  cursor: pointer;
+}
+.player .infor .button-items .controls #play:hover g {
+  stroke: #8F4DA9;
+  cursor: pointer;
+}
+.player .infor .button-items .controls #play:hover g path {
+  fill: #9b59b6;
+  cursor: pointer;
+}
+.player .infor .button-items .controls #play g {
   stroke: #FEFEFE;
   stroke-width: 1;
   stroke-miterlimit: 10;
 }
-#play g path {
+.player .infor .button-items .controls #play g path {
   fill: #FEFEFE;
 }
-#play:hover {
-  cursor: pointer;
-}
-#play:hover g {
-  stroke: #8F4DA9;
-  cursor: pointer;
-}
-#play:hover g path {
-  fill: #9b59b6;
-  cursor: pointer;
-}
-.step-backward {
-  width: 18px;
-  height: 18px;
-  x: 0px;
-  y: 0px;
-  enable-background: new 0 0 25 25;
-  margin-bottom: 5px;
-}
-.step-backward g polygon {
-  fill: #FEFEFE;
-}
-.step-foreward {
-  width: 18px;
-  height: 18px;
-  x: 0px;
-  y: 0px;
-  enable-background: new 0 0 25 25;
-  margin-bottom: 5px;
-}
-.step-foreward g polygon {
-  fill: #FEFEFE;
-}
-#pause {
+.player .infor .button-items .controls #pause {
   x: 0px;
   y: 0px;
   enable-background: new 0 0 25 25;
@@ -195,109 +205,68 @@ h2 {
   margin-left: -38px;
   cursor: pointer;
 }
-#pause rect {
-  fill: white;
-}
-#pause:hover rect {
+.player .infor .button-items .controls #pause:hover .rect {
   fill: #8F4DA9;
 }
-.step-backward g polygon:hover,
-.step-foreward g polygon:hover {
-  fill: #EF6DBC;
-  cursor: pointer;
+.player .infor .button-items .controls #pause rect {
+  fill: white;
 }
-.social {
-  text-align: center;
+.player hr {
+  max-width: 80%;
+  background: #00ff08;
 }
-.twitter {
-  color: #BDBDBD;
-  font-family: sans-serif;
-  text-decoration: none;
-}
-.twitter:hover {
-  color: #ecf0f1;
-}
-.github {
-  color: #BDBDBD;
-  font-family: sans-serif;
-  text-decoration: none;
-}
-.github:hover {
-  color: #ecf0f1;
-}
-p {
-  color: #BDBDBD;
-}
-#skip {
-  float: right;
-  margin-top: 10px;
-}
-#skip p {
-  color: #2980b9;
-}
-#skip p:hover {
-  color: #e74c3c;
-  cursor: pointer;
-}
-.expend {
-  padding: 0.5px;
-  cursor: pointer;
-}
-.expend svg:hover g polygon {
-  fill: #EF6DBC;
-}
-.music {
+.player .music {
   padding: 10px 20px 0px 20px;
-  background: #1A1B1E;
-  margin-top: 27px;
+  width: 100%;
 }
-.music .song-2 {
-  height: 80px;
+.player .music .song-2 {
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.music .song-2 .info {
+.player .music .song-2 .info {
   display: flex;
   align-items: center;
 }
-.music .song-2 .info .img {
+.player .music .song-2 .info .img {
   width: 60px;
   height: 60px;
   background: red;
   margin-right: 10px;
+  border-radius: 5px;
 }
-.music .song-2 .info .img.first {
+.player .music .song-2 .info .img.first {
   background: url(http://static.stereogum.com/blogs.dir/2/files/2011/12/Adele-21.jpg) center center;
   background-size: cover;
 }
-.music .song-2 .info .img.second {
+.player .music .song-2 .info .img.second {
   background: url(https://upload.wikimedia.org/wikipedia/en/d/df/RedHotChiliPeppersCalifornication.jpg) center center;
   background-size: cover;
 }
-.music .song-2 .info .img.third {
+.player .music .song-2 .info .img.third {
   background: url(http://images.rapgenius.com/59fc635f7dbe6b5cd1e07e5e605c96b5.640x640x1.jpg) center center;
   background-size: cover;
 }
-.music .song-2 .info .img.fourth {
+.player .music .song-2 .info .img.fourth {
   background: url(http://djrichiep.us/wp-content/uploads/2014/06/princelgc7F.jpg) center center;
   background-size: cover;
 }
-.music .song-2 .info .titles h5,
-.music .song-2 .info .titles p {
+.player .music .song-2 .info .titles h5,
+.player .music .song-2 .info .titles p {
   margin: 0;
   color: white;
 }
-.music .song-2 .info .titles h5 {
+.player .music .song-2 .info .titles h5 {
   font-size: 17px;
   font-weight: 400;
   margin-bottom: 7px;
 }
-.music .song-2 .info .titles p {
+.player .music .song-2 .info .titles p {
   font-size: 13px;
   color: #929292;
 }
-.music .song-2 .state i {
+.player .music .song-2 .state i {
   color: #ddd;
 }

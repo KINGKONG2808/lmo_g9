@@ -1,0 +1,287 @@
+﻿@player-height: 190px;
+@player-width: 430px;
+
+.player {
+    height: auto;
+    width: 100%;
+    background-color: #02f5634f;
+    user-select: none;
+    font-family: 'Open Sans', sans-serif;
+    filter: drop-shadow(20px 20px 10px black);
+    border-radius: 15px;
+
+    .cover {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+
+        &__img {
+            width: 100%;
+            height: 16rem;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+    }
+
+    .infor {
+        p {
+            color: #BDBDBD;
+        }
+
+        span {
+            width: 100%;
+        }
+
+        &__singer-name {
+            font-size: 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #ff03f7;
+            cursor: default;
+            text-align: center;
+        }
+
+        &__composer-name {
+            font-size: 18px;
+            font-weight: 400;
+            cursor: default;
+            color: #ff7939ad;
+            text-align: right;
+            font-style: italic;
+            padding-right: 1vw;
+        }
+
+        &__music-name {
+            font-size: 30px;
+            font-weight: 300;
+            color: #62ff4fdb;
+            cursor: default;
+            padding: 0 2rem;
+        }
+
+        .button-items {
+            padding: 2rem 0.5rem;
+
+            #slider {
+                height: 7px;
+                background: #4386a7c9;
+                border-radius: 5px;
+
+                #elapsed {
+                    width: 10px;
+                    height: 7px;
+                    background: #9fef6d;
+                    border-radius: 5px;
+                }
+            }
+
+            .count-down {
+                padding: 0.5rem;
+
+                #timer {
+                    margin-top: 5px;
+                    color: #04ff00;
+                    line-height: 15px;
+                    font-size: 15px;
+                    float: right;
+                }
+            }
+
+            .controls {
+                margin-top: 20px;
+
+                .expend {
+                    padding: 0.5px;
+                    cursor: pointer;
+
+                    svg {
+                        &:hover {
+                            g {
+                                polygon {
+                                    fill: #EF6DBC;
+                                }
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            margin-left: 5px;
+                            margin-right: 5px;
+                        }
+                    }
+
+                    .step-backward {
+                        width: 18px;
+                        height: 18px;
+                        x: 0px;
+                        y: 0px;
+                        enable-background: new 0 0 25 25;
+                        margin-bottom: 5px;
+
+                        g {
+                            polygon {
+                                fill: #FEFEFE;
+
+                                &:hover {
+                                    fill: #EF6DBC;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+
+                    .step-foreward {
+                        width: 18px;
+                        height: 18px;
+                        x: 0px;
+                        y: 0px;
+                        enable-background: new 0 0 25 25;
+                        margin-bottom: 5px;
+
+                        g {
+                            polygon {
+                                fill: #FEFEFE;
+
+                                &:hover {
+                                    fill: #EF6DBC;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #play {
+                    padding: 0 3px;
+                    width: 30px;
+                    height: 30px;
+                    x: 0px;
+                    y: 0px;
+                    enable-background: new 0 0 25 25;
+
+                    &:hover {
+                        cursor: pointer;
+
+                        g {
+                            stroke: #8F4DA9;
+                            cursor: pointer;
+
+                            path {
+                                fill: #9b59b6;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    g {
+                        stroke: #FEFEFE;
+                        stroke-width: 1;
+                        stroke-miterlimit: 10;
+
+                        path {
+                            fill: #FEFEFE;
+                        }
+                    }
+                }
+
+                #pause {
+                    x: 0px;
+                    y: 0px;
+                    enable-background: new 0 0 25 25;
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    margin-left: -38px;
+                    cursor: pointer;
+
+                    &:hover {
+                        .rect {
+                            fill: #8F4DA9;
+                        }
+                    }
+
+                    rect {
+                        fill: white;
+                    }
+                }
+            }
+        }
+    }
+
+    hr {
+        max-width: 80%;
+        background: #00ff08;
+    }
+
+    .music {
+        padding: 10px 20px 0px 20px;
+        width: 100%;
+
+        .song-2 {
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+            .info {
+                display: flex;
+                align-items: center;
+
+                .img {
+                    width: 60px;
+                    height: 60px;
+                    background: red;
+                    margin-right: 10px;
+                    border-radius: 5px;
+                }
+
+                .img.first {
+                    background: url(http://static.stereogum.com/blogs.dir/2/files/2011/12/Adele-21.jpg) center center;
+                    background-size: cover;
+                }
+
+                .img.second {
+                    background: url(https://upload.wikimedia.org/wikipedia/en/d/df/RedHotChiliPeppersCalifornication.jpg) center center;
+                    background-size: cover;
+                }
+
+                .img.third {
+                    background: url(http://images.rapgenius.com/59fc635f7dbe6b5cd1e07e5e605c96b5.640x640x1.jpg) center center;
+                    background-size: cover;
+                }
+
+                .img.fourth {
+                    background: url(http://djrichiep.us/wp-content/uploads/2014/06/princelgc7F.jpg) center center;
+                    background-size: cover;
+                }
+
+                .titles {
+
+                    h5, p {
+                        margin: 0;
+                        color: white;
+                    }
+
+                    h5 {
+                        font-size: 17px;
+                        font-weight: 400;
+                        margin-bottom: 7px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                        color: #929292;
+                    }
+                }
+            }
+
+
+            .state {
+
+                i {
+                    color: #ddd;
+                }
+            }
+        }
+    }
+}

@@ -95,8 +95,10 @@
     <Content Include="view\template\css\sb-admin-2.min.css" />
     <Content Include="view\template\css\util.css" />
     <Content Include="view\template\images\bg-01.jpg" />
+    <Content Include="view\template\images\icons\images.ico" />
+    <Content Include="view\template\images\logo.png" />
     <Content Include="view\template\images\undraw_posting_photo.svg" />
-    <Content Include="view\template\js\Amplitude.min.js" />
+    <Content Include="view\template\js\amplitude.min.js" />
     <Content Include="view\template\js\custom.js" />
     <Content Include="view\template\fontawsome\webfonts\fa-brands-400.svg" />
     <Content Include="view\template\fontawsome\webfonts\fa-regular-400.svg" />
@@ -145,7 +147,6 @@
     <Content Include="view\template\vendor\bootstrap\js\bootstrap.js" />
     <Content Include="view\template\vendor\bootstrap\js\bootstrap.min.js" />
     <Content Include="view\template\vendor\bootstrap\js\moment.min.js" />
-    <Content Include="view\template\vendor\bootstrap\js\popper.js" />
     <Content Include="view\template\vendor\bootstrap\js\popper.min.js" />
     <Content Include="view\template\vendor\bootstrap\js\tooltip.js" />
     <Content Include="view\template\vendor\chart.js\Chart.bundle.js" />
@@ -2130,6 +2131,8 @@
     <Content Include="view\template\css\custom.less" />
     <Content Include="view\admin\template-login.master" />
     <Content Include="view\template\vendor\bootstrap\js\moment.min.js.map" />
+    <Content Include="view\template\css\_custom-audio.less" />
+    <Content Include="view\template\vendor\bootstrap\js\popper.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
