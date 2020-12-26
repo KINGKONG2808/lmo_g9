@@ -13,28 +13,38 @@ namespace LMO_G9.view.admin
     {
         private static ComposerRepository composerRepository = new ComposerRepository();
         private static Account account;
+        private static MusicRepository musicRepository = new MusicRepository();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                hienthi();
-                account = (Account)Session["account"];
+                loadData();
+                Session["composerEdit"] = null;
             }
-           
         }
 
-        private void hienthi()
+        private void loadData()
         {
-            grComposer.DataSource = composerRepository.dsComposer();
+            grComposer.DataSource = composerRepository.getList();
             DataBind();
+            account = (Account)Session["account"];
         }
+
         protected void delete_Command(Object sender, CommandEventArgs e)
         {
             if (e.CommandName == "delete")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
+                List<Music> msList = musicRepository.getByCategoryId(id);
+                if (msList.Count > 0)
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Không thể xóa vì thể loại đang được sử dụng');", true);
+                    loadData();
+                    return;
+                }
                 composerRepository.Xoa(id);
-                hienthi();
+                loadData();
             }
         }
         
@@ -43,8 +53,8 @@ namespace LMO_G9.view.admin
             if (e.CommandName == "edit")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
-                Composer com = composerRepository.getById(id);
-                Session["composerEdit"] = com;
+                Composer composer = composerRepository.getById(id);
+                Session["composerEdit"] = composer;
                 Response.Redirect("~/view/admin/edit-page/edit-composer.aspx");
             }
         }

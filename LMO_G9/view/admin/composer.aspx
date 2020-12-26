@@ -71,9 +71,9 @@
                             <asp:BoundField DataField="name" HeaderText="Name" HeaderStyle-CssClass="text-center" />
                             <asp:BoundField DataField="imagePath" HeaderText="Image Path" HeaderStyle-CssClass="text-center" />
                             <asp:BoundField DataField="createDate" HeaderText="Create Date" HeaderStyle-CssClass="text-center" />
-                            <asp:BoundField DataField="createBy" HeaderText="Create By" HeaderStyle-CssClass="text-center" />
+                            <asp:BoundField DataField="CreatePeople" HeaderText="Create By" HeaderStyle-CssClass="text-center" />
                             <asp:BoundField DataField="updateDate" HeaderText="Update Date" HeaderStyle-CssClass="text-center" />
-                            <asp:BoundField DataField="updateBy" HeaderText="Update By" HeaderStyle-CssClass="text-center" />
+                            <asp:BoundField DataField="UpdatePeople" HeaderText="Update By" HeaderStyle-CssClass="text-center" />
                             <asp:TemplateField HeaderText="Edit" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="edit" CommandName="edit" CommandArgument='<%# Bind("composerId") %>' CssClass="btn btn-success btn-custom"
