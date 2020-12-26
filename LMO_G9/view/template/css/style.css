@@ -10,15 +10,6 @@
   font-family: 'Roboto-Medium';
   src: url('../fonts/roboto/Roboto-Medium.ttf') format('truetype');
 }
-body {
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  color: #ffffff;
-  font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
-}
-body .container-fluid {
-  padding: 0 !important;
-  margin: 0 !important;
-}
 .header .navbar {
   background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
@@ -32,23 +23,6 @@ body .container-fluid {
   width: 100% !important;
   height: 600px;
   object-fit: cover;
-}
-.text-error {
-  color: red;
-  font-size: 13px;
-  font-style: italic;
-}
-.width-100 {
-  width: 100%;
-}
-.no-padding {
-  padding: 0;
-}
-.no-margin {
-  margin: 0;
-}
-.play-audio {
-  margin: 2rem 0;
 }
 .player {
   height: auto;
@@ -269,4 +243,34 @@ body .container-fluid {
 }
 .player .music .song-2 .state i {
   color: #ddd;
+}
+.footer {
+  background-image: url("../images/footer.jpg");
+  background-size: cover;
+}
+.text-error {
+  color: red;
+  font-size: 13px;
+  font-style: italic;
+}
+.width-100 {
+  width: 100%;
+}
+.no-padding {
+  padding: 0;
+}
+.no-margin {
+  margin: 0;
+}
+.play-audio {
+  margin: 2rem 0;
+}
+body {
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  color: #ffffff;
+  font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+}
+body .container-fluid {
+  padding: 0 !important;
+  margin: 0 !important;
 }

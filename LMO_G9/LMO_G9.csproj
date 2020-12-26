@@ -96,6 +96,7 @@
     <Content Include="view\template\css\sb-admin-2.min.css" />
     <Content Include="view\template\css\util.css" />
     <Content Include="view\template\images\bg-01.jpg" />
+    <Content Include="view\template\images\footer.jpg" />
     <Content Include="view\template\images\icons\images.ico" />
     <Content Include="view\template\images\logo.png" />
     <Content Include="view\template\images\undraw_posting_photo.svg" />
@@ -1962,7 +1963,7 @@
     <Content Include="view\template\fontawsome\webfonts\fa-solid-900.ttf" />
     <Content Include="view\template\fontawsome\webfonts\fa-solid-900.woff" />
     <Content Include="view\template\fontawsome\webfonts\fa-solid-900.woff2" />
-    <Content Include="view\template\css\style.less" />
+    <Content Include="view\template\css\less\client\style.less" />
     <Content Include="view\client\template-client.master" />
     <Content Include="view\template\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
     <Content Include="view\template\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
@@ -2137,11 +2138,16 @@
     <Content Include="view\template\vendor\fontawesome-free\webfonts\fa-solid-900.woff" />
     <Content Include="view\template\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="view\template\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
-    <Content Include="view\template\css\custom.less" />
+    <Content Include="view\template\css\less\admin\custom.less" />
     <Content Include="view\admin\template-login.master" />
     <Content Include="view\template\vendor\bootstrap\js\moment.min.js.map" />
-    <Content Include="view\template\css\_custom-audio.less" />
+    <Content Include="view\template\css\less\client\_custom-audio.less" />
     <Content Include="view\template\vendor\bootstrap\js\popper.min.js.map" />
+    <Content Include="view\template\css\less\client\_footer.less" />
+    <Content Include="view\template\css\less\client\theme_style.less" />
+    <Content Include="view\template\css\less\client\_header.less" />
+    <Content Include="view\template\css\less\client\_config.less" />
+    <Content Include="view\template\css\less\client\_font.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
