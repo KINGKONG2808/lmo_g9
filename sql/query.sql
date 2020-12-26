@@ -116,3 +116,18 @@ insert into account(fullname, address, date_of_birth, role_id, username, passwor
 delete from account where account_id = 3
 
 update account set password = 1 where username = 'hungvv'
+
+-----------------------------------------------------------------------------------
+/*UPDATE NEWS*/
+create table news (
+	news_id int identity(1, 1) not null primary key,
+	title varchar(200),
+	short_content varchar(200),
+	content text,
+	img_path varchar(200),
+	create_by int,
+	create_date datetime,
+	update_by int,
+	update_date datetime
+)
+go
