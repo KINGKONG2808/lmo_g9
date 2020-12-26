@@ -89,7 +89,7 @@
                                         <div class="col-lg-1 text-center">
                                             <%= dto.ImgHTML %>
                                         </div>
-                                        <div class="col-lg-11 titles">
+                                        <div class="col-lg-10 titles">
                                             <h5><%= dto.Name %></h5>
                                             <p><%= dto.SingerName %></p>
                                         </div>
