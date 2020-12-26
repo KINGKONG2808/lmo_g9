@@ -6,33 +6,40 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using LMO_G9.util;
 using LMO_G9.model;
-
+using LMO_G9.dto;
 namespace LMO_G9.respository
 {
     public class ComposerRepository : DataUtil
     {
-        public List<Composer> dsComposer()
+        private static AccountRespository accountRespository = new AccountRespository();
+
+        public List<ComposeDto> getList()
         {
-            List<Composer> li = new List<Composer>();
-            string strSql = "select * from composer";
+            List<ComposeDto> li = new List<ComposeDto>();
+            String strSql = "select * from composer c";
             Connection.Open();
             SqlCommand cmd = new SqlCommand(strSql, Connection);
             SqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
-                Composer s = new Composer();
-                s.ComposerId = Convert.ToInt32(rd["composer_id"]);
-                s.Name = (string)rd["name"];
-                s.ImagePath = (string)rd["image_path"];
-                s.CreateBy = Convert.ToInt32(rd["create_by"]);
-                s.CreateDate = (DateTime)rd["create_date"];
-                s.UpdateBy = Convert.ToInt32(rd["update_by"]);
-                s.UpdateDate = (DateTime)rd["update_date"];
-                li.Add(s);
+                ComposeDto com = new ComposeDto();
+                Account account = new Account();
+                com.ComposerId = Convert.ToInt32(rd["composer_id"]);
+                com.Name = (string)rd["name"];
+                com.ImagePath = (string)rd["image_path"];
+                com.CreateDate = (DateTime)rd["create_date"];
+                com.CreateBy = Convert.ToInt32(rd["create_by"]);
+                account = accountRespository.getById(com.CreateBy);
+                com.CreatePeople = account.Fullname;
+                com.UpdateDate = (DateTime)rd["update_date"];
+                com.UpdateBy = Convert.ToInt32(rd["update_by"]);
+                account = accountRespository.getById(com.UpdateBy);
+                com.UpdatePeople = account.Fullname;
+
+                li.Add(com);
             }
             Connection.Close();
             return li;
-
         }
 
         public void Xoa(int composer_id)
@@ -43,19 +50,21 @@ namespace LMO_G9.respository
             cmd.Parameters.AddWithValue("composer_id", composer_id);
             cmd.ExecuteNonQuery();
             Connection.Close();
+
+          
         }
 
-        public void Them(Composer s)
+        public void Them(Composer com)
         {
             Connection.Open();
-            string sql = "insert into composer(name,image_path,create_by,create_date,update_by,update_date) values(@name,@imgpath,@cb,@cd,@ub,@ud)";
-            SqlCommand cmd = new SqlCommand(sql, Connection);
-            cmd.Parameters.AddWithValue("name", s.Name);
-            cmd.Parameters.AddWithValue("imgpath", s.ImagePath);
-            cmd.Parameters.AddWithValue("cb", s.CreateBy);
-            cmd.Parameters.AddWithValue("cd", s.CreateDate);
-            cmd.Parameters.AddWithValue("ub", s.UpdateBy);
-            cmd.Parameters.AddWithValue("ud", s.UpdateDate);
+            string strSql = "insert into composer(name,image_path,create_date,create_by,update_date,update_by) values(@name,@img,@cd,@cb,@ud,@ub)";
+            SqlCommand cmd = new SqlCommand(strSql, Connection);
+            cmd.Parameters.AddWithValue("name", com.Name);
+            cmd.Parameters.AddWithValue("img", com.ImagePath);
+            cmd.Parameters.AddWithValue("cd", com.CreateDate);
+            cmd.Parameters.AddWithValue("cb", com.CreateBy);
+            cmd.Parameters.AddWithValue("ud", com.UpdateDate);
+            cmd.Parameters.AddWithValue("ub", com.UpdateBy);
             cmd.ExecuteNonQuery();
             Connection.Close();
         }
@@ -81,21 +90,19 @@ namespace LMO_G9.respository
 
             return s;
         }
-        public void onUpdate(Composer s)
+        public void onUpdate(Composer com)
         {
             Connection.Open();
             string strSql = "update composer " +
                 " set name = @name," +
-                " set image_path = @imgpath," +
                 " update_date = @ud," +
                 " update_by = @ub " +
-                " where category_id = @id";
+                " where composer_id = @id";
             SqlCommand cmd = new SqlCommand(strSql, Connection);
-            cmd.Parameters.AddWithValue("name", s.Name);
-            cmd.Parameters.AddWithValue("imgpath", s.ImagePath);
-            cmd.Parameters.AddWithValue("ud", s.UpdateDate);
-            cmd.Parameters.AddWithValue("ub", s.UpdateBy);
-            cmd.Parameters.AddWithValue("id", s.ComposerId);
+            cmd.Parameters.AddWithValue("name", com.Name);
+            cmd.Parameters.AddWithValue("ud", com.UpdateDate);
+            cmd.Parameters.AddWithValue("ub", com.UpdateBy);
+            cmd.Parameters.AddWithValue("id", com.ComposerId);
             cmd.ExecuteNonQuery();
             Connection.Close();
         }
