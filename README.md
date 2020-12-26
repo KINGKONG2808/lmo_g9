@@ -1,8 +1,8 @@
 # LISTEN MUSIC ONLINE (lmo_g9) - Create by Group 9
 The project used for listen music online - comming up !!!
 # Language: 
-	+ Front-end: html, bootstrap 4, fontawsome, jquery, asp.net framework
-	+ Back-end: C#, asp.net framework
+	+ Front-end: Aspx, Css/Less, Js/Jquery, Bootstrap 4, Fontawsome
+	+ Back-end: C#, Asp.net, Ajax
 # About us:
 	+ HungVV (Vu Van Hung)
 	+ YenPV  (Pham Van Yen)
@@ -16,8 +16,8 @@ The project used for listen music online - comming up !!!
 	+ Install less: https://www.youtube.com/watch?v=YD91G8DdUsw&t=321s
 # Build less/css:
 	+ Front-end:
-	lessc ../LMO_G9/LMO_G9/view/template/css/style.less ../LMO_G9/LMO_G9/view/template/css/style.css
+	lessc ../LMO_G9/LMO_G9/view/template/css/less/client/style.less ../LMO_G9/LMO_G9/view/template/css/style.css
 	+ Back-end:
-	lessc ../LMO_G9/LMO_G9/view/template/css/custom.less ../LMO_G9/LMO_G9/view/template/css/custom.css
+	lessc ../LMO_G9/LMO_G9/view/template/css/less/admin/custom.less ../LMO_G9/LMO_G9/view/template/css/custom.css
 
 # Updating ... ====> comming soon ...
