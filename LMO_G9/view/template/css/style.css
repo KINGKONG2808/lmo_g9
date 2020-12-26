@@ -100,6 +100,7 @@
 }
 .player .infor .button-items .controls {
   margin-top: 20px;
+  text-align: center;
 }
 .player .infor .button-items .controls .expend {
   padding: 0.5px;
@@ -186,22 +187,27 @@
   fill: white;
 }
 .player hr {
-  max-width: 80%;
   background: #00ff08;
 }
+.player hr.hr-top {
+  max-width: 80%;
+}
+.player hr.hr-list {
+  max-width: 85%;
+  margin: 0 auto;
+}
+.player hr.hr-list:last-child {
+  display: none;
+}
 .player .music {
-  padding: 10px 20px 0px 20px;
+  padding: 0 2rem;
   width: 100%;
 }
 .player .music .song-2 {
   height: 100px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .player .music .song-2 .info {
-  display: flex;
   align-items: center;
 }
 .player .music .song-2 .info .img {
@@ -240,6 +246,9 @@
 .player .music .song-2 .info .titles p {
   font-size: 13px;
   color: #929292;
+}
+.player .music .song-2 .state {
+  text-align: center;
 }
 .player .music .song-2 .state i {
   color: #ddd;
