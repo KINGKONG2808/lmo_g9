@@ -256,6 +256,80 @@
 .footer {
   background-image: url("../images/footer.jpg");
   background-size: cover;
+  margin-top: 2rem;
+}
+.footer .container > .row {
+  padding: 4rem 2rem;
+}
+.footer .container > .row .img-logo {
+  width: 70%;
+  height: 80px;
+  object-fit: cover;
+  padding-bottom: 0.5rem;
+}
+.footer .container > .row .introduce {
+  margin: 0;
+  padding: 1rem 0;
+  text-align: justify;
+}
+.footer .container > .row .infor {
+  margin: 0;
+  padding-top: 0.5rem;
+}
+.footer .container > .row .infor a {
+  padding: 0 0.4rem;
+  color: #ffffff;
+}
+.footer .container > .row .infor a:hover {
+  color: #05fb24;
+}
+.footer .container > .row .co-founder,
+.footer .container > .row .music-type,
+.footer .container > .row .register {
+  padding: 1rem;
+}
+.footer .container > .row .co-founder p,
+.footer .container > .row .music-type p,
+.footer .container > .row .register p {
+  margin: 0;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.footer .container > .row .co-founder a:hover,
+.footer .container > .row .music-type a:hover,
+.footer .container > .row .register a:hover {
+  text-decoration: none;
+}
+.footer .container > .row .co-founder a p,
+.footer .container > .row .music-type a p,
+.footer .container > .row .register a p {
+  margin: 0;
+  padding: 0.2rem 0;
+  font-size: 1rem;
+}
+.footer .container > .row .co-founder a p {
+  font-weight: 700;
+}
+.footer .container > .row .co-founder a p:hover {
+  font-style: italic;
+}
+.footer .container > .row .co-founder a p:hover .span-first,
+.footer .container > .row .co-founder a p:hover .span-second {
+  color: #ff2e19;
+}
+.footer .container > .row .co-founder a p .span-first {
+  color: #ff2e19;
+}
+.footer .container > .row .co-founder a p .span-second {
+  color: #ffffff;
+}
+.footer .container > .row .music-type a p {
+  color: #ffffff;
+  font-weight: 100;
+}
+.footer .container > .row .music-type a p:hover {
+  color: #05fb24;
 }
 .text-error {
   color: red;
