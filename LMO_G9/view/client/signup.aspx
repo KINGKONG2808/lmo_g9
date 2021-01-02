@@ -17,6 +17,7 @@
     <link href="../template/vendor/animsition/css/animsition.min.css" rel="stylesheet" />
     <link href="../template/vendor/select2/select2.min.css" rel="stylesheet" />
     <link href="../template/vendor/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <link href="../template/vendor/bootstrap/css/bootstrap-datepicker.min.css" rel="stylesheet" />
     <link href="../template/css/util.css" rel="stylesheet" />
     <link href="../template/css/main-signup.css" rel="stylesheet" />
     <link href="../template/css/style.css" rel="stylesheet" />
@@ -26,38 +27,49 @@
         <div class="container-login100">
             <div class="login100-more" style="background-image: url('../template/images/bg-01.jpg');"></div>
             <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-                <form class="login100-form validate-form">
-                    <span class="login100-form-title p-b-59">Đăng ký tài khoản
+                <form class="login100-form validate-form" runat="server">
+                    <span class="login100-form-title p-b-59">
+                        Đăng ký tài khoản
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate="Họ tên là trường bắt buộc">
                         <span class="label-input100">Họ và tên</span>
-                        <input class="input100" type="text" name="name" placeholder="Nhập vào họ và tên ..." />
+                        <asp:TextBox ID="txtFullname" CssClass="input100" placeholder="Nhập vào họ và tên ..." runat="server" />
                         <span class="focus-input100"></span>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="Email phải đúng định dạng: ex@abc.xyz">
-                        <span class="label-input100">Email</span>
-                        <input class="input100" type="text" name="email" placeholder="Nhập vào địa chỉ email ..." />
+                    <div class="wrap-input100 validate-input" data-validate="Địa chỉ là trường bắt buộc">
+                        <span class="label-input100">Địa chỉ</span>
+                        <asp:TextBox ID="txtAddress" CssClass="input100" placeholder="Nhập vào địa chỉ ..." runat="server" />
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Ngày sinh là trường bắt buộc">
+                        <span class="label-input100">Ngày sinh</span>
+                        <asp:TextBox ID="txtDateOfBirth" CssClass="input100" placeholder="Chọn ngày sinh ..." runat="server" />
                         <span class="focus-input100"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Tên đăng nhập là trường bắt buộc">
                         <span class="label-input100">Tên đăng nhập</span>
-                        <input class="input100" type="text" name="username" placeholder="Nhập vào tên đăng nhập ..." />
+                        <asp:TextBox ID="txtUsername" CssClass="input100" placeholder="Nhập vào tên đăng nhập ..." runat="server" />
                         <span class="focus-input100"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Mật khẩu là trường bắt buộc">
                         <span class="label-input100">Mật khẩu</span>
-                        <input class="input100" type="text" name="pass" placeholder="Nhập vào mật khẩu ..." />
+                        <asp:TextBox ID="txtPassword" CssClass="input100" type="password" name="password" placeholder="Nhập vào mật khẩu ..." runat="server" />
                         <span class="focus-input100"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Nhập lại mật khẩu là bắt buộc">
                         <span class="label-input100">Nhập lại mật khẩu</span>
-                        <input class="input100" type="text" name="repeat-pass" placeholder="Nhập lại mật khẩu ..." />
+                        <asp:TextBox ID="txtRepassword" CssClass="input100" type="password" name="repassword" placeholder="Nhập lại mật khẩu ..." runat="server" />
                         <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="row validate-label">
+                        <asp:Label ID="txtError" runat="server" CssClass="text-error" />
                     </div>
 
                     <div class="flex-m w-full p-b-33">
@@ -70,36 +82,52 @@
                                 </span>
                             </label>
                         </div>
-
-
                     </div>
 
-                    <div class="container-login100-form-btn">
-                        <div class="wrap-login100-form-btn">
-                            <div class="login100-form-bgbtn"></div>
-                            <button class="login100-form-btn">
-                                Đăng ký
-                            </button>
+                    <div class="row signup-custom">
+                        <div class="col-lg-6 text-center">
+                            <asp:Button ID="btnRegister" CssClass="btn btn-success" runat="server" OnClick="btnRegister_Click" Text="Đăng ký" />
                         </div>
 
-                        <a href="signin.aspx" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">Đăng nhập
-							<i class="fa fa-long-arrow-right m-l-5"></i>
-                        </a>
+                        <div class="col-lg-6 text-center">
+                            <a href="signin.aspx" class="btn btn-light">
+                                Đăng nhập
+							    <i class="fa fa-long-arrow-right m-l-5"></i>
+                            </a>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <script src="../template/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../template/vendor/jquery/jquery-3.5.1.min.js"></script>
     <script src="../template/vendor/animsition/js/animsition.min.js"></script>
-    <script src="../template/vendor/bootstrap/js/popper.js"></script>
+    <script src="../template/vendor/bootstrap/js/popper-1.16.0.min.js"></script>
     <script src="../template/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../template/vendor/select2/select2.min.js"></script>
     <script src="../template/vendor/daterangepicker/moment.min.js"></script>
     <script src="../template/vendor/daterangepicker/daterangepicker.js"></script>
     <script src="../template/vendor/countdowntime/countdowntime.js"></script>
+    <script src="../template/vendor/bootstrap/js/bootstrap-datepicker.min.js"></script>
     <script src="../template/js/main-signup.js"></script>
+
+    <script>
+        (function () {
+            $('input').attr('autocomplete', 'off');
+            showDateTimePicker();
+        })();
+
+        // show datetime picker for bootstrap
+        function showDateTimePicker() {
+            $('#txtDateOfBirth').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: 'dd/mm/yyyy',
+                language: 'tr'
+            });
+        }
+    </script>
 </body>
 </html>
 
