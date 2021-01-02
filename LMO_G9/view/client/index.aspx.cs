@@ -6,12 +6,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LMO_G9.dto;
+using LMO_G9.model;
 using LMO_G9.respository;
+using System.Web.Services;
 
 namespace LMO_G9.view.client
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        public static Account account = new Account();
         public List<MusicDto> lms;
         ListMusicRepository lm = new ListMusicRepository();
         protected void Page_Load(object sender, EventArgs e)
@@ -72,8 +75,6 @@ namespace LMO_G9.view.client
 
         }
 
-
-
         protected void click(int a)
         {
 
@@ -116,6 +117,40 @@ namespace LMO_G9.view.client
                 composerName.InnerText = "Premiere";
                 singerName.InnerText = "I Need You Back";
             }
+        }
+
+        [WebMethod]
+        public static string onRenderLogin()
+        {
+            string result = null;
+            try
+            {
+                if (HttpContext.Current.Session["accountClient"] != null)
+                {
+                    account = (Account)HttpContext.Current.Session["accountClient"];
+                    result = account.Fullname;
+                }
+            } catch (Exception ex)
+            {
+                result = null;
+            }
+            return result;
+        }
+
+        [WebMethod]
+        public static string logout()
+        {
+            string result;
+            try
+            {
+                HttpContext.Current.Session.Remove("accountClient");
+                result = "/view/client/index.aspx";
+            }
+            catch (Exception ex)
+            {
+                result = ex.Message;
+            }
+            return result;
         }
     }
 }

@@ -1,13 +1,85 @@
 ﻿.header {
     .navbar {
         background: @background;
+        position: fixed;
+        z-index: 1;
+        width: 100%;
 
         .navbar-brand {
             font-family: Roboto-Bold;
         }
 
-        a {
-            color: @color !important;
+        .collapse {
+            .navbar-nav {
+                .nav-item {
+                    border-right: 1px solid @color;
+                    padding: 0 1rem;
+
+                    &:last-child {
+                        border: none;
+                    }
+
+                    .nav-link {
+                        color: @color !important;
+                        font-weight: bold;
+
+                        &:hover {
+                            color: @color-hover !important;
+                        }
+                    }
+
+                    &.dropdown {
+                        .dropdown-menu {
+                            background: @background;
+                            padding: 0;
+
+                            .dropdown-item {
+                                padding: 1rem 1.5rem;
+                                color: @color;
+                                border-bottom: 1px solid @color;
+                                font-weight: bold;
+
+                                &:hover {
+                                    background-color: transparent;
+                                    color: @color-hover;
+                                }
+
+                                &:last-child {
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .form-inline {
+                .input-custom {
+                    background: transparent;
+                    border: none;
+                    border-radius: unset;
+                    border-bottom: 1px solid @color;
+                    color: @color;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &::placeholder {
+                        color: @color;
+                    }
+                }
+
+                .btn-custom {
+                    background: transparent;
+                    color: @color;
+
+                    &:hover {
+                        color: @color-hover;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
     }
 
@@ -16,7 +88,7 @@
             .carousel-item {
                 img {
                     width: 100% !important;
-                    height: 600px;
+                    height: 80vh;
                     object-fit: cover
                 }
             }

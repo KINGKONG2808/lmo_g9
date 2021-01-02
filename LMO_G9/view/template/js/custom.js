@@ -11,15 +11,10 @@ function logout() {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (msg) {
-            redirectPage(msg.d);
+            window.location.href = window.location.origin.concat(msg.d);
         }
     });
 };
-
-function redirectPage(link) {
-    var currentHost = window.location.origin;
-    window.location.href = currentHost.concat(link);
-}
 
 function clear() {
     $('input').text('');
