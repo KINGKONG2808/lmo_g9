@@ -75,6 +75,45 @@ function saveComposer(composerName, imgPath) {
     });
 }
 
+function saveSinger(singerName, imgPath) {
+    var singerNameC = $('#' + singerName).val();
+    var imgPathC = $('#' + imgPath).val();
+    $.ajax({
+        type: 'POST',
+        url: 'singer.aspx/saveSinger',
+        data: '{singerName: "' + singerNameC + '", imgPath: "' + imgPathC + '"}',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        success: function (msg) {
+            alert(msg.d);
+            window.location.reload();
+        },
+        error: function (msg) {
+            alert(msg.d);
+        }
+    });
+}
+
+function saveNew(newTitle, imgPath, shortContent, content) {
+    var newTitleC = $('#' + newTitle).val();
+    var s_contentC = $('#' + shortContent).val();
+    var contentC = $('#' + content).val();
+    var imgPathC = $('#' + imgPath).val();
+    $.ajax({
+        type: 'POST',
+        url: 'singer.aspx/saveSinger',
+        data: '{singerName: "' + newTitleC + '", imgPath: "' + imgPathC + '" , shortContent: "' + s_contentC + '" , content: "' + contentC + '"}',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        success: function (msg) {
+            alert(msg.d);
+            window.location.reload();
+        },
+        error: function (msg) {
+            alert(msg.d);
+        }
+    });
+}
 function onShowModal(modalId) {
     $('#' + modalId).modal('show');
 }

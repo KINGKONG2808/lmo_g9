@@ -30,7 +30,8 @@ namespace LMO_G9.view.admin
         }
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
                 Composer composer = new Composer();
                 composer.ComposerId = Int32.Parse(txtId.Text);
                 composer.Name = txtName.Text;
@@ -39,12 +40,14 @@ namespace LMO_G9.view.admin
                 composer.UpdateBy = account.AccountId;
                 composerRepository.onUpdate(composer);
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Sucess!'); window.location='" + Request.ApplicationPath + "view/admin/composer.aspx';", true);
-            
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex);
-            //    ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", "alert('" + ex + "');", true);
-            //} 
+            }
+
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", "alert('" + ex + "');", true);
+            }
         }
     }
 }
