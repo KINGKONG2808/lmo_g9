@@ -9,13 +9,73 @@
 }
 
 .no-padding {
-    padding: 0;
+    padding: 0 !important;
 }
 
 .no-margin {
-    margin: 0;
+    margin: 0 !important;
 }
 
 .play-audio {
     margin: 2rem 0;
+}
+
+.none {
+    display: none;
+}
+
+.border-none {
+    border: none !important;
+}
+
+.bg-gradient-primary {
+    background: @background;
+    color: black;
+}
+
+.datepicker {
+    top: 200px !important;
+    width: 300px;
+
+    .datepicker-days {
+        .table-condensed {
+            width: 100%;
+
+            tbody {
+                tr {
+                    td {
+                        &.active {
+                            background-image: linear-gradient(to bottom,#cc00a945,#cc00bc);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.login100-form {
+    .validate-label {
+        width: 100%;
+        padding: 0 1rem 1.5rem 1rem;
+
+        .text-error {
+            font-size: 15px;
+        }
+    }
+
+    .signup-custom {
+        margin-top: 1rem;
+        width: 100%;
+
+        .btn {
+            width: 200px;
+            height: 60px;
+            border-radius: 30px;
+        }
+
+        a {
+            line-height: 40px;
+        }
+    }
 }

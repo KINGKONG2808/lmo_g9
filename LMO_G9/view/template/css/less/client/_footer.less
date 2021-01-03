@@ -1,4 +1,98 @@
 ﻿.footer {
     background-image: url("../images/footer.jpg");
     background-size: cover;
+    margin-top: 2rem;
+
+    .container {
+        > .row {
+            padding: 4rem 2rem;
+
+            .img-logo {
+                width: 70%;
+                height: 80px;
+                object-fit: cover;
+                padding-bottom: 0.5rem;
+            }
+
+            .introduce {
+                margin: 0;
+                padding: 1rem 0;
+                text-align: justify;
+            }
+
+            .infor {
+                margin: 0;
+                padding-top: 0.5rem;
+
+                a {
+                    padding: 0 0.4rem;
+                    color: @color;
+
+                    &:hover {
+                        color: @color-hover;
+                    }
+                }
+            }
+
+            .co-founder, .music-type, .register {
+                padding: 1rem;
+
+                p {
+                    margin: 0;
+                    padding: 1rem 0;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+
+                a {
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    p {
+                        margin: 0;
+                        padding: 0.2rem 0;
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .co-founder {
+                a {
+                    p {
+                        font-weight: 700;
+
+                        &:hover {
+                            font-style: italic;
+
+                            .span-first, .span-second {
+                                color: @second-color;
+                            }
+                        }
+
+                        .span-first {
+                            color: @second-color;
+                        }
+
+                        .span-second {
+                            color: @color;
+                        }
+                    }
+                }
+            }
+
+            .music-type {
+                a {
+                    p {
+                        color: @color;
+                        font-weight: 100;
+
+                        &:hover {
+                            color: @color-hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

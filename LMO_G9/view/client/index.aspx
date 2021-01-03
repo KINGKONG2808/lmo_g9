@@ -76,27 +76,32 @@
                         </div>
                     </div>
 
-                    <hr />
+                    <hr class="hr-top" />
 
                     <div class="row width-100 no-padding no-margin">
                         <div class="music">
                             <%
                                 foreach (LMO_G9.dto.MusicDto dto in lms)
                                 { %>
-                            <div class="song-2">
-                                <div class="info">
-                                    <%= dto.ImgHTML %>
-                                    <div class="titles">
-                                        <h5><%= dto.Name %></h5>
-                                        <p><%= dto.SingerName %></p>
+                            <div class="row song-2">
+                                <div class="col-lg-11 info">
+                                    <div class="row">
+                                        <div class="col-lg-1 text-center">
+                                            <%= dto.ImgHTML %>
+                                        </div>
+                                        <div class="col-lg-10 titles">
+                                            <h5><%= dto.Name %></h5>
+                                            <p><%= dto.SingerName %></p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="state">
+                                <div class="col-lg-1 state">
                                     <a href="index.aspx?index=<%=dto.MusicId %>" onclick="click(<%=dto.MusicId %>)">
                                         <i class="material-icons">play_arrow</i>
                                     </a>
                                 </div>
                             </div>
+                            <hr class="hr-list" />
                             <%  } %>
                         </div>
                     </div>

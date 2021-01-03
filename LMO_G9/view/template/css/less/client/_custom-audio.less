@@ -89,6 +89,7 @@
 
             .controls {
                 margin-top: 20px;
+                text-align: center;
 
                 .expend {
                     padding: 0.5px;
@@ -208,23 +209,33 @@
     }
 
     hr {
-        max-width: 80%;
         background: #00ff08;
+
+        &.hr-top {
+            max-width: 80%;
+        }
+
+        &.hr-list {
+            max-width: 85%;
+            margin: 0 auto;
+
+            &:last-child {
+                display: none;
+            }
+        }
     }
 
+
+
     .music {
-        padding: 10px 20px 0px 20px;
+        padding: 0 2rem;
         width: 100%;
 
         .song-2 {
             height: 100px;
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
             .info {
-                display: flex;
                 align-items: center;
 
                 .img {
@@ -233,26 +244,26 @@
                     background: red;
                     margin-right: 10px;
                     border-radius: 5px;
-                }
 
-                .img.first {
-                    background: url(http://static.stereogum.com/blogs.dir/2/files/2011/12/Adele-21.jpg) center center;
-                    background-size: cover;
-                }
+                    &.first {
+                        background: url(http://static.stereogum.com/blogs.dir/2/files/2011/12/Adele-21.jpg) center center;
+                        background-size: cover;
+                    }
 
-                .img.second {
-                    background: url(https://upload.wikimedia.org/wikipedia/en/d/df/RedHotChiliPeppersCalifornication.jpg) center center;
-                    background-size: cover;
-                }
+                    &.second {
+                        background: url(https://upload.wikimedia.org/wikipedia/en/d/df/RedHotChiliPeppersCalifornication.jpg) center center;
+                        background-size: cover;
+                    }
 
-                .img.third {
-                    background: url(http://images.rapgenius.com/59fc635f7dbe6b5cd1e07e5e605c96b5.640x640x1.jpg) center center;
-                    background-size: cover;
-                }
+                    &.third {
+                        background: url(http://images.rapgenius.com/59fc635f7dbe6b5cd1e07e5e605c96b5.640x640x1.jpg) center center;
+                        background-size: cover;
+                    }
 
-                .img.fourth {
-                    background: url(http://djrichiep.us/wp-content/uploads/2014/06/princelgc7F.jpg) center center;
-                    background-size: cover;
+                    &.fourth {
+                        background: url(http://djrichiep.us/wp-content/uploads/2014/06/princelgc7F.jpg) center center;
+                        background-size: cover;
+                    }
                 }
 
                 .titles {
@@ -277,6 +288,7 @@
 
 
             .state {
+                text-align: center;
 
                 i {
                     color: #ddd;
