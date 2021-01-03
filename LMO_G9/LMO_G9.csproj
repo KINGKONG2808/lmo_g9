@@ -69,7 +69,9 @@
   <ItemGroup>
     <Content Include="view\admin\composer.aspx" />
     <Content Include="view\admin\edit-page\edit-category.aspx" />
+    <Content Include="view\admin\edit-page\edit-singer.aspx" />
     <Content Include="view\admin\index.aspx" />
+    <Content Include="view\admin\news.aspx" />
     <Content Include="view\admin\singer.aspx" />
     <Content Include="view\admin\register.aspx" />
     <Content Include="view\admin\login.aspx" />
@@ -1825,6 +1827,8 @@
     <Compile Include="dto\CategoryDto.cs" />
     <Compile Include="dto\ComposerDto.cs" />
     <Compile Include="dto\MusicDto.cs" />
+    <Compile Include="dto\NewDto.cs" />
+    <Compile Include="dto\SingerDto.cs" />
     <Compile Include="model\Account.cs" />
     <Compile Include="model\BaseModel.cs" />
     <Compile Include="model\Composer.cs" />
@@ -1832,6 +1836,7 @@
     <Compile Include="model\Music.cs" />
     <Compile Include="model\MusicFactory.cs" />
     <Compile Include="model\MusicFavorite.cs" />
+    <Compile Include="model\New.cs" />
     <Compile Include="model\Singer.cs" />
     <Compile Include="model\Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1840,6 +1845,7 @@
     <Compile Include="respository\ComposerRepository.cs" />
     <Compile Include="respository\ListMusicRepository.cs" />
     <Compile Include="respository\MusicRepository.cs" />
+    <Compile Include="respository\NewResponsitory.cs" />
     <Compile Include="respository\SingerResponsitory.cs" />
     <Compile Include="util\Constant.cs" />
     <Compile Include="util\DataUtil.cs" />
@@ -1854,6 +1860,18 @@
     </Compile>
     <Compile Include="view\admin\edit-page\edit-category.aspx.designer.cs">
       <DependentUpon>edit-category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\admin\edit-page\edit-singer.aspx.cs">
+      <DependentUpon>edit-singer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\admin\edit-page\edit-singer.aspx.designer.cs">
+      <DependentUpon>edit-singer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\admin\news.aspx.cs">
+      <DependentUpon>news.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\admin\news.aspx.designer.cs">
+      <DependentUpon>news.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\admin\singer.aspx.cs">
       <DependentUpon>singer.aspx</DependentUpon>
