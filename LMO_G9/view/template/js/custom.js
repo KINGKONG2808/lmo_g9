@@ -28,7 +28,7 @@ function clear() {
 // function call method in c#
 function saveCategory(linkPage, idName) {
     var data = $('#' + idName).val();
-    //if (validateCategory(data)) {
+    if (validateCategory(data)) {
         $.ajax({
             type: 'POST',
             url: linkPage,
@@ -43,10 +43,9 @@ function saveCategory(linkPage, idName) {
                 alert(msg.d);
             }
         });
-    /*} else {
-        txtError.text('Bạn vui lòng nhập tên loại nhạc');
-        return;
-    }*/
+    } else {
+        alert('Bạn vui lòng nhập tên loại nhạc');
+    }
 }
 
 function validateCategory(nameCategory) {

@@ -45,6 +45,7 @@
         <div class="row padding-2rem">
             <div class="col-lg-4">
                 <asp:Button ID="btnEdit" runat="server" Text="Edit" CssClass="btn btn-primary width-100" OnClick="btnEdit_Click" />
+               <%-- <button type="button" class="btn btn-primary width-100" onclick="saveCategory('edit-category.aspx/btnEdit_Click', 'contentRow_txtName');">Edit</button>--%>
             </div>
             <div class="col-lg-4"></div>
             <div class="col-lg-4 text-right">

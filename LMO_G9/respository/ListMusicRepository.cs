@@ -57,9 +57,10 @@ namespace LMO_G9.respository
                     SqlCommand cmdFt = new SqlCommand(sqlFt, Connection);
                     cmdFt.Parameters.AddWithValue("msid", ms.MusicId);
                     SqlDataReader rdFt = cmdFt.ExecuteReader();
+                    ms.Singer = new List<string>();
                     while (rdFt.Read())
                     {
-                        ms.Singer.Add((string)rd["singerName"]);
+                        ms.Singer.Add((string)rdFt["singerName"]);
                     }
                     Connection.Close();
 
@@ -68,9 +69,10 @@ namespace LMO_G9.respository
                     SqlCommand cmdCp = new SqlCommand(sqlCp, Connection);
                     cmdCp.Parameters.AddWithValue("msid", ms.MusicId);
                     SqlDataReader rdCp = cmdCp.ExecuteReader();
+                    ms.Composer = new List<string>();
                     while (rdCp.Read())
                     {
-                        ms.Composer.Add((string)rd["composerName"]);
+                        ms.Composer.Add((string)rdCp["composerName"]);
                     }
                     Connection.Close();
                 }

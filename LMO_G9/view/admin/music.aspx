@@ -25,7 +25,11 @@
                         <asp:ImageField DataImageUrlField="imagePath" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="musicId" HeaderText="Music Id" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="name" HeaderText="Name" HeaderStyle-CssClass="text-center" />
-                        <asp:BoundField DataField="imagePath" HeaderText="Image Path" HeaderStyle-CssClass="text-center" />
+                        <asp:TemplateField HeaderText="Image">
+                            <ItemTemplate>
+                                <asp:Image ID="Image" runat="server" Height="80px" Width="80px" ImageUrl='<%#"imagePath" %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:BoundField DataField="singerName" HeaderText="Singer" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="categoryName" HeaderText="Category" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="createDate" HeaderText="Create Date" HeaderStyle-CssClass="text-center" />
@@ -59,16 +63,28 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Category Information</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Music Information</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-lg-4">Category name:</div>
+                        <div class="col-lg-4">Music name:</div>
                         <div class="col-lg-8">
                             <asp:TextBox ID="txtCategoryName" CssClass="form-control width-100" type="text" placeholder="Enter the category name ..." runat="server" />
+                        </div>                     
+                        <div class="col-lg-4">Category:</div>
+                        <div class="col-lg-8">
+                            <asp:DropDownList ID="ddlCategory"  CssClass="form-control width-100" placeholder="Choose the category..." runat="server" />
+                        </div>
+                        <div class="col-lg-4">Singer:</div>
+                        <div class="col-lg-8">
+                            <asp:DropDownList ID="ddlSinger" CssClass="form-control width-100" placeholder="Choose the singer..." runat="server" />
+                        </div>
+                        <div class="col-lg-4">Singer featuring:</div>
+                        <div class="col-lg-8">
+                            <asp:DropDownList ID="ddlSingerFeat" CssClass="form-control width-100" placeholder="Choose the singer featuring(if exists)..." runat="server" />
                         </div>
                         <div class="form-group">
                              <asp:Label ID="txtError" CssClass="text-error" runat="server" Text="" />
