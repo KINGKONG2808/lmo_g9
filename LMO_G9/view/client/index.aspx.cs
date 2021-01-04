@@ -168,11 +168,5 @@ namespace LMO_G9.view.client
             }
             return result;
         }
-
-        [WebMethod]
-        public static string test(string id)
-        {
-            return id;
-        }
     }
 }

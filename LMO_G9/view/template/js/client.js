@@ -38,6 +38,7 @@ function logout() {
         )
     });
 };
+
 function changeMusic(id) {
     $.ajax({
         type: 'POST',
