@@ -7,21 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LMO_G9.view.admin
+namespace LMO_G9.view.client
 {
 
 
-    public partial class WebForm18
+    public partial class forgot_pasword
     {
 
         /// <summary>
-        /// txtSingerName control.
+        /// txtUsernameReset control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSingerName;
+        protected global::System.Web.UI.WebControls.TextBox txtUsernameReset;
 
         /// <summary>
         /// txtError control.
@@ -33,30 +33,12 @@ namespace LMO_G9.view.admin
         protected global::System.Web.UI.WebControls.Label txtError;
 
         /// <summary>
-        /// txtImgPath control.
+        /// btnResetPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtImgPath;
-
-        /// <summary>
-        /// txtError1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtError1;
-
-        /// <summary>
-        /// grSinger control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grSinger;
+        protected global::System.Web.UI.WebControls.Button btnResetPassword;
     }
 }

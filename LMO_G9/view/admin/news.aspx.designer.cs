@@ -11,17 +11,17 @@ namespace LMO_G9.view.admin
 {
 
 
-    public partial class WebForm18
+    public partial class WebForm3
     {
 
         /// <summary>
-        /// txtSingerName control.
+        /// txtNewsTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSingerName;
+        protected global::System.Web.UI.WebControls.TextBox txtNewsTitle;
 
         /// <summary>
         /// txtError control.
@@ -51,12 +51,48 @@ namespace LMO_G9.view.admin
         protected global::System.Web.UI.WebControls.Label txtError1;
 
         /// <summary>
-        /// grSinger control.
+        /// txtShortContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grSinger;
+        protected global::System.Web.UI.WebControls.TextBox txtShortContent;
+
+        /// <summary>
+        /// txtError2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtError2;
+
+        /// <summary>
+        /// txtContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtContent;
+
+        /// <summary>
+        /// txtError3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtError3;
+
+        /// <summary>
+        /// grNews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grNews;
     }
 }

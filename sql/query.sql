@@ -119,7 +119,7 @@ update account set password = 1 where username = 'hungvv'
 
 -----------------------------------------------------------------------------------
 /*UPDATE NEWS*/
-create table news (
+create table new (
 	news_id int identity(1, 1) not null primary key,
 	title varchar(200),
 	short_content varchar(200),

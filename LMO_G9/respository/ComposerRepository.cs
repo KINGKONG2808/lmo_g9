@@ -50,8 +50,6 @@ namespace LMO_G9.respository
             cmd.Parameters.AddWithValue("composer_id", composer_id);
             cmd.ExecuteNonQuery();
             Connection.Close();
-
-          
         }
 
         public void Them(Composer com)

@@ -4,9 +4,9 @@
 
 <html>
 <head runat="server">
-    <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Manage music online website">
@@ -33,10 +33,10 @@
     <div class="container-fluid">
         <!-- #Include virtual="~/view/library/footer.html" -->
     </div>
-    <script src="../template/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <script src="../template/vendor/bootstrap/js/popper.min.js"></script>
+    <script src="../template/vendor/jquery/jquery-3.5.1.min.js"></script>
+    <script src="../template/vendor/bootstrap/js/popper-1.16.0.min.js"></script>
     <script src="../template/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../template/js/custom.js"></script>
+    <script src="../template/js/client.js"></script>
     <script src="../template/js/amplitude.min.js"></script>
 </body>
 </html>

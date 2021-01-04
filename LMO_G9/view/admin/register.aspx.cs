@@ -84,15 +84,13 @@ namespace LMO_G9.view.admin
                     ScriptManager.RegisterStartupScript(this,
                         this.GetType(),
                         "alert",
-                        "alert('Your new account is ready to signin. Enter OK to login now !!!'); window.open(window.location.origin + '/view/admin/login.aspx', '_self');",
+                        "alert('Your new account is ready to sign in. Enter OK to login now !!!'); window.open(window.location.origin + '/view/admin/login.aspx', '_self');",
                         true);
                 } else
                 {
                     txtError.Text = "The username already exists, please enter an other username place ...";
                     return;
                 }
-
-               
             } catch (Exception ex)
             {
                 txtError.Text = ex.Message;
