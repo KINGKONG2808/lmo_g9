@@ -15,7 +15,7 @@ namespace LMO_G9.view.client
     public partial class WebForm1 : System.Web.UI.Page
     {
         public static Account account = new Account();
-        public List<MusicDto> lms;
+        public static List<MusicDto> lms;
         ListMusicRepository lm = new ListMusicRepository();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -66,43 +66,52 @@ namespace LMO_G9.view.client
                 ma.AudioPath = "https://dl.dropbox.com/s/oswkgcw749xc8xs/The-Noisy-Freaks.mp3?dl=1";
                 ma.ImagePath = "http://i1285.photobucket.com/albums/a583/TheGreatOzz1/Hosted-Images/Noisy-Freeks-Image_zps4kilrxml.png";
                 ma.Name = "The Noisy Freakss";
-                ma.ComposerName =  "Premiere";
-                ma.SingerName =  "I Need You Back";
+                ma.ComposerName = "Premiere";
+                ma.SingerName = "I Need You Back";
                 ma.ImgHTML = "<img src='" + ms.ImagePath + "' runat='" + "server' " + "id=" + "'Img'" + "class=" + "'img second'" + "/>";
-                lms.Add(ms);
+                lms.Add(ma);
 
             }
 
         }
 
-        protected void click(int a)
+        [WebMethod]
+        public static MusicDto click(string id)
         {
-
+            MusicDto json = new MusicDto();
+            string musicName = "", sourcemp3Src = "", sourceoggSrc = "", imageSrc = "", composerName = "", singerName = "";
             if (lms.Count > 0)
             {
                 foreach (MusicDto ms in lms)
                 {
-                    if (ms.MusicId == a)
+                    if (ms.MusicId == int.Parse(id))
                     {
-                        sourcemp3.Src = ms.AudioPath;
-                        sourceogg.Src = ms.AudioPath;
-                        image.Src = ms.ImagePath;
-                        musicName.InnerText = ms.Name;
-                        composerName.InnerText = ms.ComposerName;
-                        if (ms.Composer.Count > 0)
+                        sourcemp3Src = ms.AudioPath;
+                        sourceoggSrc = ms.AudioPath;
+                        imageSrc = ms.ImagePath;
+                        musicName = ms.Name;
+                        composerName = ms.ComposerName;
+                        if (ms.Composer != null)
                         {
-                            foreach (string ft in ms.Composer)
+                            if (ms.Composer.Count > 0)
                             {
-                                composerName.InnerText = composerName.InnerText + " ft " + ft;
+                                foreach (string ft in ms.Composer)
+                                {
+                                    composerName = composerName + " ft " + ft;
+                                }
                             }
                         }
-                        singerName.InnerText = ms.SingerName;
-                        if (ms.Singer.Count > 0)
+                        singerName = ms.SingerName;
+                        if (ms.Singer != null)
                         {
-                            foreach (string ft in ms.Singer)
+                            if (ms.Singer.Count > 0)
                             {
-                                singerName.InnerText = singerName.InnerText + " ft " + ft;
+                                foreach (string ft in ms.Singer)
+                                {
+                                    singerName = singerName + " ft " + ft;
+                                }
                             }
+
                         }
                     }
                 }
@@ -110,13 +119,21 @@ namespace LMO_G9.view.client
             else
             {
 
-                sourcemp3.Src = "https://dl.dropbox.com/s/oswkgcw749xc8xs/The-Noisy-Freaks.mp3?dl=1";
-                sourceogg.Src = "https://dl.dropbox.com/s/oswkgcw749xc8xs/The-Noisy-Freaks.mp3?dl=1";
-                image.Src = "http://i1285.photobucket.com/albums/a583/TheGreatOzz1/Hosted-Images/Noisy-Freeks-Image_zps4kilrxml.png";
-                musicName.InnerText = "The Noisy Freaks";
-                composerName.InnerText = "Premiere";
-                singerName.InnerText = "I Need You Back";
+                sourcemp3Src = "https://dl.dropbox.com/s/oswkgcw749xc8xs/The-Noisy-Freaks.mp3?dl=1";
+                sourceoggSrc = "https://dl.dropbox.com/s/oswkgcw749xc8xs/The-Noisy-Freaks.mp3?dl=1";
+                imageSrc = "http://i1285.photobucket.com/albums/a583/TheGreatOzz1/Hosted-Images/Noisy-Freeks-Image_zps4kilrxml1.png";
+                musicName = "The Noisy Freakss";
+                composerName = "Premiere";
+                singerName = "I Need You Back";
             }
+
+            json.AudioPath = sourcemp3Src;
+            json.ImagePath = imageSrc;
+            json.Name = musicName;
+            json.ComposerName = composerName;
+            json.SingerName = singerName;
+
+            return json;
         }
 
         [WebMethod]
@@ -130,7 +147,8 @@ namespace LMO_G9.view.client
                     account = (Account)HttpContext.Current.Session["accountClient"];
                     result = account.Fullname;
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 result = null;
             }
@@ -151,6 +169,12 @@ namespace LMO_G9.view.client
                 result = ex.Message;
             }
             return result;
+        }
+
+        [WebMethod]
+        public static string test(string id)
+        {
+            return id;
         }
     }
 }

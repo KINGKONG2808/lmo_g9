@@ -77,12 +77,13 @@
                     </div>
 
                     <hr class="hr-top" />
-
+                    <asp:ListView ID="ListView1" runat="server"></asp:ListView>
                     <div class="row width-100 no-padding no-margin">
                         <div class="music">
                             <%
                                 foreach (LMO_G9.dto.MusicDto dto in lms)
-                                { %>
+                                   
+                                { var id = dto.MusicId; %>
                             <div class="row song-2">
                                 <div class="col-lg-11 info">
                                     <div class="row">
@@ -96,9 +97,16 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-1 state">
-                                    <a href="index.aspx?index=<%=dto.MusicId %>" onclick="click(<%=dto.MusicId %>)">
+                                    <!-- <a href="index.aspx?index=" onclick="">
+                                        <i class="material-icons">favorite_border</i>
+                                    </a> -->
+                                    <a href="#" >
+                                        <i class="material-icons">favorite</i>
+                                    </a>
+                                    <a href="#" onclick="changeMusic(<%=dto.MusicId %>);">
                                         <i class="material-icons">play_arrow</i>
                                     </a>
+                                    
                                 </div>
                             </div>
                             <hr class="hr-list" />
