@@ -18,5 +18,7 @@ namespace LMO_G9.util
 
         public static string DEFAULT_USERNAME = "1";
         public static string DEFAULT_PASSWORD = "1";
+
+        public static string NO_PATH_AVATAR = "~/view/template/images/no-avatar.jpg";
     }
 }

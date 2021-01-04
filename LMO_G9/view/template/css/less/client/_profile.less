@@ -1,0 +1,127 @@
+﻿.profile {
+    padding-top: 6rem;
+
+    &__title {
+        h1 {
+            text-align: center;
+            padding: 1rem;
+            font-weight: bold;
+        }
+
+        h6 {
+            font-style: italic;
+            text-align: right;
+            padding: 0.5rem;
+
+            span {
+                color: @color-hover;
+            }
+        }
+    }
+
+    &__infor {
+        .form-group {
+            width: 100%;
+
+            label {
+                font-weight: bold;
+                padding: 0.6rem 0;
+                margin: 0;
+            }
+
+            input {
+                background: transparent;
+                border: none;
+                border-radius: unset;
+                border-bottom: 1px solid @color;
+                color: @color;
+                padding-left: 0.5rem;
+                width: 100%;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &::placeholder {
+                    color: @color;
+                }
+            }
+
+            .avatar {
+                margin-left: 1rem;
+            }
+
+            .file-upload {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid @color;
+                margin: 0;
+
+                .custom-file {
+                    padding-left: 1.5rem;
+
+                    input {
+                        display: none;
+                    }
+
+                    label {
+                        font-weight: unset;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                input {
+                    &.btn-custom {
+                        background: @color;
+                        color: @black-color;
+                        border-radius: 1rem;
+                        width: 7rem;
+                        height: 2.5rem;
+
+                        &:hover {
+                            background: @color-hover;
+                            color: @color;
+                        }
+                    }
+                }
+            }
+
+            .image-spotlight {
+                width: 25rem;
+                height: 15rem;
+                border-radius: 1.5rem;
+                border: 1px solid @color;
+                overflow: hidden;
+                margin-left: 19.5vw;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        padding: 2rem 0;
+
+        .btn-custom {
+            margin-left: 26vw;
+            width: 12rem;
+            height: 3.5rem;
+            border-radius: 0.7rem;
+            color: @color;
+            background: linear-gradient(-32deg, #3fff00, #ff8d00);
+            font-weight: bold;
+            border-color: @color;
+
+            &:hover {
+                cursor: pointer;
+                background: linear-gradient(-32deg, #ff8d00, #3fff00);
+            }
+        }
+    }
+}

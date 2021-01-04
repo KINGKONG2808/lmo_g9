@@ -69,15 +69,13 @@ namespace LMO_G9.view.client
                 ma.ComposerName =  "Premiere";
                 ma.SingerName =  "I Need You Back";
                 ma.ImgHTML = "<img src='" + ms.ImagePath + "' runat='" + "server' " + "id=" + "'Img'" + "class=" + "'img second'" + "/>";
-                lms.Add(ms);
-
+                lms.Add(ma);
             }
 
         }
 
         protected void click(int a)
         {
-
             if (lms.Count > 0)
             {
                 foreach (MusicDto ms in lms)
