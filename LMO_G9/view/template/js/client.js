@@ -118,3 +118,4 @@ function deleteFavorite(id) {
         }
     });
 };
+

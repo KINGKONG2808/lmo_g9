@@ -51,10 +51,10 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control input-custom mr-sm-2" type="search" placeholder="Nhập từ khóa tìm kiếm" aria-label="Search">
-                <button class="btn btn-custom my-2 my-sm-0" type="submit">
+                <input class="form-control input-custom mr-sm-2" type="search" placeholder="Nhập từ khóa tìm kiếm" aria-label="Search" id="inputSearch">
+                <a href="#" class="btn btn-custom my-2 my-sm-0" type="submit" onclick="window.location = 'search.aspx?value=' + document.getElementById('inputSearch').value">
                     <i class="fas fa-search fa-lg"></i>
-                </button>
+                </a>
             </form>
         </div>
     </nav>

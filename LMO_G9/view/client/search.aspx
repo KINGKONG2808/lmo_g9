@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/client/template-client.master" AutoEventWireup="true" CodeBehind="ListFavorite.aspx.cs" Inherits="LMO_G9.view.client.ListFavorite" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/client/template-client.master" AutoEventWireup="true" CodeBehind="search.aspx.cs" Inherits="LMO_G9.view.client.search" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="slide" runat="server">
@@ -121,10 +120,9 @@
         <% }
             else
             { %>
-        <h1>Không có bài hát nào</h1>
+            <h1>Không có bài hát nào</h1>
         <% } %>
     </form>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="extend" runat="server">
-    <script src="../template/js/amplitude.min.js"></script>
 </asp:Content>
