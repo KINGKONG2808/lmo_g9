@@ -10,16 +10,16 @@ using LMO_G9.util;
 using LMO_G9.respository;
 using System.Globalization;
 
-namespace LMO_G9.view.client
+namespace LMO_G9.view.admin
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class WebForm8 : System.Web.UI.Page
     {
         public AccountRespository accountRespository = new AccountRespository();
         public Account account = new Account();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            account = (Account)Session["accountClient"];
+            account = (Account)Session["account"];
 
             if (!IsPostBack)
             {
@@ -90,7 +90,7 @@ namespace LMO_G9.view.client
             }
             catch (Exception ex)
             {
-                
+
             }
         }
     }
