@@ -6,12 +6,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LMO_G9.respository;
 using LMO_G9.model;
+using System.Web.Services;
+using System.IO;
 
 namespace LMO_G9.view.admin
 {
     public partial class WebForm16 : System.Web.UI.Page
     {
-        private static ListMusicRepository musicRepository = new ListMusicRepository();
+        private static ListMusicRepository listMusicRepository = new ListMusicRepository();
+        private static MusicRepository musicRepository = new MusicRepository();
         private static CategoryRepository categoryRepository = new CategoryRepository();
         private static SingerResponsitory singerResponsitory = new SingerResponsitory();
         private static Account account;
@@ -26,7 +29,7 @@ namespace LMO_G9.view.admin
 
         private void loadData()
         {
-            grdDs.DataSource = musicRepository.getList();
+            grdDs.DataSource = listMusicRepository.getList();
             DataBind();
             account = (Account)Session["account"];
         }
@@ -39,11 +42,11 @@ namespace LMO_G9.view.admin
             ddlCategory.DataTextField = "name";
             ddlCategory.DataValueField = "categoryId";
             //ddl singer
-            ddlSinger.DataSource = singerResponsitory.dsSinger();
+            ddlSinger.DataSource = singerResponsitory.getList();
             ddlSinger.DataTextField = "name";
             ddlSinger.DataValueField = "singerId";
             //ddl singer feat
-            ddlSingerFeat.DataSource = singerResponsitory.dsSinger();
+            ddlSingerFeat.DataSource = singerResponsitory.getList();
             ddlSingerFeat.DataTextField = "name";
             ddlSingerFeat.DataValueField = "singerId";
 
@@ -64,7 +67,9 @@ namespace LMO_G9.view.admin
             if (e.CommandName == "delete")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
+                musicRepository.onDelete(id);
                 loadData();
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Xóa thành công');", true);
             }
         }
 
@@ -73,7 +78,72 @@ namespace LMO_G9.view.admin
             if (e.CommandName == "edit")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
+                
             }
         }
+
+        [WebMethod]
+        [HttpPost]
+        public static string saveMusic(string musicName, string categoryId, string singerId, string singerIdFeat,string imagePath)
+        {
+            string log;
+            try
+            {
+                Music ms = new Music(); 
+                ms.Name = musicName;
+                ms.CategoryId = Int32.Parse(categoryId);
+                ms.SignerId = Int32.Parse(singerId);
+                Page page = (Page)HttpContext.Current.Handler;
+                String path = HttpContext.Current.Server.MapPath("~/folder/");
+                string timeString = DateTime.Now.ToString("ddMMyyyy_hhmmss_tt_");
+                WebForm16 wf = new WebForm16();
+                //FileUpload image = (FileUpload)page.FindControl("music").FindControl("imageFUL");
+                //image.PostedFile.SaveAs(path + "images/"+ timeString + imagePath);
+                ms.ImagePath = path + "images/" + timeString + imagePath;
+                ms.ImagePath = wf.fileUtil(path);
+                ms.FilePath = "";
+                ms.CreateDate = DateTime.Now;
+                ms.CreateBy = account.AccountId;
+                ms.UpdateDate = DateTime.Now;
+                ms.UpdateBy = account.AccountId;
+                musicRepository.onAddNew(ms);
+                if(singerIdFeat != "0" || singerIdFeat != singerId)
+                {
+
+                }
+                log = "Sucess !!!";
+            }
+            catch (Exception ex)
+            {
+                log = "Something wrong with the error: " + ex.Message;
+            }
+            return log;
+        }
+
+        private string fileUtil(string path)
+        {
+            string timeString = DateTime.Now.ToString("ddMMyyyy_hhmmss_tt_");
+            imageFUL.PostedFile.SaveAs(path + "images/" + timeString + imageFUL.FileName);
+            return "images/" + timeString + imageFUL.FileName ;
+        }
+
+        bool CheckImageType(string fileName)
+        {
+            string ext = Path.GetExtension(fileName);
+            switch (ext.ToLower())
+            {
+                case ".gif":
+                    return true;
+                case ".png":
+                    return true;
+                case ".jpg":
+                    return true;
+                case ".jpeg":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
     }
 }

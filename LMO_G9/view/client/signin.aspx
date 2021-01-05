@@ -56,7 +56,7 @@
                     <div class="text-center p-t-12">
                         <span class="txt1">Quên
                         </span>
-                        <a class="txt2" href="#">Tài khoản / Mật khẩu?
+                        <a class="txt2" href="forgot-pasword.aspx">Tài khoản / Mật khẩu?
                         </a>
                     </div>
 

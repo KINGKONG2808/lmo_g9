@@ -10,35 +10,21 @@ using LMO_G9.model;
 
 namespace LMO_G9.view.admin
 {
-    public partial class WebForm18 : System.Web.UI.Page
+    public partial class WebForm3 : System.Web.UI.Page
     {
-        private static SingerResponsitory singerResponsitory = new SingerResponsitory();
+        private static NewResponsitory newResponsitory = new NewResponsitory();
         private static Account account;
         private static MusicRepository musicRepository = new MusicRepository();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                loadData();
-                Session["singerEdit"] = null;
-            }
+            loadData();
         }
 
         private void loadData()
         {
-            grSinger.DataSource = singerResponsitory.getList();
+            grNews.DataSource = newResponsitory.getList();
             DataBind();
             account = (Account)Session["account"];
-        }
-
-        protected void Xoa_Click(Object sender, CommandEventArgs e)
-        {
-            if (e.CommandName == "xoa")
-            {
-                int m = Convert.ToInt16(e.CommandArgument);
-                singerResponsitory.Xoa(m);
-                loadData();
-            }
         }
         protected void delete_Command(Object sender, CommandEventArgs e)
         {
@@ -52,7 +38,7 @@ namespace LMO_G9.view.admin
                     loadData();
                     return;
                 }
-                singerResponsitory.Xoa(id);
+                newResponsitory.Xoa(id);
                 loadData();
             }
         }
@@ -61,25 +47,27 @@ namespace LMO_G9.view.admin
             if (e.CommandName == "edit")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
-                Singer singer = singerResponsitory.getById(id);
-                Session["singerEdit"] = singer;
-                Response.Redirect("~/view/admin/edit-page/edit-singer.aspx");
+                New news = newResponsitory.getById(id);
+                Session["composerEdit"] = news;
+                //Response.Redirect("~/view/admin/edit-page/edit-composer.aspx");
             }
         }
         [WebMethod]
-        public static string saveSinger(string singerName, string imgPath)
+        public static string saveNew(string title, string imgPath , string shortContent , string content)
         {
             string log;
             try
             {
-                Singer singer = new Singer();
-                singer.Name = singerName;
-                singer.ImagePath = imgPath;
-                singer.CreateDate = DateTime.Now;
-                singer.CreateBy = account.AccountId;
-                singer.UpdateDate = DateTime.Now;
-                singer.UpdateBy = account.AccountId;
-                singerResponsitory.Them(singer);
+                New news = new New();
+                news.Title = title;
+                news.ShortContent = shortContent;
+                news.Content = content;
+                news.ImagePath = imgPath;
+                news.CreateDate = DateTime.Now;
+                news.CreateBy = account.AccountId;
+                news.UpdateDate = DateTime.Now;
+                news.UpdateBy = account.AccountId;
+                newResponsitory.Them(news);
                 log = "Sucess !!!";
             }
             catch (Exception ex)

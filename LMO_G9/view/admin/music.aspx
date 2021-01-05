@@ -27,7 +27,7 @@
                         <asp:BoundField DataField="name" HeaderText="Name" HeaderStyle-CssClass="text-center" />
                         <asp:TemplateField HeaderText="Image">
                             <ItemTemplate>
-                                <asp:Image ID="Image" runat="server" Height="80px" Width="80px" ImageUrl='<%#"imagePath" %>' />
+                                <asp:Image ID="Image" runat="server" Height="80px" Width="80px" ImageUrl='<%# "~/folder/" +Eval("imagePath") %>' />
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="singerName" HeaderText="Singer" HeaderStyle-CssClass="text-center" />
@@ -72,19 +72,32 @@
                     <div class="row">
                         <div class="col-lg-4">Music name:</div>
                         <div class="col-lg-8">
-                            <asp:TextBox ID="txtCategoryName" CssClass="form-control width-100" type="text" placeholder="Enter the category name ..." runat="server" />
-                        </div>                     
+                            <asp:TextBox ID="txtMusicName" CssClass="form-control width-100" type="text" placeholder="Enter the music name ..." runat="server" />
+                        </div>       
+                        <br />
                         <div class="col-lg-4">Category:</div>
                         <div class="col-lg-8">
                             <asp:DropDownList ID="ddlCategory"  CssClass="form-control width-100" placeholder="Choose the category..." runat="server" />
                         </div>
+                        <br />
                         <div class="col-lg-4">Singer:</div>
                         <div class="col-lg-8">
                             <asp:DropDownList ID="ddlSinger" CssClass="form-control width-100" placeholder="Choose the singer..." runat="server" />
                         </div>
+                        <br />
                         <div class="col-lg-4">Singer featuring:</div>
                         <div class="col-lg-8">
                             <asp:DropDownList ID="ddlSingerFeat" CssClass="form-control width-100" placeholder="Choose the singer featuring(if exists)..." runat="server" />
+                        </div>
+                        <br />
+                        <div class="col-lg-4">Image:</div>
+                        <div class="col-lg-8">
+                            <asp:FileUpload ID="imageFUL" CssClass="form-control width-100" placeholder="Choose image" runat="server" />
+                        </div>
+                        <br />
+                        <div class="col-lg-4">Audio:</div>
+                        <div class="col-lg-8">
+                            <asp:FileUpload ID="audioFUL" CssClass="form-control width-100" placeholder="Choose audio" runat="server" />
                         </div>
                         <div class="form-group">
                              <asp:Label ID="txtError" CssClass="text-error" runat="server" Text="" />
@@ -93,7 +106,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveCategory('category.aspx/saveCategory', 'contentRow_txtCategoryName');">Save</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveMusic('contentRow_txtMusicName', 'contentRow_ddlCategory', 'contentRow_ddlSinger', 'contentRow_ddlSingerFeat', 'contentRow_imageFUL', 'contentRow_audioFUL');">Save</button>
+                    
                 </div>
             </div>
         </div>
