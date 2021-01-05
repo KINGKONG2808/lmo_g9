@@ -4,8 +4,7 @@
 
 <html>
 <head runat="server">
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
     <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,11 +23,11 @@
     <div class="container-fluid">
         <!-- #Include virtual="~/view/library/topbar.html" -->
     </div>
+    <div class="container-fluid">
+        <asp:ContentPlaceHolder ID="slide" runat="server" />
+    </div>
     <div class="container">
-        <div class="content">
-            <asp:ContentPlaceHolder ID="content" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+        <asp:ContentPlaceHolder ID="content" runat="server" />
     </div>
     <div class="container-fluid">
         <!-- #Include virtual="~/view/library/footer.html" -->
@@ -37,6 +36,7 @@
     <script src="../template/vendor/bootstrap/js/popper-1.16.0.min.js"></script>
     <script src="../template/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../template/js/client.js"></script>
-    <script src="../template/js/amplitude.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="extend" runat="server" />
 </body>
 </html>

@@ -3,7 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Trang chủ</title>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="slide" runat="server">
+    <!-- #Include virtual="~/view/library/slideshow.html" -->
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="content" runat="server">
     <form runat="server">
         <div class="container">
             <div class="row width-100 play-audio">
@@ -77,12 +80,12 @@
                     </div>
 
                     <hr class="hr-top" />
-
                     <div class="row width-100 no-padding no-margin">
                         <div class="music">
                             <%
                                 foreach (LMO_G9.dto.MusicDto dto in lms)
-                                { %>
+                                   
+                                { var id = dto.MusicId; %>
                             <div class="row song-2">
                                 <div class="col-lg-11 info">
                                     <div class="row">
@@ -96,9 +99,16 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-1 state">
-                                    <a href="index.aspx?index=<%=dto.MusicId %>" onclick="click(<%=dto.MusicId %>)">
+                                    <!-- <a href="index.aspx?index=" onclick="">
+                                        <i class="material-icons">favorite_border</i>
+                                    </a> -->
+                                    <a href="#" >
+                                        <i class="material-icons">favorite</i>
+                                    </a>
+                                    <a href="#" onclick="changeMusic(<%=dto.MusicId %>);">
                                         <i class="material-icons">play_arrow</i>
                                     </a>
+                                    
                                 </div>
                             </div>
                             <hr class="hr-list" />
@@ -109,4 +119,7 @@
             </div>
         </div>
     </form>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="extend" runat="server">
+    <script src="../template/js/amplitude.min.js"></script>
 </asp:Content>

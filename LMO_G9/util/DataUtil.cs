@@ -14,7 +14,7 @@ namespace LMO_G9.util
 
         public DataUtil()
         {
-            string connectString = Constant.CONNECTING_STRING_NIET;
+            string connectString = Constant.CONNECTING_STRING_K2;
             Connection = new SqlConnection(connectString);
         }
 

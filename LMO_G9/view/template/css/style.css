@@ -71,7 +71,7 @@
   color: #05fb24;
   cursor: pointer;
 }
-.header .slide .carousel-inner .carousel-item img {
+.carousel .carousel-inner .carousel-item img {
   width: 100% !important;
   height: 80vh;
   object-fit: cover;
@@ -79,7 +79,7 @@
 .player {
   height: auto;
   width: 100%;
-  background-color: #02f5634f;
+  background-color: #1E2125;
   user-select: none;
   font-family: 'Open Sans', sans-serif;
   filter: drop-shadow(20px 20px 10px black);
@@ -304,6 +304,106 @@
 }
 .player .music .song-2 .state i {
   color: #ddd;
+}
+.profile {
+  padding-top: 6rem;
+}
+.profile__title h1 {
+  text-align: center;
+  padding: 1rem;
+  font-weight: bold;
+}
+.profile__title h6 {
+  font-style: italic;
+  text-align: right;
+  padding: 0.5rem;
+}
+.profile__title h6 span {
+  color: #05fb24;
+}
+.profile__infor .form-group {
+  width: 100%;
+}
+.profile__infor .form-group label {
+  font-weight: bold;
+  padding: 0.6rem 0;
+  margin: 0;
+}
+.profile__infor .form-group input {
+  background: transparent;
+  border: none;
+  border-radius: unset;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+  padding-left: 0.5rem;
+  width: 100%;
+}
+.profile__infor .form-group input:hover {
+  cursor: pointer;
+}
+.profile__infor .form-group input::placeholder {
+  color: #ffffff;
+}
+.profile__infor .form-group .avatar {
+  margin-left: 1rem;
+}
+.profile__infor .form-group .file-upload {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ffffff;
+  margin: 0;
+}
+.profile__infor .form-group .file-upload .custom-file {
+  padding-left: 1.5rem;
+}
+.profile__infor .form-group .file-upload .custom-file input {
+  display: none;
+}
+.profile__infor .form-group .file-upload .custom-file label {
+  font-weight: unset;
+}
+.profile__infor .form-group .file-upload .custom-file label:hover {
+  cursor: pointer;
+}
+.profile__infor .form-group .file-upload input.btn-custom {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 1rem;
+  width: 7rem;
+  height: 2.5rem;
+}
+.profile__infor .form-group .file-upload input.btn-custom:hover {
+  background: #05fb24;
+  color: #ffffff;
+}
+.profile__infor .form-group .image-spotlight {
+  width: 25rem;
+  height: 15rem;
+  border-radius: 1.5rem;
+  border: 1px solid #ffffff;
+  overflow: hidden;
+  margin-left: 19.5vw;
+}
+.profile__infor .form-group .image-spotlight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile__btn {
+  padding: 2rem 0;
+}
+.profile__btn .btn-custom {
+  margin-left: 26vw;
+  width: 12rem;
+  height: 3.5rem;
+  border-radius: 0.7rem;
+  color: #ffffff;
+  background: linear-gradient(-32deg, #3fff00, #ff8d00);
+  font-weight: bold;
+  border-color: #ffffff;
+}
+.profile__btn .btn-custom:hover {
+  cursor: pointer;
+  background: linear-gradient(-32deg, #ff8d00, #3fff00);
 }
 .footer {
   background-image: url("../images/footer.jpg");
