@@ -57,7 +57,9 @@
                 Image:
             </div>
             <div class="col-lg-9 padding-1rem">
-                <asp:FileUpload ID="imageFUL" CssClass="form-control width-100" runat="server" />
+                <asp:FileUpload ID="imageFUL" CssClass="form-control width-100 " runat="server" />
+                <%--custom-file-input--%>
+                <%--<label class="custom-file-label" for="content_imageFUL"><i class="far fa-file-image"></i>&nbsp;&nbsp;&nbsp;Chọn ảnh đại diện</label>--%>
             </div>
             <div class="col-lg-3 padding-1rem">
                 Audio:
@@ -106,6 +108,8 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="extendOther" runat="server">
+    <script>
+    </script>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="extendScript" runat="server">
 </asp:Content>
