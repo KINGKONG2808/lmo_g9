@@ -70,9 +70,7 @@ namespace LMO_G9.view.client
                 ma.SingerName = "I Need You Back";
                 ma.ImgHTML = "<img src='" + ms.ImagePath + "' runat='" + "server' " + "id=" + "'Img'" + "class=" + "'img second'" + "/>";
                 lms.Add(ma);
-
             }
-
         }
 
         [WebMethod]
@@ -169,12 +167,6 @@ namespace LMO_G9.view.client
                 result = ex.Message;
             }
             return result;
-        }
-
-        [WebMethod]
-        public static string test(string id)
-        {
-            return id;
         }
     }
 }

@@ -88,9 +88,12 @@
     <Content Include="view\client\index.aspx" />
     <Content Include="view\client\signin.aspx" />
     <Content Include="view\client\signup.aspx" />
+    <Content Include="view\client\profile.aspx" />
+    <Content Include="view\client\Upload.aspx" />
     <Content Include="view\library\404.html" />
     <Content Include="view\library\footer.html" />
     <Content Include="view\library\menubar-admin.html" />
+    <Content Include="view\library\slideshow.html" />
     <Content Include="view\library\topbar-admin.html" />
     <Content Include="view\template\css\custom.css" />
     <Content Include="view\template\css\main-signin.css" />
@@ -102,6 +105,7 @@
     <Content Include="view\template\images\footer.jpg" />
     <Content Include="view\template\images\icons\images.ico" />
     <Content Include="view\template\images\logo.png" />
+    <Content Include="view\template\images\no-avatar.jpg" />
     <Content Include="view\template\images\undraw_posting_photo.svg" />
     <Content Include="view\template\js\amplitude.min.js" />
     <Content Include="view\template\js\client.js" />
@@ -1977,6 +1981,20 @@
     <Compile Include="view\client\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="view\client\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\client\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\client\Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\client\Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -2177,6 +2195,8 @@
     <Content Include="view\template\css\less\client\_header.less" />
     <Content Include="view\template\css\less\client\_config.less" />
     <Content Include="view\template\css\less\client\_font.less" />
+    <Content Include="view\template\css\less\client\_content.less" />
+    <Content Include="view\template\css\less\client\_profile.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2184,7 +2204,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="target\upload\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

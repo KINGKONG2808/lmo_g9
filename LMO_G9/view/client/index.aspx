@@ -3,7 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Trang chủ</title>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="slide" runat="server">
+    <!-- #Include virtual="~/view/library/slideshow.html" -->
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="content" runat="server">
     <form runat="server">
         <div class="container">
             <div class="row width-100 play-audio">
@@ -116,4 +119,7 @@
             </div>
         </div>
     </form>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="extend" runat="server">
+    <script src="../template/js/amplitude.min.js"></script>
 </asp:Content>
