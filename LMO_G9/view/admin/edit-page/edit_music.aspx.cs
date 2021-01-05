@@ -21,7 +21,7 @@ namespace LMO_G9.view.admin
         private static ComposerRepository composerRepository = new ComposerRepository();
         private static ComposerMusicRepository composerMusicRepository = new ComposerMusicRepository();
         private static Account account;
-        private static Music msBak = new Music();
+        public static Music msBak = new Music();
         private static MusicFactory mfBak = new MusicFactory();
         private static ComposerMusic cmBak = new ComposerMusic();
 
@@ -50,6 +50,7 @@ namespace LMO_G9.view.admin
                     ComposerMusic cm = composerMusicRepository.getByMusicId(music.MusicId);
                     cmBak = cm;
                     ddlComposer.SelectedValue = cm.ComposerId.ToString();
+                    //imageFUL.Attributes.Add(" = music.FilePath");
                     txtUpdateBy.Text = music.UpdateBy.ToString();
                     txtUpdateDate.Text = music.UpdateDate.ToString();
                     DataBind();
@@ -91,7 +92,7 @@ namespace LMO_G9.view.admin
             ddlCategory.Items[0].Value = "0";
             ddlSinger.Items.Insert(0, "Choose the singer...");
             ddlSinger.Items[0].Value = "0";
-            ddlSingerFeat.Items.Insert(0, "Choose the singer featuring...");
+            ddlSingerFeat.Items.Insert(0, "Choose the singer featuring(if exists)...");
             ddlSingerFeat.Items[0].Value = "0";
             ddlComposer.Items.Insert(0, "Choose the composer...");
             ddlComposer.Items[0].Value = "0";
