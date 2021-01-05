@@ -89,7 +89,6 @@
     <Content Include="view\client\signin.aspx" />
     <Content Include="view\client\signup.aspx" />
     <Content Include="view\client\profile.aspx" />
-    <Content Include="view\client\Upload.aspx" />
     <Content Include="view\library\404.html" />
     <Content Include="view\library\footer.html" />
     <Content Include="view\library\menubar-admin.html" />
@@ -1987,13 +1986,6 @@
     </Compile>
     <Compile Include="view\client\profile.aspx.designer.cs">
       <DependentUpon>profile.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="view\client\Upload.aspx.cs">
-      <DependentUpon>Upload.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\client\Upload.aspx.designer.cs">
-      <DependentUpon>Upload.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
