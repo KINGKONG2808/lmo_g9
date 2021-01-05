@@ -166,8 +166,8 @@
   margin-right: 5px;
 }
 .player .infor .button-items .controls .expend .step-backward {
-  width: 18px;
-  height: 18px;
+  width: 40px;
+  height: 40px;
   x: 0px;
   y: 0px;
   enable-background: new 0 0 25 25;
@@ -181,8 +181,8 @@
   cursor: pointer;
 }
 .player .infor .button-items .controls .expend .step-foreward {
-  width: 18px;
-  height: 18px;
+  width: 40px;
+  height: 40px;
   x: 0px;
   y: 0px;
   enable-background: new 0 0 25 25;
@@ -197,8 +197,8 @@
 }
 .player .infor .button-items .controls #play {
   padding: 0 3px;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   x: 0px;
   y: 0px;
   enable-background: new 0 0 25 25;
@@ -226,10 +226,11 @@
   x: 0px;
   y: 0px;
   enable-background: new 0 0 25 25;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  margin-left: -38px;
+  margin-left: -47px;
+  margin-top: 5px;
   cursor: pointer;
 }
 .player .infor .button-items .controls #pause:hover .rect {
@@ -404,6 +405,9 @@
 .profile__btn .btn-custom:hover {
   cursor: pointer;
   background: linear-gradient(-32deg, #ff8d00, #3fff00);
+}
+.category {
+  padding-top: 8rem;
 }
 .footer {
   background-image: url("../images/footer.jpg");

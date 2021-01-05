@@ -18,6 +18,7 @@ namespace LMO_G9.view.admin
         protected void Page_Load(object sender, EventArgs e)
         {
             loadData();
+            Session["newEdit"] = null;
         }
 
         private void loadData()
@@ -48,8 +49,8 @@ namespace LMO_G9.view.admin
             {
                 int id = Convert.ToInt32(e.CommandArgument);
                 New news = newResponsitory.getById(id);
-                Session["composerEdit"] = news;
-                //Response.Redirect("~/view/admin/edit-page/edit-composer.aspx");
+                Session["newEdit"] = news;
+                Response.Redirect("~/view/admin/edit-page/edit-news.aspx");
             }
         }
         [WebMethod]
