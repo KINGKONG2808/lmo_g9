@@ -80,7 +80,6 @@
                     </div>
 
                     <hr class="hr-top" />
-                    <asp:ListView ID="ListView1" runat="server"></asp:ListView>
                     <div class="row width-100 no-padding no-margin">
                         <div class="music">
                             <%
