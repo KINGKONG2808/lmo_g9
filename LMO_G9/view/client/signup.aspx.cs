@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using LMO_G9.respository;
 using LMO_G9.util;
 using LMO_G9.model;
+using System.Globalization;
 
 namespace LMO_G9.view.client
 {
@@ -39,12 +40,10 @@ namespace LMO_G9.view.client
                 Account account = new Account();
                 account.Fullname = fullname;
                 account.Address = address;
-                account.DateOfBirth = Convert.ToDateTime(dateOfBirth);
+                account.DateOfBirth = DateTime.ParseExact(dateOfBirth, "dd/mm/yyyy", CultureInfo.InvariantCulture);
                 account.RoleId = Constant.ACCOUNT_ROLE_USER;
                 account.Username = username;
                 account.Password = password;
-                account.CreateDate = DateTime.Now;
-                account.UpdateDate = DateTime.Now;
 
                 Account accountCheckExists = accountRespository.checkExistsAccount(null, username, null, Constant.ACCOUNT_ROLE_USER);
                 if (accountCheckExists.AccountId == 0)

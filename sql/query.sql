@@ -47,6 +47,10 @@ create table singer (
 	update_by int
 )
 go
+use lmo_g9
+go
+TRUNCATE TABLE singer;
+go
 -- music
 create table music (
 	music_id int identity(1, 1) not null primary key,
@@ -93,7 +97,11 @@ create table composer(
 	update_by int,
 	update_date datetime
 )
+use lmo_g9
 go
+TRUNCATE TABLE composer;
+go
+
 -- create table composer-music
 create table composer_music(
 	composer_music_id int identity(1, 1) not null primary key,

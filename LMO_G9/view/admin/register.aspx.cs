@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using LMO_G9.respository;
 using LMO_G9.util;
 using LMO_G9.model;
+using System.Globalization;
 
 namespace LMO_G9.view.admin
 {
@@ -69,7 +70,7 @@ namespace LMO_G9.view.admin
                 Account account = new Account();
                 account.Fullname = fullname;
                 account.Address = address;
-                account.DateOfBirth = Convert.ToDateTime(dateOfBirth);
+                account.DateOfBirth = DateTime.ParseExact(dateOfBirth, "dd/mm/yyyy", CultureInfo.InvariantCulture);
                 account.RoleId = Constant.ACCOUNT_ROLE_ADMIN;
                 account.Username = username;
                 account.Password = password;

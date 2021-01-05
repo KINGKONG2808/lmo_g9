@@ -1,5 +1,6 @@
 ﻿(function () {
     renderLogin();
+    renderFavorite();
 })();
 
 function renderLogin() {
@@ -29,11 +30,11 @@ function logout() {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: setTimeout(
-            function (msg) {
+            function () {
                 $('#login').removeClass('none');
                 $('#login').parent().removeClass('no-padding');
                 $('#profile-customer').addClass('none');
-                window.location.href = window.location.origin.concat(msg.d);
+                window.location = 'index.aspx';
             }, 1000
         )
     });
@@ -53,6 +54,68 @@ function changeMusic(id) {
             $("#content_musicName").text(msg.d.Name);
             $("#content_composerName").text(msg.d.ComposerName);
             $("#content_singerName").text(msg.d.SingerName);
+            var music = document.getElementById("music");
+            music.load();
+            var playButton = document.getElementById("play");
+            var pauseButton = document.getElementById("pause");
+            playButton.style.visibility = "visible";
+            pause.style.visibility = "hidden";
+
         }
     });
 };
+
+function renderFavorite() {
+    $.ajax({
+        type: 'POST',
+        url: 'index.aspx/renderFavorite',
+        data: '{}',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        success: function (msg) {
+            msg.d.map((n) => {
+                $('#unfavorite_' + n).attr('style', 'display:none;')
+                $('#favorite_' + n).attr('style', 'display: block;')
+            });
+        }
+    });
+};
+
+function addtoFavorite(id) {
+    $.ajax({
+        type: 'POST',
+        url: 'index.aspx/addToFavorite',
+        data: '{id: "' + id + '"}',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        success: function (msg) {
+            if (msg.d != null) {
+                msg.d.map((n) => {
+                    $('#unfavorite_' + n).attr('style', 'display:none;');
+                    $('#favorite_' + n).attr('style', 'display: block;');
+                });
+            } else {
+                window.location = 'signin.aspx';
+            }
+        }
+    });
+};
+
+function deleteFavorite(id) {
+    $.ajax({
+        type: 'POST',
+        url: 'index.aspx/addToFavorite',
+        data: '{id: "' + id + '"}',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        success: function (msg) {
+            if (msg.d != null) {
+                msg.d.map((n) => {
+                    $('#unfavorite_' + n).attr('style', 'display:none;');
+                    $('#favorite_' + n).attr('style', 'display: block;');
+                });
+            } 
+        }
+    });
+};
+

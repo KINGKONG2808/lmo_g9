@@ -16,7 +16,7 @@ namespace LMO_G9.view.client
     {
         public static Account account = new Account();
         public static List<MusicDto> lms;
-        ListMusicRepository lm = new ListMusicRepository();
+        public static ListMusicRepository lm = new ListMusicRepository();
         protected void Page_Load(object sender, EventArgs e)
         {
             lms = new List<MusicDto>();
@@ -63,7 +63,7 @@ namespace LMO_G9.view.client
 
                 MusicDto ma = new MusicDto();
                 ma.MusicId = 2;
-                ma.AudioPath = "https://dl.dropbox.com/s/oswkgcw749xc8xs/The-Noisy-Freaks.mp3?dl=1";
+                ma.AudioPath = "https://dl.dropbox.com/s/oswkgcw749xc8xs/The-Noisy-Freaks.mp3?dl=2";
                 ma.ImagePath = "http://i1285.photobucket.com/albums/a583/TheGreatOzz1/Hosted-Images/Noisy-Freeks-Image_zps4kilrxml.png";
                 ma.Name = "The Noisy Freakss";
                 ma.ComposerName = "Premiere";
@@ -154,19 +154,83 @@ namespace LMO_G9.view.client
         }
 
         [WebMethod]
-        public static string logout()
+        public static void logout()
         {
-            string result;
             try
             {
                 HttpContext.Current.Session.Remove("accountClient");
-                result = "/view/client/index.aspx";
             }
             catch (Exception ex)
             {
-                result = ex.Message;
+                
             }
-            return result;
+        }
+
+        [WebMethod]
+        public static List<int> renderFavorite()
+        {
+            List<int> listId = new List<int>();
+            try
+            {
+                if (HttpContext.Current.Session["accountClient"] != null)
+                {
+                    account = (Account)HttpContext.Current.Session["accountClient"];
+                    listId = lm.getListFavoriteId(account.AccountId);
+                }
+            }
+            catch (Exception)
+            {
+                account = null;
+            }
+
+            return listId;
+        }
+
+        [WebMethod]
+        public static List<int> addToFavorite(string id)
+        {
+            List<int> listId = new List<int>();
+            try
+            {
+                if (HttpContext.Current.Session["accountClient"] != null)
+                {
+                    account = (Account)HttpContext.Current.Session["accountClient"];
+                    listId = lm.addToFavorite(account.AccountId,int.Parse(id));
+                } else
+                {
+                    listId = null;
+                }
+            }
+            catch (Exception)
+            {
+                account = null;
+            }
+
+            return listId;
+        }
+
+        [WebMethod]
+        public static List<int> deleteFavorite(string id)
+        {
+            List<int> listId = new List<int>();
+            try
+            {
+                if (HttpContext.Current.Session["accountClient"] != null)
+                {
+                    account = (Account)HttpContext.Current.Session["accountClient"];
+                    listId = lm.deleteFavorite(account.AccountId, int.Parse(id));
+                }
+                else
+                {
+                    listId = null;
+                }
+            }
+            catch (Exception)
+            {
+                account = null;
+            }
+
+            return listId;
         }
     }
 }
