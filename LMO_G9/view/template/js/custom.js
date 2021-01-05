@@ -23,7 +23,7 @@ function clear() {
 // function call method in c#
 function saveCategory(linkPage, idName) {
     var data = $('#' + idName).val();
-    //if (validateCategory(data)) {
+    if (validateCategory(data)) {
         $.ajax({
             type: 'POST',
             url: linkPage,
@@ -38,10 +38,9 @@ function saveCategory(linkPage, idName) {
                 alert(msg.d);
             }
         });
-    /*} else {
-        txtError.text('Bạn vui lòng nhập tên loại nhạc');
-        return;
-    }*/
+    } else {
+        alert('Bạn vui lòng nhập tên loại nhạc');
+    }
 }
 
 function validateCategory(nameCategory) {
@@ -109,6 +108,30 @@ function saveNew(newTitle, imgPath, shortContent, content) {
         }
     });
 }
+
+function saveMusic(name, category, singer, singerFeat, image, audio) {
+    var musicName = $('#' + name).val();
+    var categoryId = $('#' + category).val();
+    var singerId = $('#' + singer).val();
+    var singerIdFeat = $('#' + singerFeat).val();
+    var imagePath = $('#' + image).val().split('\\').pop();
+    var audioPath = $('#' + audio).val();
+    $.ajax({
+        type: 'POST',
+        url: 'music.aspx/saveMusic',
+        data: '{musicName: "' + musicName + '", categoryId: "' + categoryId + '", singerId: "' + singerId + '",singerIdFeat: "' + singerIdFeat + '", imagePath:"' + imagePath + '"}',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        success: function (msg) {
+            alert(msg.d);
+            window.location.reload();
+        },
+        error: function (msg) {
+            alert(msg.d);
+        }
+    });
+}
+
 function onShowModal(modalId) {
     $('#' + modalId).modal('show');
 }

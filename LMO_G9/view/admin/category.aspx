@@ -71,7 +71,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveCategory('category.aspx/saveCategory', 'contentRow_txtCategoryName');">Save</button>
+                    <button type="button" class="btn btn-primary" onclick="saveCategory('category.aspx/saveCategory', 'contentRow_txtCategoryName');">Save</button>
                 </div>
             </div>
         </div>

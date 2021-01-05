@@ -68,30 +68,23 @@ namespace LMO_G9.respository
                 "role_id, " +
                 "username, " +
                 "password, " +
+                "avatar_path, " +
                 "create_date, " +
                 "create_by, " +
                 "update_date, " +
-                "update_by");
-            if (account.AvatarPath != null)
-            {
-                sb.Append(", avatar_path");
-            }
-            sb.Append(") values (" +
+                "update_by) " +
+                "values (" +
                 "@fullname, " +
                 "@address, " +
                 "@dateOfBirth, " +
                 "@roleId, " +
                 "@username, " +
                 "@password, " +
+                "@avatarPath, " +
                 "@createDate, " +
                 "@createBy, " +
                 "@updateDate, " +
-                "@updateBy");
-            if (account.AvatarPath != null)
-            {
-                sb.Append(", @avatarPath");
-            }
-            sb.Append(")");
+                "@updateBy)");
             SqlCommand cmd = new SqlCommand(sb.ToString(), Connection);
             cmd.Parameters.AddWithValue("fullname", account.Fullname);
             cmd.Parameters.AddWithValue("address", account.Address);
@@ -99,14 +92,41 @@ namespace LMO_G9.respository
             cmd.Parameters.AddWithValue("roleId", account.RoleId);
             cmd.Parameters.AddWithValue("username", account.Username);
             cmd.Parameters.AddWithValue("password", account.Password);
-            cmd.Parameters.AddWithValue("createDate", account.CreateDate);
+            cmd.Parameters.AddWithValue("avatarPath", Constant.NO_PATH_AVATAR);
+            cmd.Parameters.AddWithValue("createDate", DateTime.Now);
             cmd.Parameters.AddWithValue("createBy", account.CreateBy);
-            cmd.Parameters.AddWithValue("updateDate", account.UpdateDate);
+            cmd.Parameters.AddWithValue("updateDate", DateTime.Now);
             cmd.Parameters.AddWithValue("updateBy", account.UpdateBy);
-            if (account.AvatarPath != null)
-            {
-                cmd.Parameters.AddWithValue("avatarPath", account.AvatarPath);
-            }
+            cmd.ExecuteNonQuery();
+            Connection.Close();
+        }
+
+        public void updateAccount(Account account)
+        {
+            Connection.Open();
+            StringBuilder sb = new StringBuilder();
+            sb.Append("update account set " +
+                "fullname = @fullname, " +
+                "address = @address, " +
+                "date_of_birth = @dateOfBirth, " +
+                "username = @username, " +
+                "password = @password, " +
+                "avatar_path = @avatarPath, " +
+                "create_by = @createBy, " +
+                "update_by = @updateBy, " +
+                "update_date = @updateDate " +
+                "where account_id = @accountId");
+            SqlCommand cmd = new SqlCommand(sb.ToString(), Connection);
+            cmd.Parameters.AddWithValue("fullname", account.Fullname);
+            cmd.Parameters.AddWithValue("address", account.Address);
+            cmd.Parameters.AddWithValue("dateOfBirth", account.DateOfBirth);
+            cmd.Parameters.AddWithValue("username", account.Username);
+            cmd.Parameters.AddWithValue("password", account.Password);
+            cmd.Parameters.AddWithValue("avatarPath", account.AvatarPath);
+            cmd.Parameters.AddWithValue("createBy", account.CreateBy);
+            cmd.Parameters.AddWithValue("updateDate", DateTime.Now);
+            cmd.Parameters.AddWithValue("updateBy", account.UpdateBy);
+            cmd.Parameters.AddWithValue("accountId", account.AccountId);
             cmd.ExecuteNonQuery();
             Connection.Close();
         }

@@ -7,83 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LMO_G9.view.admin
+namespace LMO_G9.view.client
 {
 
 
-    public partial class WebForm16
+    public partial class search
     {
 
         /// <summary>
-        /// grdDs control.
+        /// image control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdDs;
+        protected global::System.Web.UI.HtmlControls.HtmlImage image;
 
         /// <summary>
-        /// txtMusicName control.
+        /// singerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMusicName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl singerName;
 
         /// <summary>
-        /// ddlCategory control.
+        /// composerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCategory;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl composerName;
 
         /// <summary>
-        /// ddlSinger control.
+        /// musicName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSinger;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl musicName;
 
         /// <summary>
-        /// ddlSingerFeat control.
+        /// sourcemp3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSingerFeat;
+        protected global::System.Web.UI.HtmlControls.HtmlSource sourcemp3;
 
         /// <summary>
-        /// imageFUL control.
+        /// sourceogg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload imageFUL;
-
-        /// <summary>
-        /// audioFUL control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload audioFUL;
-
-        /// <summary>
-        /// txtError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtError;
+        protected global::System.Web.UI.HtmlControls.HtmlSource sourceogg;
     }
 }

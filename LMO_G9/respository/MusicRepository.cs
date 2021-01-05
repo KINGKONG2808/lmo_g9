@@ -42,5 +42,51 @@ namespace LMO_G9.respository
 
             return li;
         }
+
+        public void onDelete(long id)
+        {
+            //delete in composer_music
+            Connection.Open();
+            string strSqlCM = "delete from composer_music where music_id = @id";
+            SqlCommand cmdCM = new SqlCommand(strSqlCM, Connection);
+            cmdCM.Parameters.AddWithValue("id", id);
+            cmdCM.ExecuteNonQuery();
+            //delete in music_factory(featuring)
+            string strSqlMFt = "delete from music_factory where music_id = @id";
+            SqlCommand cmdMFt = new SqlCommand(strSqlMFt, Connection);
+            cmdMFt.Parameters.AddWithValue("id", id);
+            cmdMFt.ExecuteNonQuery();
+            //delete in music_favorite
+            string strSqlMF = "delete from music_favorite where music_id = @id";
+            SqlCommand cmdMF = new SqlCommand(strSqlMF, Connection);
+            cmdMF.Parameters.AddWithValue("id", id);
+            cmdMF.ExecuteNonQuery();
+            //delete in mussic
+            string strSqlM = "delete from music where music_id = @id";
+            SqlCommand cmdM = new SqlCommand(strSqlM, Connection);
+            cmdM.Parameters.AddWithValue("id", id);
+            cmdM.ExecuteNonQuery();
+            Connection.Close();
+        }
+
+
+        public void onAddNew(Music ms)
+        {
+            Connection.Open();
+            string strSql = "insert into category(name,file_path,imath_path,singer_id,category_id,create_date,create_by,update_date,update_by) " +
+                " values(@name,@audio,@image,@singerId,@cateId,@cd,@cb,@ud,@ub)";
+            SqlCommand cmd = new SqlCommand(strSql, Connection);
+            cmd.Parameters.AddWithValue("name", ms.Name);
+            cmd.Parameters.AddWithValue("audio", ms.FilePath);
+            cmd.Parameters.AddWithValue("image", ms.ImagePath);
+            cmd.Parameters.AddWithValue("singerId", ms.SignerId);
+            cmd.Parameters.AddWithValue("cateId", ms.CategoryId);
+            cmd.Parameters.AddWithValue("cd", ms.CreateDate);
+            cmd.Parameters.AddWithValue("cb", ms.CreateBy);
+            cmd.Parameters.AddWithValue("ud", ms.UpdateDate);
+            cmd.Parameters.AddWithValue("ub", ms.UpdateBy);
+            cmd.ExecuteNonQuery();
+            Connection.Close();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="target\upload\yvette-de-wit-NYrVisodQ2M-unsplash.jpg" />
     <Content Include="view\admin\composer.aspx" />
     <Content Include="view\admin\edit-page\edit-category.aspx" />
     <Content Include="view\admin\edit-page\edit-singer.aspx" />
@@ -1853,6 +1854,7 @@
     <Compile Include="respository\SingerResponsitory.cs" />
     <Compile Include="util\Constant.cs" />
     <Compile Include="util\DataUtil.cs" />
+    <Compile Include="util\DateUtil.cs" />
     <Compile Include="view\admin\composer.aspx.cs">
       <DependentUpon>composer.aspx</DependentUpon>
     </Compile>
@@ -1867,12 +1869,15 @@
     </Compile>
     <Compile Include="view\admin\edit-page\edit-singer.aspx.cs">
       <DependentUpon>edit-singer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="view\admin\edit-page\edit-singer.aspx.designer.cs">
       <DependentUpon>edit-singer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="view\admin\HttpPostAttribute.cs" />
     <Compile Include="view\admin\news.aspx.cs">
       <DependentUpon>news.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="view\admin\news.aspx.designer.cs">
       <DependentUpon>news.aspx</DependentUpon>
@@ -2204,9 +2209,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="target\upload\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,13 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/client/template-client.master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="LMO_G9.view.client.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/client/template-client.master" AutoEventWireup="true" CodeBehind="ListFavorite.aspx.cs" Inherits="LMO_G9.view.client.ListFavorite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Trang chủ</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="slide" runat="server">
-    <!-- #Include virtual="~/view/library/slideshow.html" -->
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="content" runat="server">
-    <form runat="server">
+    <form runat="server" class="category">
+        <% if (lms.Count > 0)
+            {%>
         <div class="container">
             <div class="row width-100 play-audio">
                 <div class="player">
@@ -118,8 +118,13 @@
                 </div>
             </div>
         </div>
+        <% }
+            else
+            { %>
+        <h1>Không có bài hát nào</h1>
+        <% } %>
     </form>
-</asp:Content>  
+</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="extend" runat="server">
     <script src="../template/js/amplitude.min.js"></script>
 </asp:Content>

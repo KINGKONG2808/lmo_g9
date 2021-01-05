@@ -10,7 +10,7 @@
         <div class="profile">
             <div class="row profile__title">
                 <div class="col-lg-12">
-                    <h1>Chỉnh sửa thông tin cá nhân</h1>
+                    <h1>Thông tin cá nhân</h1>
                 </div>
                 <div class="col-lg-12">
                     <h6>Xin chào
@@ -53,7 +53,7 @@
 
                 <div class="form-group">
                     <label for="txtDateOfBirth">Ngày sinh:</label>
-                    <asp:TextBox ID="txtDateOfBirth" CssClass="form-control" runat="server" placeholder="Nhập vào ngày sinh" />
+                    <asp:TextBox ID="txtDateOfBirth" CssClass="form-control" runat="server" placeholder="Nhập vào ngày sinh" onclick="clearValue();" />
                 </div>
 
                 <div class="form-group">
@@ -63,22 +63,46 @@
 
                 <div class="form-group">
                     <label for="txtPassword">Mật khẩu:</label>
-                    <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" placeholder="Nhập vào mật khẩu:" />
+                    <asp:TextBox ID="txtPassword" type="password" CssClass="form-control" runat="server" placeholder="Nhập vào mật khẩu:" />
                 </div>
             </div>
 
             <div class="row profile__btn">
-                <asp:Button ID="btnUpdate" runat="server" Text="Cập nhật" CssClass="btn btn-custom" />
+                <asp:Button ID="btnUpdate" runat="server" Text="Cập nhật" CssClass="btn btn-custom" OnClick="btnUpdate_Click" />
             </div>
         </div>
     </form>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="extend" runat="server">
+    <style>
+        .datepicker {
+            top: 56vh !important;
+        }
+    </style>
     <script>
+        (function () {
+            $('input').attr('autocomplete', 'off');
+            showDateTimePicker();
+        })();
+
+        // show datetime picker for bootstrap
+        function showDateTimePicker() {
+            $('#content_txtDateOfBirth').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: 'dd/mm/yyyy',
+                language: 'tr'
+            });
+        }
+
         // Add the following code if you want the name of the file appear on select
         $(".custom-file-input").on("change", function () {
             var fileName = $(this).val().split("\\").pop();
             $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
         });
+
+        function clearValue() {
+            $('#content_txtDateOfBirth').removeAttr('value');
+        }
     </script>
 </asp:Content>
