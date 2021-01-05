@@ -30,11 +30,11 @@ function logout() {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: setTimeout(
-            function (msg) {
+            function () {
                 $('#login').removeClass('none');
                 $('#login').parent().removeClass('no-padding');
                 $('#profile-customer').addClass('none');
-                window.location.href = window.location.origin.concat(msg.d);
+                window.location = 'index.aspx';
             }, 1000
         )
     });
