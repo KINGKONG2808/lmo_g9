@@ -79,6 +79,7 @@
     <Content Include="view\admin\category.aspx" />
     <Content Include="view\admin\music.aspx" />
     <Content Include="view\admin\edit-page\edit-composer.aspx" />
+    <Content Include="view\admin\edit-page\edit-news.aspx" />
     <Content Include="view\client\forgot-pasword.aspx" />
     <Content Include="view\client\img\slide1.jpg" />
     <Content Include="view\client\img\slide2.jpg" />
@@ -1941,6 +1942,13 @@
     </Compile>
     <Compile Include="view\admin\edit-page\edit-composer.aspx.designer.cs">
       <DependentUpon>edit-composer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\admin\edit-page\edit-news.aspx.cs">
+      <DependentUpon>edit-news.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\admin\edit-page\edit-news.aspx.designer.cs">
+      <DependentUpon>edit-news.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\client\forgot-pasword.aspx.cs">
       <DependentUpon>forgot-pasword.aspx</DependentUpon>
