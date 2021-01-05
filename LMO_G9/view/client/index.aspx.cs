@@ -154,19 +154,16 @@ namespace LMO_G9.view.client
         }
 
         [WebMethod]
-        public static string logout()
+        public static void logout()
         {
-            string result;
             try
             {
                 HttpContext.Current.Session.Remove("accountClient");
-                result = "/view/client/index.aspx";
             }
             catch (Exception ex)
             {
-                result = ex.Message;
+                
             }
-            return result;
         }
     }
 }

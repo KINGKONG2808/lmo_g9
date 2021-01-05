@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="target\upload\yvette-de-wit-NYrVisodQ2M-unsplash.jpg" />
     <Content Include="view\admin\composer.aspx" />
     <Content Include="view\admin\edit-page\edit-category.aspx" />
     <Content Include="view\admin\edit-page\edit-singer.aspx" />
@@ -1852,6 +1853,7 @@
     <Compile Include="respository\SingerResponsitory.cs" />
     <Compile Include="util\Constant.cs" />
     <Compile Include="util\DataUtil.cs" />
+    <Compile Include="util\DateUtil.cs" />
     <Compile Include="view\admin\composer.aspx.cs">
       <DependentUpon>composer.aspx</DependentUpon>
     </Compile>
@@ -2196,9 +2198,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="target\upload\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
