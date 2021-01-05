@@ -24,6 +24,7 @@ namespace LMO_G9.view.admin
             {
                 loadData();
                 loadDdl();
+                Session["musicEdit"] = null;
             }
         }
 
@@ -78,7 +79,9 @@ namespace LMO_G9.view.admin
             if (e.CommandName == "edit")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
-                
+                Music music = musicRepository.getById(id);
+                Session["musicEdit"] = music;
+                Response.Redirect("~/view/admin/edit-page/edit_music.aspx");
             }
         }
 

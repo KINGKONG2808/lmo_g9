@@ -73,6 +73,7 @@ namespace LMO_G9.respository
                     while (rdCp.Read())
                     {
                         ms.Composer.Add((string)rdCp["composerName"]);
+                        ms.ComposerName = (string)rdCp["composerName"];
                     }
                     Connection.Close();
                 }

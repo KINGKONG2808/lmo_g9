@@ -1,4 +1,4 @@
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -80,6 +80,7 @@
     <Content Include="view\admin\music.aspx" />
     <Content Include="view\admin\edit-page\edit-composer.aspx" />
     <Content Include="view\admin\edit-page\edit-news.aspx" />
+    <Content Include="view\admin\edit-page\edit_music.aspx" />
     <Content Include="view\client\forgot-pasword.aspx" />
     <Content Include="view\client\img\slide1.jpg" />
     <Content Include="view\client\img\slide2.jpg" />
@@ -1846,8 +1847,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="respository\AccountRespository.cs" />
     <Compile Include="respository\CategoryRepository.cs" />
+    <Compile Include="respository\ComposerMusicRepository.cs" />
     <Compile Include="respository\ComposerRepository.cs" />
     <Compile Include="respository\ListMusicRepository.cs" />
+    <Compile Include="respository\MusicFactoryRepository.cs" />
     <Compile Include="respository\MusicRepository.cs" />
     <Compile Include="respository\NewResponsitory.cs" />
     <Compile Include="respository\SingerResponsitory.cs" />
@@ -1955,6 +1958,13 @@
     </Compile>
     <Compile Include="view\admin\edit-page\edit-news.aspx.designer.cs">
       <DependentUpon>edit-news.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\admin\edit-page\edit_music.aspx.cs">
+      <DependentUpon>edit_music.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\admin\edit-page\edit_music.aspx.designer.cs">
+      <DependentUpon>edit_music.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\client\forgot-pasword.aspx.cs">
       <DependentUpon>forgot-pasword.aspx</DependentUpon>

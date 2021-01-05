@@ -8,9 +8,12 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="contentRow" runat="server">
     <div class="container">
         <div class="row">
-            <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal" style="width: 100%; margin: 1rem;">
+           <%-- <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal" style="width: 100%; margin: 1rem;">
                 <i class="fas fa-plus">Add</i>
-            </button>
+            </button>--%>
+            <asp:LinkButton  CssClass="btn btn-primary btn-custom" runat="server" style="width: 100%; margin: 1rem;" PostBackUrl="~/view/admin/edit-page/edit_music.aspx">
+                <i class="fas fa-plus">Add</i>
+            </asp:LinkButton>
         </div>
     </div>
 
@@ -22,16 +25,16 @@
             <div class="table-responsive">
                 <asp:GridView ID="grdDs" runat="server" AllowPaging="true" PageSize="15" AutoGenerateColumns="false" class="table table-bordered" Width="100%" CellSpacing="0" >
                     <Columns>
-                        <asp:ImageField DataImageUrlField="imagePath" HeaderStyle-CssClass="text-center" />
-                        <asp:BoundField DataField="musicId" HeaderText="Music Id" HeaderStyle-CssClass="text-center" />
-                        <asp:BoundField DataField="name" HeaderText="Name" HeaderStyle-CssClass="text-center" />
                         <asp:TemplateField HeaderText="Image">
                             <ItemTemplate>
-                                <asp:Image ID="Image" runat="server" Height="80px" Width="80px" ImageUrl='<%# "~/folder/" +Eval("imagePath") %>' />
+                                <asp:Image ID="Image" runat="server" Height="80px" Width="80px" ImageUrl='<%# Eval("imagePath") %>' />
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:BoundField DataField="musicId" HeaderText="Music Id" HeaderStyle-CssClass="text-center" />
+                        <asp:BoundField DataField="name" HeaderText="Name" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="singerName" HeaderText="Singer" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="categoryName" HeaderText="Category" HeaderStyle-CssClass="text-center" />
+                        <asp:BoundField DataField="composerName" HeaderText="Composer" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="createDate" HeaderText="Create Date" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="createPeople" HeaderText="Create By" HeaderStyle-CssClass="text-center" />
                         <asp:BoundField DataField="updateDate" HeaderText="Update Date" HeaderStyle-CssClass="text-center" />
@@ -77,27 +80,27 @@
                         <br />
                         <div class="col-lg-4">Category:</div>
                         <div class="col-lg-8">
-                            <asp:DropDownList ID="ddlCategory"  CssClass="form-control width-100" placeholder="Choose the category..." runat="server" />
+                            <asp:DropDownList ID="ddlCategory"  CssClass="form-control width-100" runat="server" />
                         </div>
                         <br />
                         <div class="col-lg-4">Singer:</div>
                         <div class="col-lg-8">
-                            <asp:DropDownList ID="ddlSinger" CssClass="form-control width-100" placeholder="Choose the singer..." runat="server" />
+                            <asp:DropDownList ID="ddlSinger" CssClass="form-control width-100" runat="server" />
                         </div>
                         <br />
                         <div class="col-lg-4">Singer featuring:</div>
                         <div class="col-lg-8">
-                            <asp:DropDownList ID="ddlSingerFeat" CssClass="form-control width-100" placeholder="Choose the singer featuring(if exists)..." runat="server" />
+                            <asp:DropDownList ID="ddlSingerFeat" CssClass="form-control width-100" runat="server" />
                         </div>
                         <br />
                         <div class="col-lg-4">Image:</div>
                         <div class="col-lg-8">
-                            <asp:FileUpload ID="imageFUL" CssClass="form-control width-100" placeholder="Choose image" runat="server" />
+                            <asp:FileUpload ID="imageFUL" CssClass="form-control width-100" runat="server" />
                         </div>
                         <br />
                         <div class="col-lg-4">Audio:</div>
                         <div class="col-lg-8">
-                            <asp:FileUpload ID="audioFUL" CssClass="form-control width-100" placeholder="Choose audio" runat="server" />
+                            <asp:FileUpload ID="audioFUL" CssClass="form-control width-100" runat="server" />
                         </div>
                         <div class="form-group">
                              <asp:Label ID="txtError" CssClass="text-error" runat="server" Text="" />

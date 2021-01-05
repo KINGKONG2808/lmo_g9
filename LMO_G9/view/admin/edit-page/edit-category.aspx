@@ -21,7 +21,7 @@
                 Name:
             </div>
             <div class="col-lg-9 padding-1rem" >
-                <asp:TextBox ID="txtName" runat="server" CssClass="form-control width-100" />
+                <asp:TextBox ID="txtName" runat="server"  CssClass="form-control width-100" />
             </div>
             <div class="col-lg-3 padding-1rem d-none">
                 Create by:

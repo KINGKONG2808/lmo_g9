@@ -9,21 +9,21 @@ namespace LMO_G9.model
     {
         private int musicFactoryId;
         private int musicId;
-        private int accountId;
+        private int singerId;
 
         public MusicFactory()
         {
         }
 
-        public MusicFactory(int musicFactoryId, int musicId, int accountId)
+        public MusicFactory(int musicFactoryId, int musicId, int singerId)
         {
             this.MusicFactoryId = musicFactoryId;
             this.MusicId = musicId;
-            this.AccountId = accountId;
+            this.SingerId = singerId;
         }
 
         public int MusicFactoryId { get => musicFactoryId; set => musicFactoryId = value; }
         public int MusicId { get => musicId; set => musicId = value; }
-        public int AccountId { get => accountId; set => accountId = value; }
+        public int SingerId { get => singerId; set => singerId = value; }
     }
 }
