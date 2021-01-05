@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -79,6 +79,7 @@
     <Content Include="view\admin\category.aspx" />
     <Content Include="view\admin\music.aspx" />
     <Content Include="view\admin\edit-page\edit-composer.aspx" />
+    <Content Include="view\admin\edit-page\edit-news.aspx" />
     <Content Include="view\client\forgot-pasword.aspx" />
     <Content Include="view\client\img\slide1.jpg" />
     <Content Include="view\client\img\slide2.jpg" />
@@ -89,7 +90,6 @@
     <Content Include="view\client\signin.aspx" />
     <Content Include="view\client\signup.aspx" />
     <Content Include="view\client\profile.aspx" />
-    <Content Include="view\client\Upload.aspx" />
     <Content Include="view\library\404.html" />
     <Content Include="view\library\footer.html" />
     <Content Include="view\library\menubar-admin.html" />
@@ -1867,12 +1867,15 @@
     </Compile>
     <Compile Include="view\admin\edit-page\edit-singer.aspx.cs">
       <DependentUpon>edit-singer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="view\admin\edit-page\edit-singer.aspx.designer.cs">
       <DependentUpon>edit-singer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="view\admin\HttpPostAttribute.cs" />
     <Compile Include="view\admin\news.aspx.cs">
       <DependentUpon>news.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="view\admin\news.aspx.designer.cs">
       <DependentUpon>news.aspx</DependentUpon>
@@ -1946,6 +1949,13 @@
     <Compile Include="view\admin\edit-page\edit-composer.aspx.designer.cs">
       <DependentUpon>edit-composer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="view\admin\edit-page\edit-news.aspx.cs">
+      <DependentUpon>edit-news.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\admin\edit-page\edit-news.aspx.designer.cs">
+      <DependentUpon>edit-news.aspx</DependentUpon>
+    </Compile>
     <Compile Include="view\client\forgot-pasword.aspx.cs">
       <DependentUpon>forgot-pasword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1987,13 +1997,6 @@
     </Compile>
     <Compile Include="view\client\profile.aspx.designer.cs">
       <DependentUpon>profile.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="view\client\Upload.aspx.cs">
-      <DependentUpon>Upload.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="view\client\Upload.aspx.designer.cs">
-      <DependentUpon>Upload.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

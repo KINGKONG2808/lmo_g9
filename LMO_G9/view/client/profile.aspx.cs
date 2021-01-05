@@ -30,7 +30,7 @@ namespace LMO_G9.view.client
         {
             if (Page.IsValid && FileUpload1.HasFile && CheckFileType(FileUpload1.FileName))
             {
-                string fileName = "~/target/upload/" + FileUpload1.FileName;
+                string fileName = Constant.RESOURCE_PATH + FileUpload1.FileName;
                 string filePath = MapPath(fileName);
                 FileUpload1.SaveAs(filePath);
                 avatarPath.ImageUrl = fileName;

@@ -95,19 +95,17 @@ namespace LMO_G9.respository
         public void onUpdate(New news)
         {
             Connection.Open();
-            string strSql = "update new " +
+            string strSql = "update news " +
                 " set title = @title," +
-                " set short_content = @short_content," +
-                " set content = @content," +
-                " set img_path = @img_path," +
+                " short_content = @short_content," +
+                " content = @content," +
                 " update_date = @ud," +
                 " update_by = @ub " +
-                " where composer_id = @id";
+                " where news_id = @id";
             SqlCommand cmd = new SqlCommand(strSql, Connection);
             cmd.Parameters.AddWithValue("title", news.Title);
             cmd.Parameters.AddWithValue("short_content", news.ShortContent);
             cmd.Parameters.AddWithValue("content", news.Content);
-            cmd.Parameters.AddWithValue("i_path", news.ImagePath);
             cmd.Parameters.AddWithValue("ud", news.UpdateDate);
             cmd.Parameters.AddWithValue("ub", news.UpdateBy);
             cmd.Parameters.AddWithValue("id", news.NewsId);
