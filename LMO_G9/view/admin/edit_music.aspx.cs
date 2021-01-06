@@ -31,6 +31,7 @@ namespace LMO_G9.view.admin
             {
                 loadDdl();
                 typeP.Text = "Add";
+                msBak = new Music();
                 account = (Account)Session["account"];
                 if (Session["musicEdit"] != null)
                 {

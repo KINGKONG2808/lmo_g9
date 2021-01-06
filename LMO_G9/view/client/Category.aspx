@@ -15,7 +15,7 @@
                     <h5>Không có danh sách thể loại</h5>
             <% } else {
                     foreach (LMO_G9.model.Category ctg in LMO_G9.view.client.Category.lcg) { %>
-                        <div class="col-sm-4 no-padding">
+                        <div class="col-sm-4 grid-padding">
                             <div class="thumbnail">
                                 <img src="../template/images/demo.jfif" alt="Paris">
                                 <a href="list-music.aspx?id=<%=ctg.CategoryId %>">

@@ -83,7 +83,7 @@
     <Content Include="view\admin\music.aspx" />
     <Content Include="view\admin\edit-page\edit-composer.aspx" />
     <Content Include="view\admin\edit-page\edit-news.aspx" />
-    <Content Include="view\admin\edit-page\edit_music.aspx" />
+    <Content Include="view\admin\edit_music.aspx" />
     <Content Include="view\admin\profile.aspx" />
     <Content Include="view\client\category.aspx" />
     <Content Include="view\client\forgot-pasword.aspx" />
@@ -1969,11 +1969,11 @@
     <Compile Include="view\admin\edit-page\edit-news.aspx.designer.cs">
       <DependentUpon>edit-news.aspx</DependentUpon>
     </Compile>
-    <Compile Include="view\admin\edit-page\edit_music.aspx.cs">
+    <Compile Include="view\admin\edit_music.aspx.cs">
       <DependentUpon>edit_music.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="view\admin\edit-page\edit_music.aspx.designer.cs">
+    <Compile Include="view\admin\edit_music.aspx.designer.cs">
       <DependentUpon>edit_music.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\admin\UserControlType.cs" />

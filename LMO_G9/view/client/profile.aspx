@@ -30,9 +30,9 @@
                     </div>
                     <div class="row file-upload">
                         <div class="col-lg-10">
-                            <div class="custom-file">
+                            <div class="custom-file width-100">
                                 <asp:FileUpload ID="FileUpload1" runat="server" CssClass="custom-file-input" name="filename" />
-                                <label class="custom-file-label" for="content_FileUpload1"><i class="far fa-file-image"></i>&nbsp;&nbsp;&nbsp;Chọn ảnh đại diện</label>
+                                <label class="custom-file-label width-100" for="content_FileUpload1"><i class="far fa-file-image"></i>&nbsp;&nbsp;&nbsp;Chọn ảnh đại diện</label>
                             </div>
                         </div>
                         <div class="col-lg-2 text-center">

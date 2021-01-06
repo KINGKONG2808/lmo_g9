@@ -129,6 +129,9 @@
 .padding-2rem {
   padding: 2rem;
 }
+padding-left-10 {
+  padding-left: 10vw;
+}
 .datepicker {
   top: 265px !important;
   width: 250px;

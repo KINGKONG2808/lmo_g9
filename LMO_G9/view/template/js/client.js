@@ -48,9 +48,14 @@ function changeMusic(id) {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (msg) {
-            $("#content_image").attr('src',msg.d.ImagePath);
-            $("#content_sourcemp3").attr('src',msg.d.AudioPath);
-            $("#content_sourceogg").attr('src',msg.d.AudioPath);
+            var imagePath = msg.d.ImagePath;
+            var imagePathResult = imagePath.replace("~/", "../../");
+            var audioPath = msg.d.AudioPath;
+            var audioPathResult = audioPath.replace("~/", "../../");
+
+            $("#content_image").attr('src', imagePathResult);
+            $("#content_sourcemp3").attr('src', audioPathResult);
+            $("#content_sourceogg").attr('src', audioPathResult);
             $("#content_musicName").text(msg.d.Name);
             $("#content_composerName").text(msg.d.ComposerName);
             $("#content_singerName").text(msg.d.SingerName);
