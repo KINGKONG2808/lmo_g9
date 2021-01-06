@@ -75,11 +75,6 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="extendOther" runat="server">
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="extendScript" runat="server">
-    <style>
-        .datepicker {
-            top: 56vh !important;
-        }
-    </style>
     <script>
         (function () {
             $('input').attr('autocomplete', 'off');

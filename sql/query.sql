@@ -1,4 +1,3 @@
-
 use master
 go
 /*create databae*/
@@ -8,8 +7,8 @@ use lmo_g9
 go
 /*create table*/
 -- account
-drop table account
-truncate table account
+--drop table account
+--truncate table account
 
 create table account (
 	account_id int identity(1, 1) not null primary key,
