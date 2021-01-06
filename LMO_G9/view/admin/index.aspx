@@ -10,7 +10,7 @@
     <!-- Content Row -->
     <div class="container">
         <div class="row">
-            <img src="../template/images/logo.png" style="margin-left: 28vw" />
+            <img src="../template/images/logo.png" style="margin-left: 20vw; padding: 2rem 0;" />
         </div>
         <div class="row">
             <div class="col-lg-6">
