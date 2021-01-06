@@ -189,9 +189,10 @@ namespace LMO_G9.respository
                     SqlCommand cmdFt = new SqlCommand(sqlFt, Connection);
                     cmdFt.Parameters.AddWithValue("msid", ms.MusicId);
                     SqlDataReader rdFt = cmdFt.ExecuteReader();
+                    ms.Singer = new List<string>();
                     while (rdFt.Read())
                     {
-                        ms.Singer.Add((string)rd["singerName"]);
+                        ms.Singer.Add((string)rdFt["singerName"]);
                     }
                     Connection.Close();
 
@@ -200,9 +201,10 @@ namespace LMO_G9.respository
                     SqlCommand cmdCp = new SqlCommand(sqlCp, Connection);
                     cmdCp.Parameters.AddWithValue("msid", ms.MusicId);
                     SqlDataReader rdCp = cmdCp.ExecuteReader();
+                    ms.Composer = new List<string>();
                     while (rdCp.Read())
                     {
-                        ms.Composer.Add((string)rd["composerName"]);
+                        ms.Composer.Add((string)rdCp["composerName"]);
                     }
                     Connection.Close();
                 }
@@ -258,9 +260,10 @@ namespace LMO_G9.respository
                     SqlCommand cmdFt = new SqlCommand(sqlFt, Connection);
                     cmdFt.Parameters.AddWithValue("msid", ms.MusicId);
                     SqlDataReader rdFt = cmdFt.ExecuteReader();
+                    ms.Singer = new List<string>();
                     while (rdFt.Read())
                     {
-                        ms.Singer.Add((string)rd["singerName"]);
+                        ms.Singer.Add((string)rdFt["singerName"]);
                     }
                     Connection.Close();
 
@@ -269,9 +272,10 @@ namespace LMO_G9.respository
                     SqlCommand cmdCp = new SqlCommand(sqlCp, Connection);
                     cmdCp.Parameters.AddWithValue("msid", ms.MusicId);
                     SqlDataReader rdCp = cmdCp.ExecuteReader();
+                    ms.Composer = new List<string>();
                     while (rdCp.Read())
                     {
-                        ms.Composer.Add((string)rd["composerName"]);
+                        ms.Composer.Add((string)rdCp["composerName"]);
                     }
                     Connection.Close();
                 }
@@ -289,10 +293,9 @@ namespace LMO_G9.respository
                 " from music ms " +
                 "left join singer sng on ms.singer_id = sng.singer_id " +
                 "left join category ctg on ms.category_id = ctg.category_id " +
-                "where ms.name LIKE  '%@value%'";
+                "where ms.name LIKE '%" + value  + "%'";
             Connection.Open();
             SqlCommand cmd = new SqlCommand(strSql, Connection);
-            cmd.Parameters.AddWithValue("value", value);
             SqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {

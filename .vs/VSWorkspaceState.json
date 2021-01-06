@@ -3,7 +3,9 @@
     "",
     "\\LMO_G9",
     "\\LMO_G9\\view",
+    "\\LMO_G9\\view\\admin",
     "\\LMO_G9\\view\\template"
   ],
+  "SelectedNode": "\\LMO_G9\\view\\admin\\music.aspx",
   "PreviewInSolutionExplorer": false
 }

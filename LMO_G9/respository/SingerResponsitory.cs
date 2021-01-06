@@ -92,11 +92,13 @@ namespace LMO_G9.respository
             Connection.Open();
             string strSql = "update singer " +
                 " set name = @name," +
+                " image_path = @imagePath," +
                 " update_date = @ud," +
                 " update_by = @ub " +
                 " where singer_id = @id";
             SqlCommand cmd = new SqlCommand(strSql, Connection);
             cmd.Parameters.AddWithValue("name", com.Name);
+            cmd.Parameters.AddWithValue("imagePath", com.ImagePath);
             cmd.Parameters.AddWithValue("ud", com.UpdateDate);
             cmd.Parameters.AddWithValue("ub", com.UpdateBy);
             cmd.Parameters.AddWithValue("id", com.SingerId);

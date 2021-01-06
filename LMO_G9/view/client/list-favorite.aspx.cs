@@ -36,13 +36,6 @@ namespace LMO_G9.view.client
                 image.Src = lms[0].ImagePath;
                 musicName.InnerText = lms[0].Name;
                 composerName.InnerText = lms[0].ComposerName;
-                if (lms[0].Composer.Count > 0)
-                {
-                    foreach (string ft in lms[0].Composer)
-                    {
-                        composerName.InnerText = composerName.InnerText + " ft " + ft;
-                    }
-                }
                 singerName.InnerText = lms[0].SingerName;
                 if (lms[0].Singer.Count > 0)
                 {
@@ -53,7 +46,8 @@ namespace LMO_G9.view.client
                 }
                 foreach (MusicDto ms in lms)
                 {
-                    ms.ImgHTML = "<img src='" + ms.ImagePath + "' runat='" + "server' " + "id=" + "'Img'" + "class=" + "'img second'" + "/>";
+                    string imagePath = ms.ImagePath.Replace("~/", "../../");
+                    ms.ImgHTML = "<img src='" + imagePath + "' runat='" + "server' " + "id=" + "'Img'" + "class=" + "'img second'" + "/>";
                 }
             }
         }
