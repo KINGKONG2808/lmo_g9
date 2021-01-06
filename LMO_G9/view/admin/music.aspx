@@ -12,7 +12,7 @@
             <%-- <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal" style="width: 100%; margin: 1rem;">
                 <i class="fas fa-plus">Add</i>
             </button>--%>
-            <asp:LinkButton CssClass="btn btn-primary btn-custom" runat="server" Style="width: 100%; margin: 1rem;" PostBackUrl="~/view/admin/edit-page/edit_music.aspx">
+            <asp:LinkButton CssClass="btn btn-primary btn-custom" runat="server" Style="width: 100%; margin: 1rem;" PostBackUrl="~/view/admin/edit_music.aspx">
                 <i class="fas fa-plus">Add</i>
             </asp:LinkButton>
         </div>
@@ -102,7 +102,8 @@
                         <br />
                         <div class="col-lg-4">Image:</div>
                         <div class="col-lg-8">
-                            <asp:FileUpload ID="imageFUL" CssClass="form-control width-100" runat="server" />
+                            <asp:FileUpload ID="imageFUL" CssClass="form-control width-100 custom-file-input" runat="server" />
+                            <label class="custom-file-label" for="contentRow_FileUpload1"><i class="far fa-file-image"></i>&nbsp;&nbsp;&nbsp;Choose an image</label>
                         </div>
                         <br />
                         <div class="col-lg-4">Audio:</div>
