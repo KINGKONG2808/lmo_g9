@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="target\upload\05012021_043323_PM_106712958_900534967023752_6154247878363760044_n.jpg" />
+    <Content Include="target\upload\TRG09936.jpg" />
     <Content Include="target\upload\yvette-de-wit-NYrVisodQ2M-unsplash.jpg" />
     <Content Include="view\admin\composer.aspx" />
     <Content Include="view\admin\edit-page\edit-category.aspx" />
@@ -82,6 +84,7 @@
     <Content Include="view\admin\edit-page\edit-composer.aspx" />
     <Content Include="view\admin\edit-page\edit-news.aspx" />
     <Content Include="view\admin\edit-page\edit_music.aspx" />
+    <Content Include="view\client\Category.aspx" />
     <Content Include="view\client\forgot-pasword.aspx" />
     <Content Include="view\client\img\slide1.jpg" />
     <Content Include="view\client\img\slide2.jpg" />
@@ -89,6 +92,9 @@
     <Content Include="view\client\img\slide5.jpg" />
     <Content Include="view\client\img\slide3.jpg" />
     <Content Include="view\client\index.aspx" />
+    <Content Include="view\client\ListFavorite.aspx" />
+    <Content Include="view\client\ListMusic.aspx" />
+    <Content Include="view\client\search.aspx" />
     <Content Include="view\client\signin.aspx" />
     <Content Include="view\client\signup.aspx" />
     <Content Include="view\client\profile.aspx" />
@@ -1968,12 +1974,37 @@
     <Compile Include="view\admin\edit-page\edit_music.aspx.designer.cs">
       <DependentUpon>edit_music.aspx</DependentUpon>
     </Compile>
+    <Compile Include="view\admin\UserControlType.cs" />
+    <Compile Include="view\client\Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\client\Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
     <Compile Include="view\client\forgot-pasword.aspx.cs">
       <DependentUpon>forgot-pasword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="view\client\forgot-pasword.aspx.designer.cs">
       <DependentUpon>forgot-pasword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\client\ListFavorite.aspx.cs">
+      <DependentUpon>ListFavorite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\client\ListFavorite.aspx.designer.cs">
+      <DependentUpon>ListFavorite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\client\ListMusic.aspx.cs">
+      <DependentUpon>ListMusic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\client\ListMusic.aspx.designer.cs">
+      <DependentUpon>ListMusic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\client\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\client\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\client\signin.aspx.cs">
       <DependentUpon>signin.aspx</DependentUpon>
