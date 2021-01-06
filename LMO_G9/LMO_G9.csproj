@@ -84,7 +84,8 @@
     <Content Include="view\admin\edit-page\edit-composer.aspx" />
     <Content Include="view\admin\edit-page\edit-news.aspx" />
     <Content Include="view\admin\edit-page\edit_music.aspx" />
-    <Content Include="view\client\Category.aspx" />
+    <Content Include="view\admin\profile.aspx" />
+    <Content Include="view\client\category.aspx" />
     <Content Include="view\client\forgot-pasword.aspx" />
     <Content Include="view\client\img\slide1.jpg" />
     <Content Include="view\client\img\slide2.jpg" />
@@ -92,8 +93,8 @@
     <Content Include="view\client\img\slide5.jpg" />
     <Content Include="view\client\img\slide3.jpg" />
     <Content Include="view\client\index.aspx" />
-    <Content Include="view\client\ListFavorite.aspx" />
-    <Content Include="view\client\ListMusic.aspx" />
+    <Content Include="view\client\list-favorite.aspx" />
+    <Content Include="view\client\list-music.aspx" />
     <Content Include="view\client\search.aspx" />
     <Content Include="view\client\signin.aspx" />
     <Content Include="view\client\signup.aspx" />
@@ -110,6 +111,7 @@
     <Content Include="view\template\css\sb-admin-2.min.css" />
     <Content Include="view\template\css\util.css" />
     <Content Include="view\template\images\bg-01.jpg" />
+    <Content Include="view\template\images\demo.jfif" />
     <Content Include="view\template\images\footer.jpg" />
     <Content Include="view\template\images\icons\images.ico" />
     <Content Include="view\template\images\logo.png" />
@@ -1975,11 +1977,19 @@
       <DependentUpon>edit_music.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\admin\UserControlType.cs" />
-    <Compile Include="view\client\Category.aspx.cs">
-      <DependentUpon>Category.aspx</DependentUpon>
+    <Compile Include="view\admin\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="view\client\Category.aspx.designer.cs">
-      <DependentUpon>Category.aspx</DependentUpon>
+    <Compile Include="view\admin\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\client\category.aspx.cs">
+      <DependentUpon>category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\client\category.aspx.designer.cs">
+      <DependentUpon>category.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\client\forgot-pasword.aspx.cs">
       <DependentUpon>forgot-pasword.aspx</DependentUpon>
@@ -1988,20 +1998,23 @@
     <Compile Include="view\client\forgot-pasword.aspx.designer.cs">
       <DependentUpon>forgot-pasword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="view\client\ListFavorite.aspx.cs">
-      <DependentUpon>ListFavorite.aspx</DependentUpon>
+    <Compile Include="view\client\list-favorite.aspx.cs">
+      <DependentUpon>list-favorite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="view\client\ListFavorite.aspx.designer.cs">
-      <DependentUpon>ListFavorite.aspx</DependentUpon>
+    <Compile Include="view\client\list-favorite.aspx.designer.cs">
+      <DependentUpon>list-favorite.aspx</DependentUpon>
     </Compile>
-    <Compile Include="view\client\ListMusic.aspx.cs">
-      <DependentUpon>ListMusic.aspx</DependentUpon>
+    <Compile Include="view\client\list-music.aspx.cs">
+      <DependentUpon>list-music.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="view\client\ListMusic.aspx.designer.cs">
-      <DependentUpon>ListMusic.aspx</DependentUpon>
+    <Compile Include="view\client\list-music.aspx.designer.cs">
+      <DependentUpon>list-music.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\client\search.aspx.cs">
       <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="view\client\search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
@@ -2243,6 +2256,10 @@
     <Content Include="view\template\css\less\client\_font.less" />
     <Content Include="view\template\css\less\client\_content.less" />
     <Content Include="view\template\css\less\client\_profile.less" />
+    <Content Include="view\template\css\less\client\_category.less" />
+    <Content Include="view\template\css\less\admin\_config.less" />
+    <Content Include="view\template\css\less\admin\_profile.less" />
+    <Content Include="view\template\css\less\admin\theme_style.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

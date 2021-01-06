@@ -101,3 +101,5 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="extendOther" runat="server">
 </asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="extendScript" runat="server">
+</asp:Content>

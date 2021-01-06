@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/client/template-client.master" AutoEventWireup="true" CodeBehind="ListFavorite.aspx.cs" Inherits="LMO_G9.view.client.ListFavorite" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/client/template-client.master" AutoEventWireup="true" CodeBehind="list-favorite.aspx.cs" Inherits="LMO_G9.view.client.ListFavorite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

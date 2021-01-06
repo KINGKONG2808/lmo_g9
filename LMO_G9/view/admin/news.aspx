@@ -1,4 +1,4 @@
-﻿.<%@ Page Title="" Language="C#" MasterPageFile="~/view/admin/template-admin.master" AutoEventWireup="true" CodeBehind="news.aspx.cs" Inherits="LMO_G9.view.admin.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/admin/template-admin.master" AutoEventWireup="true" CodeBehind="news.aspx.cs" Inherits="LMO_G9.view.admin.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>News Manage</title>
 </asp:Content>
@@ -111,4 +111,6 @@
         </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="extendOther" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="extendScript" runat="server">
 </asp:Content>

@@ -83,6 +83,7 @@
         (function () {
             $('input').attr('autocomplete', 'off');
             showDateTimePicker();
+            $('.custom-file-label').text('<%=account.AvatarPath%>');
         })();
 
         // show datetime picker for bootstrap

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/admin/template-admin.master" AutoEventWireup="true" CodeBehind="music.aspx.cs" Inherits="LMO_G9.view.admin.WebForm16" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Music</title>
 </asp:Content>
@@ -8,10 +9,10 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="contentRow" runat="server">
     <div class="container">
         <div class="row">
-           <%-- <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal" style="width: 100%; margin: 1rem;">
+            <%-- <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal" style="width: 100%; margin: 1rem;">
                 <i class="fas fa-plus">Add</i>
             </button>--%>
-            <asp:LinkButton  CssClass="btn btn-primary btn-custom" runat="server" style="width: 100%; margin: 1rem;" PostBackUrl="~/view/admin/edit-page/edit_music.aspx">
+            <asp:LinkButton CssClass="btn btn-primary btn-custom" runat="server" Style="width: 100%; margin: 1rem;" PostBackUrl="~/view/admin/edit-page/edit_music.aspx">
                 <i class="fas fa-plus">Add</i>
             </asp:LinkButton>
         </div>
@@ -23,11 +24,17 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <asp:GridView ID="grdDs" runat="server" AllowPaging="true" PageSize="15" AutoGenerateColumns="false" class="table table-bordered" Width="100%" CellSpacing="0" >
+                <asp:GridView ID="grdDs" runat="server" AllowPaging="true" PageSize="15" AutoGenerateColumns="false" class="table table-bordered" Width="100%" CellSpacing="0">
                     <Columns>
                         <asp:TemplateField HeaderText="Image">
                             <ItemTemplate>
                                 <asp:Image ID="Image" runat="server" Height="80px" Width="80px" ImageUrl='<%# Eval("imagePath") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Audio">
+                            <ItemTemplate>
+                                <audio id="listen" runat="server" src='<%# Eval("audioPath") %>' controls style="width: 120px">
+                                </audio>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="musicId" HeaderText="Music Id" HeaderStyle-CssClass="text-center" />
@@ -76,11 +83,11 @@
                         <div class="col-lg-4">Music name:</div>
                         <div class="col-lg-8">
                             <asp:TextBox ID="txtMusicName" CssClass="form-control width-100" type="text" placeholder="Enter the music name ..." runat="server" />
-                        </div>       
+                        </div>
                         <br />
                         <div class="col-lg-4">Category:</div>
                         <div class="col-lg-8">
-                            <asp:DropDownList ID="ddlCategory"  CssClass="form-control width-100" runat="server" />
+                            <asp:DropDownList ID="ddlCategory" CssClass="form-control width-100" runat="server" />
                         </div>
                         <br />
                         <div class="col-lg-4">Singer:</div>
@@ -103,18 +110,20 @@
                             <asp:FileUpload ID="audioFUL" CssClass="form-control width-100" runat="server" />
                         </div>
                         <div class="form-group">
-                             <asp:Label ID="txtError" CssClass="text-error" runat="server" Text="" />
+                            <asp:Label ID="txtError" CssClass="text-error" runat="server" Text="" />
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveMusic('contentRow_txtMusicName', 'contentRow_ddlCategory', 'contentRow_ddlSinger', 'contentRow_ddlSingerFeat', 'contentRow_imageFUL', 'contentRow_audioFUL');">Save</button>
-                    
+
                 </div>
             </div>
         </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="extendOther" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="extendScript" runat="server">
 </asp:Content>

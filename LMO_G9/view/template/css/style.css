@@ -407,7 +407,51 @@
   background: linear-gradient(-32deg, #ff8d00, #3fff00);
 }
 .category {
-  padding-top: 8rem;
+  padding-top: 5rem;
+}
+.category__title {
+  text-align: center;
+}
+.category__title h1 {
+  width: 100%;
+  font-weight: bold;
+  padding: 2rem 0;
+}
+.category__grid {
+  text-align: center;
+}
+.category__grid h5 {
+  width: 100%;
+  padding: 2rem;
+  font-style: italic;
+}
+.category__grid .thumbnail {
+  width: 18rem;
+  height: 18rem;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.category__grid .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.category__grid .thumbnail a {
+  color: #ffffff;
+  position: absolute;
+  width: 75%;
+  left: 1px;
+  top: 15rem;
+  padding: 0.7rem 0;
+  background: #00000082;
+  border-radius: 1rem;
+}
+.category__grid .thumbnail a:hover {
+  text-decoration: none;
+  color: #05fb24;
+}
+.category__grid .thumbnail a p {
+  margin: 0;
 }
 .footer {
   background-image: url("../images/footer.jpg");

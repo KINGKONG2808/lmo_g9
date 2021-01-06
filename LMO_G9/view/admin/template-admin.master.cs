@@ -12,6 +12,7 @@ namespace LMO_G9.view.admin
     {
         public Account account;
         public string fullname = "";
+        public string avatarPath = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,6 +24,7 @@ namespace LMO_G9.view.admin
                     if (account.Fullname != null)
                     {
                         fullname = account.Fullname;
+                        avatarPath = account.AvatarPath;
                     }
                 } else
                 {
