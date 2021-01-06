@@ -9,11 +9,11 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentRow" runat="server">
       <!-- DataTales Example -->
-    <div class="container">
+     <div class="container">
         <div class="row">
-            <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal" style="width: 100%; margin: 1rem;">
+            <asp:LinkButton CssClass="btn btn-primary btn-custom" runat="server" Style="width: 100%; margin: 1rem;" PostBackUrl="~/view/admin/edit-page/edit-singer.aspx">
                 <i class="fas fa-plus">Add</i>
-            </button>
+            </asp:LinkButton>
         </div>
     </div>
     <div class="card shadow mb-4">
@@ -65,7 +65,11 @@
                         <Columns>
                             <asp:BoundField DataField="singerId" HeaderText="Singer Id" HeaderStyle-CssClass="text-center" />
                             <asp:BoundField DataField="name" HeaderText="Name" HeaderStyle-CssClass="text-center" />
-                            <asp:BoundField DataField="imagePath" HeaderText="Image Path" HeaderStyle-CssClass="text-center" />
+                            <asp:TemplateField HeaderText="Image">
+                                <ItemTemplate>
+                                    <asp:Image ID="Image" runat="server" Height="80px" Width="80px" ImageUrl='<%# Eval("imagePath") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField DataField="createDate" HeaderText="Create Date" HeaderStyle-CssClass="text-center" />
                             <asp:BoundField DataField="CreatePeople" HeaderText="Create By" HeaderStyle-CssClass="text-center" />
                             <asp:BoundField DataField="updateDate" HeaderText="Update Date" HeaderStyle-CssClass="text-center" />

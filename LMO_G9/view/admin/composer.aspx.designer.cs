@@ -15,40 +15,40 @@ namespace LMO_G9.view.admin
     {
 
         /// <summary>
-        /// txtComposerName control.
+        /// txtcomposername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtComposerName;
+        protected global::System.Web.UI.WebControls.TextBox txtcomposername;
 
         /// <summary>
-        /// txtError control.
+        /// txterror control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtError;
+        protected global::System.Web.UI.WebControls.Label txterror;
 
         /// <summary>
-        /// txtImgPath control.
+        /// txtimgpath control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtImgPath;
+        protected global::System.Web.UI.WebControls.TextBox txtimgpath;
 
         /// <summary>
-        /// txtError1 control.
+        /// txterror1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtError1;
+        protected global::System.Web.UI.WebControls.Label txterror1;
 
         /// <summary>
         /// grComposer control.

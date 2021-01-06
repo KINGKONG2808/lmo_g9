@@ -13,45 +13,45 @@
     <!-- DataTales Example -->
     <div class="container">
         <div class="row">
-            <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal" style="width: 100%; margin: 1rem;">
+            <asp:LinkButton CssClass="btn btn-primary btn-custom" runat="server" Style="width: 100%; margin: 1rem;" PostBackUrl="~/view/admin/edit-page/edit-composer.aspx">
                 <i class="fas fa-plus">Add</i>
-            </button>
+            </asp:LinkButton>
         </div>
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="examplemodal" tabindex="-1" role="dialog" aria-labelledby="examplemodallabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Composer Information</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <h5 class="modal-title" id="examplemodallabel">composer information</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-lg-4">Composer name:</div>
+                                <div class="col-lg-4">composer name:</div>
                                 <div class="col-lg-8">
-                                    <asp:TextBox ID="txtComposerName" CssClass="form-control width-100" type="text" placeholder="Enter the Composer name ..." runat="server" />
+                                    <asp:TextBox ID="txtcomposername" CssClass="form-control width-100" type="text" placeholder="enter the composer name ..." runat="server" />
                                 </div>
                                 <div class="form-group">
-                                    <asp:Label ID="txtError" CssClass="text-error" runat="server" Text="" />
+                                    <asp:Label ID="txterror" CssClass="text-error" runat="server" Text="" />
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4">Image path:</div>
+                                <div class="col-lg-4">image path:</div>
                                 <div class="col-lg-8">
-                                    <asp:TextBox ID="txtImgPath" CssClass="form-control width-100" type="text" placeholder="Enter the Image path ..." runat="server" />
+                                    <asp:TextBox ID="txtimgpath" CssClass="form-control width-100" type="text" placeholder="enter the image path ..." runat="server" />
                                 </div>
                                 <div class="form-group">
-                                    <asp:Label ID="txtError1" CssClass="text-error" runat="server" Text="" />
+                                    <asp:Label ID="txterror1" CssClass="text-error" runat="server" Text="" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveComposer('contentRow_txtComposerName', 'contentRow_txtImgPath');">Save</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="savecomposer('contentrow_txtcomposername', 'contentrow_txtimgpath');">save</button>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,11 @@
                         <Columns>
                             <asp:BoundField DataField="composerId" HeaderText="Composer Id" HeaderStyle-CssClass="text-center" />
                             <asp:BoundField DataField="name" HeaderText="Name" HeaderStyle-CssClass="text-center" />
-                            <asp:BoundField DataField="imagePath" HeaderText="Image Path" HeaderStyle-CssClass="text-center" />
+                            <asp:TemplateField HeaderText="Image">
+                                <ItemTemplate>
+                                    <asp:Image ID="Image" runat="server" Height="80px" Width="80px" ImageUrl='<%# Eval("imagePath") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField DataField="createDate" HeaderText="Create Date" HeaderStyle-CssClass="text-center" />
                             <asp:BoundField DataField="CreatePeople" HeaderText="Create By" HeaderStyle-CssClass="text-center" />
                             <asp:BoundField DataField="updateDate" HeaderText="Update Date" HeaderStyle-CssClass="text-center" />
