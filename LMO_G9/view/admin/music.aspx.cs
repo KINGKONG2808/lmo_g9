@@ -81,7 +81,7 @@ namespace LMO_G9.view.admin
                 int id = Convert.ToInt32(e.CommandArgument);
                 Music music = musicRepository.getById(id);
                 Session["musicEdit"] = music;
-                Response.Redirect("~/view/admin/edit-page/edit_music.aspx");
+                Response.Redirect("~/view/admin/edit_music.aspx");
             }
         }
 

@@ -56,16 +56,21 @@
             <div class="col-lg-3 padding-1rem">
                 Image:
             </div>
-            <div class="col-lg-9 padding-1rem">
-                <asp:FileUpload ID="imageFUL" CssClass="form-control width-100 " runat="server" />
-                <%--custom-file-input--%>
-                <%--<label class="custom-file-label" for="content_imageFUL"><i class="far fa-file-image"></i>&nbsp;&nbsp;&nbsp;Chọn ảnh đại diện</label>--%>
+            <div class="col-lg-9 padding-1rem ">
+                <div class="custom-file">
+                    <asp:FileUpload ID="imageFUL" CssClass="form-control width-100 custom-file-input" runat="server" />
+                    <%--custom-file-input--%>
+                    <label id="labelImage" class="custom-file-label" for="content_imageFUL"><i class="far fa-file-image"></i>&nbsp;&nbsp;&nbsp;Chọn the image</label>
+                </div>
             </div>
             <div class="col-lg-3 padding-1rem">
                 Audio:
             </div>
             <div class="col-lg-9 padding-1rem">
-                <asp:FileUpload ID="audioFUL" CssClass="form-control width-100" runat="server" />
+                <div class="custom-file">
+                    <asp:FileUpload ID="audioFUL" CssClass="form-control width-100 custom-file-input" runat="server" />
+                    <label id="labelAudio" class="custom-file-label" for="content_imageFUL"><i class="far fa-file-image"></i>&nbsp;&nbsp;&nbsp;Choose the audio</label>
+                </div>
             </div>
 
 
@@ -98,7 +103,7 @@
         </div>
         <div class="row padding-2rem">
             <div class="col-lg-4">
-                <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary width-100" OnClick="btnSave_Click"/>
+                <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary width-100" OnClick="btnSave_Click" />
             </div>
             <div class="col-lg-4"></div>
             <div class="col-lg-4 text-right">
@@ -108,8 +113,19 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="extendOther" runat="server">
-    <script>
-    </script>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="extendScript" runat="server">
+    <script>
+        (function () {
+            var placeholderImage = '<%=msBak.ImagePath%>';
+            var placeholderAudio = '<%=msBak.FilePath%>';
+            $('#labelImage').text(placeholderImage == '' ? 'Choose the image' : placeholderImage);
+            $('#labelAudio').text(placeholderAudio == '' ? 'Choose the audio' : placeholderAudio);
+        })();
+
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
 </asp:Content>
