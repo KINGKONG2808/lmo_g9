@@ -45,7 +45,8 @@ namespace LMO_G9.view.client
                 }
                 foreach (MusicDto ms in lms)
                 {
-                    ms.ImgHTML = "<img src='" + ms.ImagePath + "' runat='" + "server' " + "id=" + "'Img'" + "class=" + "'img second'" + "/>";
+                    string imagePath = ms.ImagePath.Replace("~/", "../../");
+                    ms.ImgHTML = "<img src='" + imagePath + "' runat='" + "server' " + "id=" + "'Img'" + "class=" + "'img second'" + "/>";
                 }
             }
             else
